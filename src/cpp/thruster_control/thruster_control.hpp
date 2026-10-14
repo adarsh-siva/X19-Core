@@ -4,12 +4,10 @@
  * space to be sent to thruster mappings
  */
 
-typedef struct {
-  rov::telemetry::Vector3D position;
-  rov::telemetry::Vector3D orientation; 
-} Pose;
+
+#include <Eigen/Dense>
 
 Pose genThrusterCommand(Pose measuredPose, Pose joystickCommand,
                                  float depthControlCommand) {
-
+  
 }
