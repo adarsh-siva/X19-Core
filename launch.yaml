@@ -1,0 +1,18 @@
+# ROV X19-Core Multi-Node Orchestration Configuration
+session_name: rov_x19_core
+
+# Default mode when neither --dev nor --field is passed
+default_mode: dev
+
+# Node definitions
+nodes:
+  - name: "ZMQ Surface IP Subscriber / Camera Launcher"
+    cwd: "."
+    cmd: "python3 src/python/videos/get_ip.py"
+    mode: "all"
+
+  - name: "IMU Node (OAK-D W Pro)"
+    cwd: "."
+    cmd: "python3 src/python/sensors/imu_node.py"
+    mode: "all"
+
