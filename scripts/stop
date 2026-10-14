@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+# Stop all running Core nodes and kill the tmux session
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+python3 "$SCRIPT_DIR/launch.py" --stop
