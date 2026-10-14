@@ -9,8 +9,8 @@ REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 
 # Define paths
 PROTO_DIR="$REPO_ROOT/proto"
-CPP_OUT_DIR="$REPO_ROOT/core/protocols/cpp"
-PYTHON_OUT_DIR="$REPO_ROOT/core/protocols/python"
+CPP_OUT_DIR="$REPO_ROOT/src/protocols/cpp"
+PYTHON_OUT_DIR="$REPO_ROOT/src/protocols/python"
 
 # Ensure output directories exist
 mkdir -p "$CPP_OUT_DIR"

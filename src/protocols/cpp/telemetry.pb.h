@@ -46,9 +46,15 @@ struct TableStruct_telemetry_2eproto {
 extern const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_telemetry_2eproto;
 namespace rov {
 namespace telemetry {
+class ImuData;
+struct ImuDataDefaultTypeInternal;
+extern ImuDataDefaultTypeInternal _ImuData_default_instance_;
 class JoystickCommand;
 struct JoystickCommandDefaultTypeInternal;
 extern JoystickCommandDefaultTypeInternal _JoystickCommand_default_instance_;
+class Quaternion;
+struct QuaternionDefaultTypeInternal;
+extern QuaternionDefaultTypeInternal _Quaternion_default_instance_;
 class SensorData;
 struct SensorDataDefaultTypeInternal;
 extern SensorDataDefaultTypeInternal _SensorData_default_instance_;
@@ -61,7 +67,9 @@ extern testDefaultTypeInternal _test_default_instance_;
 }  // namespace telemetry
 }  // namespace rov
 PROTOBUF_NAMESPACE_OPEN
+template<> ::rov::telemetry::ImuData* Arena::CreateMaybeMessage<::rov::telemetry::ImuData>(Arena*);
 template<> ::rov::telemetry::JoystickCommand* Arena::CreateMaybeMessage<::rov::telemetry::JoystickCommand>(Arena*);
+template<> ::rov::telemetry::Quaternion* Arena::CreateMaybeMessage<::rov::telemetry::Quaternion>(Arena*);
 template<> ::rov::telemetry::SensorData* Arena::CreateMaybeMessage<::rov::telemetry::SensorData>(Arena*);
 template<> ::rov::telemetry::Vector3D* Arena::CreateMaybeMessage<::rov::telemetry::Vector3D>(Arena*);
 template<> ::rov::telemetry::test* Arena::CreateMaybeMessage<::rov::telemetry::test>(Arena*);
@@ -241,6 +249,406 @@ class Vector3D final :
 };
 // -------------------------------------------------------------------
 
+class Quaternion final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:rov.telemetry.Quaternion) */ {
+ public:
+  inline Quaternion() : Quaternion(nullptr) {}
+  ~Quaternion() override;
+  explicit PROTOBUF_CONSTEXPR Quaternion(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  Quaternion(const Quaternion& from);
+  Quaternion(Quaternion&& from) noexcept
+    : Quaternion() {
+    *this = ::std::move(from);
+  }
+
+  inline Quaternion& operator=(const Quaternion& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline Quaternion& operator=(Quaternion&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const Quaternion& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const Quaternion* internal_default_instance() {
+    return reinterpret_cast<const Quaternion*>(
+               &_Quaternion_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    1;
+
+  friend void swap(Quaternion& a, Quaternion& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(Quaternion* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(Quaternion* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  Quaternion* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<Quaternion>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const Quaternion& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const Quaternion& from) {
+    Quaternion::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(Quaternion* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "rov.telemetry.Quaternion";
+  }
+  protected:
+  explicit Quaternion(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kXFieldNumber = 1,
+    kYFieldNumber = 2,
+    kZFieldNumber = 3,
+    kWFieldNumber = 4,
+    kAccuracyRadFieldNumber = 5,
+  };
+  // float x = 1;
+  void clear_x();
+  float x() const;
+  void set_x(float value);
+  private:
+  float _internal_x() const;
+  void _internal_set_x(float value);
+  public:
+
+  // float y = 2;
+  void clear_y();
+  float y() const;
+  void set_y(float value);
+  private:
+  float _internal_y() const;
+  void _internal_set_y(float value);
+  public:
+
+  // float z = 3;
+  void clear_z();
+  float z() const;
+  void set_z(float value);
+  private:
+  float _internal_z() const;
+  void _internal_set_z(float value);
+  public:
+
+  // float w = 4;
+  void clear_w();
+  float w() const;
+  void set_w(float value);
+  private:
+  float _internal_w() const;
+  void _internal_set_w(float value);
+  public:
+
+  // float accuracy_rad = 5;
+  void clear_accuracy_rad();
+  float accuracy_rad() const;
+  void set_accuracy_rad(float value);
+  private:
+  float _internal_accuracy_rad() const;
+  void _internal_set_accuracy_rad(float value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:rov.telemetry.Quaternion)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    float x_;
+    float y_;
+    float z_;
+    float w_;
+    float accuracy_rad_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_telemetry_2eproto;
+};
+// -------------------------------------------------------------------
+
+class ImuData final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:rov.telemetry.ImuData) */ {
+ public:
+  inline ImuData() : ImuData(nullptr) {}
+  ~ImuData() override;
+  explicit PROTOBUF_CONSTEXPR ImuData(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  ImuData(const ImuData& from);
+  ImuData(ImuData&& from) noexcept
+    : ImuData() {
+    *this = ::std::move(from);
+  }
+
+  inline ImuData& operator=(const ImuData& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline ImuData& operator=(ImuData&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const ImuData& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const ImuData* internal_default_instance() {
+    return reinterpret_cast<const ImuData*>(
+               &_ImuData_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    2;
+
+  friend void swap(ImuData& a, ImuData& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(ImuData* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(ImuData* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  ImuData* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<ImuData>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const ImuData& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const ImuData& from) {
+    ImuData::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ImuData* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "rov.telemetry.ImuData";
+  }
+  protected:
+  explicit ImuData(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kAccelerationFieldNumber = 2,
+    kAngularVelocityFieldNumber = 3,
+    kOrientationFieldNumber = 4,
+    kTimestampUsFieldNumber = 1,
+  };
+  // .rov.telemetry.Vector3D acceleration = 2;
+  bool has_acceleration() const;
+  private:
+  bool _internal_has_acceleration() const;
+  public:
+  void clear_acceleration();
+  const ::rov::telemetry::Vector3D& acceleration() const;
+  PROTOBUF_NODISCARD ::rov::telemetry::Vector3D* release_acceleration();
+  ::rov::telemetry::Vector3D* mutable_acceleration();
+  void set_allocated_acceleration(::rov::telemetry::Vector3D* acceleration);
+  private:
+  const ::rov::telemetry::Vector3D& _internal_acceleration() const;
+  ::rov::telemetry::Vector3D* _internal_mutable_acceleration();
+  public:
+  void unsafe_arena_set_allocated_acceleration(
+      ::rov::telemetry::Vector3D* acceleration);
+  ::rov::telemetry::Vector3D* unsafe_arena_release_acceleration();
+
+  // .rov.telemetry.Vector3D angular_velocity = 3;
+  bool has_angular_velocity() const;
+  private:
+  bool _internal_has_angular_velocity() const;
+  public:
+  void clear_angular_velocity();
+  const ::rov::telemetry::Vector3D& angular_velocity() const;
+  PROTOBUF_NODISCARD ::rov::telemetry::Vector3D* release_angular_velocity();
+  ::rov::telemetry::Vector3D* mutable_angular_velocity();
+  void set_allocated_angular_velocity(::rov::telemetry::Vector3D* angular_velocity);
+  private:
+  const ::rov::telemetry::Vector3D& _internal_angular_velocity() const;
+  ::rov::telemetry::Vector3D* _internal_mutable_angular_velocity();
+  public:
+  void unsafe_arena_set_allocated_angular_velocity(
+      ::rov::telemetry::Vector3D* angular_velocity);
+  ::rov::telemetry::Vector3D* unsafe_arena_release_angular_velocity();
+
+  // .rov.telemetry.Quaternion orientation = 4;
+  bool has_orientation() const;
+  private:
+  bool _internal_has_orientation() const;
+  public:
+  void clear_orientation();
+  const ::rov::telemetry::Quaternion& orientation() const;
+  PROTOBUF_NODISCARD ::rov::telemetry::Quaternion* release_orientation();
+  ::rov::telemetry::Quaternion* mutable_orientation();
+  void set_allocated_orientation(::rov::telemetry::Quaternion* orientation);
+  private:
+  const ::rov::telemetry::Quaternion& _internal_orientation() const;
+  ::rov::telemetry::Quaternion* _internal_mutable_orientation();
+  public:
+  void unsafe_arena_set_allocated_orientation(
+      ::rov::telemetry::Quaternion* orientation);
+  ::rov::telemetry::Quaternion* unsafe_arena_release_orientation();
+
+  // uint64 timestamp_us = 1;
+  void clear_timestamp_us();
+  uint64_t timestamp_us() const;
+  void set_timestamp_us(uint64_t value);
+  private:
+  uint64_t _internal_timestamp_us() const;
+  void _internal_set_timestamp_us(uint64_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:rov.telemetry.ImuData)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::rov::telemetry::Vector3D* acceleration_;
+    ::rov::telemetry::Vector3D* angular_velocity_;
+    ::rov::telemetry::Quaternion* orientation_;
+    uint64_t timestamp_us_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_telemetry_2eproto;
+};
+// -------------------------------------------------------------------
+
 class SensorData final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:rov.telemetry.SensorData) */ {
  public:
@@ -289,7 +697,7 @@ class SensorData final :
                &_SensorData_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    1;
+    3;
 
   friend void swap(SensorData& a, SensorData& b) {
     a.Swap(&b);
@@ -499,7 +907,7 @@ class JoystickCommand final :
                &_JoystickCommand_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    2;
+    4;
 
   friend void swap(JoystickCommand& a, JoystickCommand& b) {
     a.Swap(&b);
@@ -713,7 +1121,7 @@ class test final :
                &_test_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    3;
+    5;
 
   friend void swap(test& a, test& b) {
     a.Swap(&b);
@@ -885,6 +1293,404 @@ inline void Vector3D::_internal_set_z(float value) {
 inline void Vector3D::set_z(float value) {
   _internal_set_z(value);
   // @@protoc_insertion_point(field_set:rov.telemetry.Vector3D.z)
+}
+
+// -------------------------------------------------------------------
+
+// Quaternion
+
+// float x = 1;
+inline void Quaternion::clear_x() {
+  _impl_.x_ = 0;
+}
+inline float Quaternion::_internal_x() const {
+  return _impl_.x_;
+}
+inline float Quaternion::x() const {
+  // @@protoc_insertion_point(field_get:rov.telemetry.Quaternion.x)
+  return _internal_x();
+}
+inline void Quaternion::_internal_set_x(float value) {
+  
+  _impl_.x_ = value;
+}
+inline void Quaternion::set_x(float value) {
+  _internal_set_x(value);
+  // @@protoc_insertion_point(field_set:rov.telemetry.Quaternion.x)
+}
+
+// float y = 2;
+inline void Quaternion::clear_y() {
+  _impl_.y_ = 0;
+}
+inline float Quaternion::_internal_y() const {
+  return _impl_.y_;
+}
+inline float Quaternion::y() const {
+  // @@protoc_insertion_point(field_get:rov.telemetry.Quaternion.y)
+  return _internal_y();
+}
+inline void Quaternion::_internal_set_y(float value) {
+  
+  _impl_.y_ = value;
+}
+inline void Quaternion::set_y(float value) {
+  _internal_set_y(value);
+  // @@protoc_insertion_point(field_set:rov.telemetry.Quaternion.y)
+}
+
+// float z = 3;
+inline void Quaternion::clear_z() {
+  _impl_.z_ = 0;
+}
+inline float Quaternion::_internal_z() const {
+  return _impl_.z_;
+}
+inline float Quaternion::z() const {
+  // @@protoc_insertion_point(field_get:rov.telemetry.Quaternion.z)
+  return _internal_z();
+}
+inline void Quaternion::_internal_set_z(float value) {
+  
+  _impl_.z_ = value;
+}
+inline void Quaternion::set_z(float value) {
+  _internal_set_z(value);
+  // @@protoc_insertion_point(field_set:rov.telemetry.Quaternion.z)
+}
+
+// float w = 4;
+inline void Quaternion::clear_w() {
+  _impl_.w_ = 0;
+}
+inline float Quaternion::_internal_w() const {
+  return _impl_.w_;
+}
+inline float Quaternion::w() const {
+  // @@protoc_insertion_point(field_get:rov.telemetry.Quaternion.w)
+  return _internal_w();
+}
+inline void Quaternion::_internal_set_w(float value) {
+  
+  _impl_.w_ = value;
+}
+inline void Quaternion::set_w(float value) {
+  _internal_set_w(value);
+  // @@protoc_insertion_point(field_set:rov.telemetry.Quaternion.w)
+}
+
+// float accuracy_rad = 5;
+inline void Quaternion::clear_accuracy_rad() {
+  _impl_.accuracy_rad_ = 0;
+}
+inline float Quaternion::_internal_accuracy_rad() const {
+  return _impl_.accuracy_rad_;
+}
+inline float Quaternion::accuracy_rad() const {
+  // @@protoc_insertion_point(field_get:rov.telemetry.Quaternion.accuracy_rad)
+  return _internal_accuracy_rad();
+}
+inline void Quaternion::_internal_set_accuracy_rad(float value) {
+  
+  _impl_.accuracy_rad_ = value;
+}
+inline void Quaternion::set_accuracy_rad(float value) {
+  _internal_set_accuracy_rad(value);
+  // @@protoc_insertion_point(field_set:rov.telemetry.Quaternion.accuracy_rad)
+}
+
+// -------------------------------------------------------------------
+
+// ImuData
+
+// uint64 timestamp_us = 1;
+inline void ImuData::clear_timestamp_us() {
+  _impl_.timestamp_us_ = uint64_t{0u};
+}
+inline uint64_t ImuData::_internal_timestamp_us() const {
+  return _impl_.timestamp_us_;
+}
+inline uint64_t ImuData::timestamp_us() const {
+  // @@protoc_insertion_point(field_get:rov.telemetry.ImuData.timestamp_us)
+  return _internal_timestamp_us();
+}
+inline void ImuData::_internal_set_timestamp_us(uint64_t value) {
+  
+  _impl_.timestamp_us_ = value;
+}
+inline void ImuData::set_timestamp_us(uint64_t value) {
+  _internal_set_timestamp_us(value);
+  // @@protoc_insertion_point(field_set:rov.telemetry.ImuData.timestamp_us)
+}
+
+// .rov.telemetry.Vector3D acceleration = 2;
+inline bool ImuData::_internal_has_acceleration() const {
+  return this != internal_default_instance() && _impl_.acceleration_ != nullptr;
+}
+inline bool ImuData::has_acceleration() const {
+  return _internal_has_acceleration();
+}
+inline void ImuData::clear_acceleration() {
+  if (GetArenaForAllocation() == nullptr && _impl_.acceleration_ != nullptr) {
+    delete _impl_.acceleration_;
+  }
+  _impl_.acceleration_ = nullptr;
+}
+inline const ::rov::telemetry::Vector3D& ImuData::_internal_acceleration() const {
+  const ::rov::telemetry::Vector3D* p = _impl_.acceleration_;
+  return p != nullptr ? *p : reinterpret_cast<const ::rov::telemetry::Vector3D&>(
+      ::rov::telemetry::_Vector3D_default_instance_);
+}
+inline const ::rov::telemetry::Vector3D& ImuData::acceleration() const {
+  // @@protoc_insertion_point(field_get:rov.telemetry.ImuData.acceleration)
+  return _internal_acceleration();
+}
+inline void ImuData::unsafe_arena_set_allocated_acceleration(
+    ::rov::telemetry::Vector3D* acceleration) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.acceleration_);
+  }
+  _impl_.acceleration_ = acceleration;
+  if (acceleration) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:rov.telemetry.ImuData.acceleration)
+}
+inline ::rov::telemetry::Vector3D* ImuData::release_acceleration() {
+  
+  ::rov::telemetry::Vector3D* temp = _impl_.acceleration_;
+  _impl_.acceleration_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::rov::telemetry::Vector3D* ImuData::unsafe_arena_release_acceleration() {
+  // @@protoc_insertion_point(field_release:rov.telemetry.ImuData.acceleration)
+  
+  ::rov::telemetry::Vector3D* temp = _impl_.acceleration_;
+  _impl_.acceleration_ = nullptr;
+  return temp;
+}
+inline ::rov::telemetry::Vector3D* ImuData::_internal_mutable_acceleration() {
+  
+  if (_impl_.acceleration_ == nullptr) {
+    auto* p = CreateMaybeMessage<::rov::telemetry::Vector3D>(GetArenaForAllocation());
+    _impl_.acceleration_ = p;
+  }
+  return _impl_.acceleration_;
+}
+inline ::rov::telemetry::Vector3D* ImuData::mutable_acceleration() {
+  ::rov::telemetry::Vector3D* _msg = _internal_mutable_acceleration();
+  // @@protoc_insertion_point(field_mutable:rov.telemetry.ImuData.acceleration)
+  return _msg;
+}
+inline void ImuData::set_allocated_acceleration(::rov::telemetry::Vector3D* acceleration) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete _impl_.acceleration_;
+  }
+  if (acceleration) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(acceleration);
+    if (message_arena != submessage_arena) {
+      acceleration = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, acceleration, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  _impl_.acceleration_ = acceleration;
+  // @@protoc_insertion_point(field_set_allocated:rov.telemetry.ImuData.acceleration)
+}
+
+// .rov.telemetry.Vector3D angular_velocity = 3;
+inline bool ImuData::_internal_has_angular_velocity() const {
+  return this != internal_default_instance() && _impl_.angular_velocity_ != nullptr;
+}
+inline bool ImuData::has_angular_velocity() const {
+  return _internal_has_angular_velocity();
+}
+inline void ImuData::clear_angular_velocity() {
+  if (GetArenaForAllocation() == nullptr && _impl_.angular_velocity_ != nullptr) {
+    delete _impl_.angular_velocity_;
+  }
+  _impl_.angular_velocity_ = nullptr;
+}
+inline const ::rov::telemetry::Vector3D& ImuData::_internal_angular_velocity() const {
+  const ::rov::telemetry::Vector3D* p = _impl_.angular_velocity_;
+  return p != nullptr ? *p : reinterpret_cast<const ::rov::telemetry::Vector3D&>(
+      ::rov::telemetry::_Vector3D_default_instance_);
+}
+inline const ::rov::telemetry::Vector3D& ImuData::angular_velocity() const {
+  // @@protoc_insertion_point(field_get:rov.telemetry.ImuData.angular_velocity)
+  return _internal_angular_velocity();
+}
+inline void ImuData::unsafe_arena_set_allocated_angular_velocity(
+    ::rov::telemetry::Vector3D* angular_velocity) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.angular_velocity_);
+  }
+  _impl_.angular_velocity_ = angular_velocity;
+  if (angular_velocity) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:rov.telemetry.ImuData.angular_velocity)
+}
+inline ::rov::telemetry::Vector3D* ImuData::release_angular_velocity() {
+  
+  ::rov::telemetry::Vector3D* temp = _impl_.angular_velocity_;
+  _impl_.angular_velocity_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::rov::telemetry::Vector3D* ImuData::unsafe_arena_release_angular_velocity() {
+  // @@protoc_insertion_point(field_release:rov.telemetry.ImuData.angular_velocity)
+  
+  ::rov::telemetry::Vector3D* temp = _impl_.angular_velocity_;
+  _impl_.angular_velocity_ = nullptr;
+  return temp;
+}
+inline ::rov::telemetry::Vector3D* ImuData::_internal_mutable_angular_velocity() {
+  
+  if (_impl_.angular_velocity_ == nullptr) {
+    auto* p = CreateMaybeMessage<::rov::telemetry::Vector3D>(GetArenaForAllocation());
+    _impl_.angular_velocity_ = p;
+  }
+  return _impl_.angular_velocity_;
+}
+inline ::rov::telemetry::Vector3D* ImuData::mutable_angular_velocity() {
+  ::rov::telemetry::Vector3D* _msg = _internal_mutable_angular_velocity();
+  // @@protoc_insertion_point(field_mutable:rov.telemetry.ImuData.angular_velocity)
+  return _msg;
+}
+inline void ImuData::set_allocated_angular_velocity(::rov::telemetry::Vector3D* angular_velocity) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete _impl_.angular_velocity_;
+  }
+  if (angular_velocity) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(angular_velocity);
+    if (message_arena != submessage_arena) {
+      angular_velocity = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, angular_velocity, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  _impl_.angular_velocity_ = angular_velocity;
+  // @@protoc_insertion_point(field_set_allocated:rov.telemetry.ImuData.angular_velocity)
+}
+
+// .rov.telemetry.Quaternion orientation = 4;
+inline bool ImuData::_internal_has_orientation() const {
+  return this != internal_default_instance() && _impl_.orientation_ != nullptr;
+}
+inline bool ImuData::has_orientation() const {
+  return _internal_has_orientation();
+}
+inline void ImuData::clear_orientation() {
+  if (GetArenaForAllocation() == nullptr && _impl_.orientation_ != nullptr) {
+    delete _impl_.orientation_;
+  }
+  _impl_.orientation_ = nullptr;
+}
+inline const ::rov::telemetry::Quaternion& ImuData::_internal_orientation() const {
+  const ::rov::telemetry::Quaternion* p = _impl_.orientation_;
+  return p != nullptr ? *p : reinterpret_cast<const ::rov::telemetry::Quaternion&>(
+      ::rov::telemetry::_Quaternion_default_instance_);
+}
+inline const ::rov::telemetry::Quaternion& ImuData::orientation() const {
+  // @@protoc_insertion_point(field_get:rov.telemetry.ImuData.orientation)
+  return _internal_orientation();
+}
+inline void ImuData::unsafe_arena_set_allocated_orientation(
+    ::rov::telemetry::Quaternion* orientation) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.orientation_);
+  }
+  _impl_.orientation_ = orientation;
+  if (orientation) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:rov.telemetry.ImuData.orientation)
+}
+inline ::rov::telemetry::Quaternion* ImuData::release_orientation() {
+  
+  ::rov::telemetry::Quaternion* temp = _impl_.orientation_;
+  _impl_.orientation_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::rov::telemetry::Quaternion* ImuData::unsafe_arena_release_orientation() {
+  // @@protoc_insertion_point(field_release:rov.telemetry.ImuData.orientation)
+  
+  ::rov::telemetry::Quaternion* temp = _impl_.orientation_;
+  _impl_.orientation_ = nullptr;
+  return temp;
+}
+inline ::rov::telemetry::Quaternion* ImuData::_internal_mutable_orientation() {
+  
+  if (_impl_.orientation_ == nullptr) {
+    auto* p = CreateMaybeMessage<::rov::telemetry::Quaternion>(GetArenaForAllocation());
+    _impl_.orientation_ = p;
+  }
+  return _impl_.orientation_;
+}
+inline ::rov::telemetry::Quaternion* ImuData::mutable_orientation() {
+  ::rov::telemetry::Quaternion* _msg = _internal_mutable_orientation();
+  // @@protoc_insertion_point(field_mutable:rov.telemetry.ImuData.orientation)
+  return _msg;
+}
+inline void ImuData::set_allocated_orientation(::rov::telemetry::Quaternion* orientation) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete _impl_.orientation_;
+  }
+  if (orientation) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(orientation);
+    if (message_arena != submessage_arena) {
+      orientation = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, orientation, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  _impl_.orientation_ = orientation;
+  // @@protoc_insertion_point(field_set_allocated:rov.telemetry.ImuData.orientation)
 }
 
 // -------------------------------------------------------------------
@@ -1332,6 +2138,10 @@ inline void test::set_allocated_msg(std::string* msg) {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

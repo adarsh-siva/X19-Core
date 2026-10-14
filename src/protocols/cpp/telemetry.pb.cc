@@ -37,6 +37,39 @@ struct Vector3DDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 Vector3DDefaultTypeInternal _Vector3D_default_instance_;
+PROTOBUF_CONSTEXPR Quaternion::Quaternion(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.x_)*/0
+  , /*decltype(_impl_.y_)*/0
+  , /*decltype(_impl_.z_)*/0
+  , /*decltype(_impl_.w_)*/0
+  , /*decltype(_impl_.accuracy_rad_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct QuaternionDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR QuaternionDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~QuaternionDefaultTypeInternal() {}
+  union {
+    Quaternion _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 QuaternionDefaultTypeInternal _Quaternion_default_instance_;
+PROTOBUF_CONSTEXPR ImuData::ImuData(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.acceleration_)*/nullptr
+  , /*decltype(_impl_.angular_velocity_)*/nullptr
+  , /*decltype(_impl_.orientation_)*/nullptr
+  , /*decltype(_impl_.timestamp_us_)*/uint64_t{0u}
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct ImuDataDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR ImuDataDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~ImuDataDefaultTypeInternal() {}
+  union {
+    ImuData _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ImuDataDefaultTypeInternal _ImuData_default_instance_;
 PROTOBUF_CONSTEXPR SensorData::SensorData(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_.acceleration_)*/nullptr
@@ -88,7 +121,7 @@ struct testDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 testDefaultTypeInternal _test_default_instance_;
 }  // namespace telemetry
 }  // namespace rov
-static ::_pb::Metadata file_level_metadata_telemetry_2eproto[4];
+static ::_pb::Metadata file_level_metadata_telemetry_2eproto[6];
 static constexpr ::_pb::EnumDescriptor const** file_level_enum_descriptors_telemetry_2eproto = nullptr;
 static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_telemetry_2eproto = nullptr;
 
@@ -102,6 +135,27 @@ const uint32_t TableStruct_telemetry_2eproto::offsets[] PROTOBUF_SECTION_VARIABL
   PROTOBUF_FIELD_OFFSET(::rov::telemetry::Vector3D, _impl_.x_),
   PROTOBUF_FIELD_OFFSET(::rov::telemetry::Vector3D, _impl_.y_),
   PROTOBUF_FIELD_OFFSET(::rov::telemetry::Vector3D, _impl_.z_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::rov::telemetry::Quaternion, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::rov::telemetry::Quaternion, _impl_.x_),
+  PROTOBUF_FIELD_OFFSET(::rov::telemetry::Quaternion, _impl_.y_),
+  PROTOBUF_FIELD_OFFSET(::rov::telemetry::Quaternion, _impl_.z_),
+  PROTOBUF_FIELD_OFFSET(::rov::telemetry::Quaternion, _impl_.w_),
+  PROTOBUF_FIELD_OFFSET(::rov::telemetry::Quaternion, _impl_.accuracy_rad_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::rov::telemetry::ImuData, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::rov::telemetry::ImuData, _impl_.timestamp_us_),
+  PROTOBUF_FIELD_OFFSET(::rov::telemetry::ImuData, _impl_.acceleration_),
+  PROTOBUF_FIELD_OFFSET(::rov::telemetry::ImuData, _impl_.angular_velocity_),
+  PROTOBUF_FIELD_OFFSET(::rov::telemetry::ImuData, _impl_.orientation_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::rov::telemetry::SensorData, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -136,13 +190,17 @@ const uint32_t TableStruct_telemetry_2eproto::offsets[] PROTOBUF_SECTION_VARIABL
 };
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::rov::telemetry::Vector3D)},
-  { 9, -1, -1, sizeof(::rov::telemetry::SensorData)},
-  { 20, -1, -1, sizeof(::rov::telemetry::JoystickCommand)},
-  { 33, -1, -1, sizeof(::rov::telemetry::test)},
+  { 9, -1, -1, sizeof(::rov::telemetry::Quaternion)},
+  { 20, -1, -1, sizeof(::rov::telemetry::ImuData)},
+  { 30, -1, -1, sizeof(::rov::telemetry::SensorData)},
+  { 41, -1, -1, sizeof(::rov::telemetry::JoystickCommand)},
+  { 54, -1, -1, sizeof(::rov::telemetry::test)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
   &::rov::telemetry::_Vector3D_default_instance_._instance,
+  &::rov::telemetry::_Quaternion_default_instance_._instance,
+  &::rov::telemetry::_ImuData_default_instance_._instance,
   &::rov::telemetry::_SensorData_default_instance_._instance,
   &::rov::telemetry::_JoystickCommand_default_instance_._instance,
   &::rov::telemetry::_test_default_instance_._instance,
@@ -150,22 +208,28 @@ static const ::_pb::Message* const file_default_instances[] = {
 
 const char descriptor_table_protodef_telemetry_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\017telemetry.proto\022\rrov.telemetry\"+\n\010Vect"
-  "or3D\022\t\n\001x\030\001 \001(\002\022\t\n\001y\030\002 \001(\002\022\t\n\001z\030\003 \001(\002\"\250\001"
-  "\n\nSensorData\022\024\n\014timestamp_us\030\001 \001(\004\022-\n\014ac"
-  "celeration\030\002 \001(\0132\027.rov.telemetry.Vector3"
-  "D\0221\n\020angular_velocity\030\003 \001(\0132\027.rov.teleme"
-  "try.Vector3D\022\r\n\005depth\030\004 \001(\002\022\023\n\013temperatu"
-  "re\030\005 \001(\002\"\204\001\n\017JoystickCommand\022\024\n\014timestam"
-  "p_us\030\001 \001(\004\022\017\n\007forward\030\002 \001(\002\022\016\n\006strafe\030\003 "
-  "\001(\002\022\020\n\010vertical\030\004 \001(\002\022\r\n\005pitch\030\005 \001(\002\022\014\n\004"
-  "roll\030\006 \001(\002\022\013\n\003yaw\030\007 \001(\002\"\023\n\004test\022\013\n\003msg\030\001"
-  " \001(\tb\006proto3"
+  "or3D\022\t\n\001x\030\001 \001(\002\022\t\n\001y\030\002 \001(\002\022\t\n\001z\030\003 \001(\002\"N\n"
+  "\nQuaternion\022\t\n\001x\030\001 \001(\002\022\t\n\001y\030\002 \001(\002\022\t\n\001z\030\003"
+  " \001(\002\022\t\n\001w\030\004 \001(\002\022\024\n\014accuracy_rad\030\005 \001(\002\"\261\001"
+  "\n\007ImuData\022\024\n\014timestamp_us\030\001 \001(\004\022-\n\014accel"
+  "eration\030\002 \001(\0132\027.rov.telemetry.Vector3D\0221"
+  "\n\020angular_velocity\030\003 \001(\0132\027.rov.telemetry"
+  ".Vector3D\022.\n\013orientation\030\004 \001(\0132\031.rov.tel"
+  "emetry.Quaternion\"\250\001\n\nSensorData\022\024\n\014time"
+  "stamp_us\030\001 \001(\004\022-\n\014acceleration\030\002 \001(\0132\027.r"
+  "ov.telemetry.Vector3D\0221\n\020angular_velocit"
+  "y\030\003 \001(\0132\027.rov.telemetry.Vector3D\022\r\n\005dept"
+  "h\030\004 \001(\002\022\023\n\013temperature\030\005 \001(\002\"\204\001\n\017Joystic"
+  "kCommand\022\024\n\014timestamp_us\030\001 \001(\004\022\017\n\007forwar"
+  "d\030\002 \001(\002\022\016\n\006strafe\030\003 \001(\002\022\020\n\010vertical\030\004 \001("
+  "\002\022\r\n\005pitch\030\005 \001(\002\022\014\n\004roll\030\006 \001(\002\022\013\n\003yaw\030\007 "
+  "\001(\002\"\023\n\004test\022\013\n\003msg\030\001 \001(\tb\006proto3"
   ;
 static ::_pbi::once_flag descriptor_table_telemetry_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_telemetry_2eproto = {
-    false, false, 412, descriptor_table_protodef_telemetry_2eproto,
+    false, false, 672, descriptor_table_protodef_telemetry_2eproto,
     "telemetry.proto",
-    &descriptor_table_telemetry_2eproto_once, nullptr, 0, 4,
+    &descriptor_table_telemetry_2eproto_once, nullptr, 0, 6,
     schemas, file_default_instances, TableStruct_telemetry_2eproto::offsets,
     file_level_metadata_telemetry_2eproto, file_level_enum_descriptors_telemetry_2eproto,
     file_level_service_descriptors_telemetry_2eproto,
@@ -448,6 +512,655 @@ void Vector3D::InternalSwap(Vector3D* other) {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_telemetry_2eproto_getter, &descriptor_table_telemetry_2eproto_once,
       file_level_metadata_telemetry_2eproto[0]);
+}
+
+// ===================================================================
+
+class Quaternion::_Internal {
+ public:
+};
+
+Quaternion::Quaternion(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:rov.telemetry.Quaternion)
+}
+Quaternion::Quaternion(const Quaternion& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  Quaternion* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.x_){}
+    , decltype(_impl_.y_){}
+    , decltype(_impl_.z_){}
+    , decltype(_impl_.w_){}
+    , decltype(_impl_.accuracy_rad_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::memcpy(&_impl_.x_, &from._impl_.x_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.accuracy_rad_) -
+    reinterpret_cast<char*>(&_impl_.x_)) + sizeof(_impl_.accuracy_rad_));
+  // @@protoc_insertion_point(copy_constructor:rov.telemetry.Quaternion)
+}
+
+inline void Quaternion::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.x_){0}
+    , decltype(_impl_.y_){0}
+    , decltype(_impl_.z_){0}
+    , decltype(_impl_.w_){0}
+    , decltype(_impl_.accuracy_rad_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+}
+
+Quaternion::~Quaternion() {
+  // @@protoc_insertion_point(destructor:rov.telemetry.Quaternion)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void Quaternion::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+}
+
+void Quaternion::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void Quaternion::Clear() {
+// @@protoc_insertion_point(message_clear_start:rov.telemetry.Quaternion)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  ::memset(&_impl_.x_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&_impl_.accuracy_rad_) -
+      reinterpret_cast<char*>(&_impl_.x_)) + sizeof(_impl_.accuracy_rad_));
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* Quaternion::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // float x = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 13)) {
+          _impl_.x_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else
+          goto handle_unusual;
+        continue;
+      // float y = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 21)) {
+          _impl_.y_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else
+          goto handle_unusual;
+        continue;
+      // float z = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 29)) {
+          _impl_.z_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else
+          goto handle_unusual;
+        continue;
+      // float w = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 37)) {
+          _impl_.w_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else
+          goto handle_unusual;
+        continue;
+      // float accuracy_rad = 5;
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 45)) {
+          _impl_.accuracy_rad_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* Quaternion::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:rov.telemetry.Quaternion)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // float x = 1;
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_x = this->_internal_x();
+  uint32_t raw_x;
+  memcpy(&raw_x, &tmp_x, sizeof(tmp_x));
+  if (raw_x != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(1, this->_internal_x(), target);
+  }
+
+  // float y = 2;
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_y = this->_internal_y();
+  uint32_t raw_y;
+  memcpy(&raw_y, &tmp_y, sizeof(tmp_y));
+  if (raw_y != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(2, this->_internal_y(), target);
+  }
+
+  // float z = 3;
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_z = this->_internal_z();
+  uint32_t raw_z;
+  memcpy(&raw_z, &tmp_z, sizeof(tmp_z));
+  if (raw_z != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(3, this->_internal_z(), target);
+  }
+
+  // float w = 4;
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_w = this->_internal_w();
+  uint32_t raw_w;
+  memcpy(&raw_w, &tmp_w, sizeof(tmp_w));
+  if (raw_w != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(4, this->_internal_w(), target);
+  }
+
+  // float accuracy_rad = 5;
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_accuracy_rad = this->_internal_accuracy_rad();
+  uint32_t raw_accuracy_rad;
+  memcpy(&raw_accuracy_rad, &tmp_accuracy_rad, sizeof(tmp_accuracy_rad));
+  if (raw_accuracy_rad != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(5, this->_internal_accuracy_rad(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:rov.telemetry.Quaternion)
+  return target;
+}
+
+size_t Quaternion::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:rov.telemetry.Quaternion)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // float x = 1;
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_x = this->_internal_x();
+  uint32_t raw_x;
+  memcpy(&raw_x, &tmp_x, sizeof(tmp_x));
+  if (raw_x != 0) {
+    total_size += 1 + 4;
+  }
+
+  // float y = 2;
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_y = this->_internal_y();
+  uint32_t raw_y;
+  memcpy(&raw_y, &tmp_y, sizeof(tmp_y));
+  if (raw_y != 0) {
+    total_size += 1 + 4;
+  }
+
+  // float z = 3;
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_z = this->_internal_z();
+  uint32_t raw_z;
+  memcpy(&raw_z, &tmp_z, sizeof(tmp_z));
+  if (raw_z != 0) {
+    total_size += 1 + 4;
+  }
+
+  // float w = 4;
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_w = this->_internal_w();
+  uint32_t raw_w;
+  memcpy(&raw_w, &tmp_w, sizeof(tmp_w));
+  if (raw_w != 0) {
+    total_size += 1 + 4;
+  }
+
+  // float accuracy_rad = 5;
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_accuracy_rad = this->_internal_accuracy_rad();
+  uint32_t raw_accuracy_rad;
+  memcpy(&raw_accuracy_rad, &tmp_accuracy_rad, sizeof(tmp_accuracy_rad));
+  if (raw_accuracy_rad != 0) {
+    total_size += 1 + 4;
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData Quaternion::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    Quaternion::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Quaternion::GetClassData() const { return &_class_data_; }
+
+
+void Quaternion::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<Quaternion*>(&to_msg);
+  auto& from = static_cast<const Quaternion&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:rov.telemetry.Quaternion)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_x = from._internal_x();
+  uint32_t raw_x;
+  memcpy(&raw_x, &tmp_x, sizeof(tmp_x));
+  if (raw_x != 0) {
+    _this->_internal_set_x(from._internal_x());
+  }
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_y = from._internal_y();
+  uint32_t raw_y;
+  memcpy(&raw_y, &tmp_y, sizeof(tmp_y));
+  if (raw_y != 0) {
+    _this->_internal_set_y(from._internal_y());
+  }
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_z = from._internal_z();
+  uint32_t raw_z;
+  memcpy(&raw_z, &tmp_z, sizeof(tmp_z));
+  if (raw_z != 0) {
+    _this->_internal_set_z(from._internal_z());
+  }
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_w = from._internal_w();
+  uint32_t raw_w;
+  memcpy(&raw_w, &tmp_w, sizeof(tmp_w));
+  if (raw_w != 0) {
+    _this->_internal_set_w(from._internal_w());
+  }
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_accuracy_rad = from._internal_accuracy_rad();
+  uint32_t raw_accuracy_rad;
+  memcpy(&raw_accuracy_rad, &tmp_accuracy_rad, sizeof(tmp_accuracy_rad));
+  if (raw_accuracy_rad != 0) {
+    _this->_internal_set_accuracy_rad(from._internal_accuracy_rad());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void Quaternion::CopyFrom(const Quaternion& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:rov.telemetry.Quaternion)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool Quaternion::IsInitialized() const {
+  return true;
+}
+
+void Quaternion::InternalSwap(Quaternion* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(Quaternion, _impl_.accuracy_rad_)
+      + sizeof(Quaternion::_impl_.accuracy_rad_)
+      - PROTOBUF_FIELD_OFFSET(Quaternion, _impl_.x_)>(
+          reinterpret_cast<char*>(&_impl_.x_),
+          reinterpret_cast<char*>(&other->_impl_.x_));
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata Quaternion::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_telemetry_2eproto_getter, &descriptor_table_telemetry_2eproto_once,
+      file_level_metadata_telemetry_2eproto[1]);
+}
+
+// ===================================================================
+
+class ImuData::_Internal {
+ public:
+  static const ::rov::telemetry::Vector3D& acceleration(const ImuData* msg);
+  static const ::rov::telemetry::Vector3D& angular_velocity(const ImuData* msg);
+  static const ::rov::telemetry::Quaternion& orientation(const ImuData* msg);
+};
+
+const ::rov::telemetry::Vector3D&
+ImuData::_Internal::acceleration(const ImuData* msg) {
+  return *msg->_impl_.acceleration_;
+}
+const ::rov::telemetry::Vector3D&
+ImuData::_Internal::angular_velocity(const ImuData* msg) {
+  return *msg->_impl_.angular_velocity_;
+}
+const ::rov::telemetry::Quaternion&
+ImuData::_Internal::orientation(const ImuData* msg) {
+  return *msg->_impl_.orientation_;
+}
+ImuData::ImuData(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:rov.telemetry.ImuData)
+}
+ImuData::ImuData(const ImuData& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  ImuData* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.acceleration_){nullptr}
+    , decltype(_impl_.angular_velocity_){nullptr}
+    , decltype(_impl_.orientation_){nullptr}
+    , decltype(_impl_.timestamp_us_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  if (from._internal_has_acceleration()) {
+    _this->_impl_.acceleration_ = new ::rov::telemetry::Vector3D(*from._impl_.acceleration_);
+  }
+  if (from._internal_has_angular_velocity()) {
+    _this->_impl_.angular_velocity_ = new ::rov::telemetry::Vector3D(*from._impl_.angular_velocity_);
+  }
+  if (from._internal_has_orientation()) {
+    _this->_impl_.orientation_ = new ::rov::telemetry::Quaternion(*from._impl_.orientation_);
+  }
+  _this->_impl_.timestamp_us_ = from._impl_.timestamp_us_;
+  // @@protoc_insertion_point(copy_constructor:rov.telemetry.ImuData)
+}
+
+inline void ImuData::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.acceleration_){nullptr}
+    , decltype(_impl_.angular_velocity_){nullptr}
+    , decltype(_impl_.orientation_){nullptr}
+    , decltype(_impl_.timestamp_us_){uint64_t{0u}}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+}
+
+ImuData::~ImuData() {
+  // @@protoc_insertion_point(destructor:rov.telemetry.ImuData)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void ImuData::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  if (this != internal_default_instance()) delete _impl_.acceleration_;
+  if (this != internal_default_instance()) delete _impl_.angular_velocity_;
+  if (this != internal_default_instance()) delete _impl_.orientation_;
+}
+
+void ImuData::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void ImuData::Clear() {
+// @@protoc_insertion_point(message_clear_start:rov.telemetry.ImuData)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  if (GetArenaForAllocation() == nullptr && _impl_.acceleration_ != nullptr) {
+    delete _impl_.acceleration_;
+  }
+  _impl_.acceleration_ = nullptr;
+  if (GetArenaForAllocation() == nullptr && _impl_.angular_velocity_ != nullptr) {
+    delete _impl_.angular_velocity_;
+  }
+  _impl_.angular_velocity_ = nullptr;
+  if (GetArenaForAllocation() == nullptr && _impl_.orientation_ != nullptr) {
+    delete _impl_.orientation_;
+  }
+  _impl_.orientation_ = nullptr;
+  _impl_.timestamp_us_ = uint64_t{0u};
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* ImuData::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // uint64 timestamp_us = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _impl_.timestamp_us_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // .rov.telemetry.Vector3D acceleration = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          ptr = ctx->ParseMessage(_internal_mutable_acceleration(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // .rov.telemetry.Vector3D angular_velocity = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
+          ptr = ctx->ParseMessage(_internal_mutable_angular_velocity(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // .rov.telemetry.Quaternion orientation = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
+          ptr = ctx->ParseMessage(_internal_mutable_orientation(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* ImuData::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:rov.telemetry.ImuData)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // uint64 timestamp_us = 1;
+  if (this->_internal_timestamp_us() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(1, this->_internal_timestamp_us(), target);
+  }
+
+  // .rov.telemetry.Vector3D acceleration = 2;
+  if (this->_internal_has_acceleration()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(2, _Internal::acceleration(this),
+        _Internal::acceleration(this).GetCachedSize(), target, stream);
+  }
+
+  // .rov.telemetry.Vector3D angular_velocity = 3;
+  if (this->_internal_has_angular_velocity()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(3, _Internal::angular_velocity(this),
+        _Internal::angular_velocity(this).GetCachedSize(), target, stream);
+  }
+
+  // .rov.telemetry.Quaternion orientation = 4;
+  if (this->_internal_has_orientation()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(4, _Internal::orientation(this),
+        _Internal::orientation(this).GetCachedSize(), target, stream);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:rov.telemetry.ImuData)
+  return target;
+}
+
+size_t ImuData::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:rov.telemetry.ImuData)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // .rov.telemetry.Vector3D acceleration = 2;
+  if (this->_internal_has_acceleration()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *_impl_.acceleration_);
+  }
+
+  // .rov.telemetry.Vector3D angular_velocity = 3;
+  if (this->_internal_has_angular_velocity()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *_impl_.angular_velocity_);
+  }
+
+  // .rov.telemetry.Quaternion orientation = 4;
+  if (this->_internal_has_orientation()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *_impl_.orientation_);
+  }
+
+  // uint64 timestamp_us = 1;
+  if (this->_internal_timestamp_us() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_timestamp_us());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData ImuData::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    ImuData::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*ImuData::GetClassData() const { return &_class_data_; }
+
+
+void ImuData::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<ImuData*>(&to_msg);
+  auto& from = static_cast<const ImuData&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:rov.telemetry.ImuData)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from._internal_has_acceleration()) {
+    _this->_internal_mutable_acceleration()->::rov::telemetry::Vector3D::MergeFrom(
+        from._internal_acceleration());
+  }
+  if (from._internal_has_angular_velocity()) {
+    _this->_internal_mutable_angular_velocity()->::rov::telemetry::Vector3D::MergeFrom(
+        from._internal_angular_velocity());
+  }
+  if (from._internal_has_orientation()) {
+    _this->_internal_mutable_orientation()->::rov::telemetry::Quaternion::MergeFrom(
+        from._internal_orientation());
+  }
+  if (from._internal_timestamp_us() != 0) {
+    _this->_internal_set_timestamp_us(from._internal_timestamp_us());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void ImuData::CopyFrom(const ImuData& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:rov.telemetry.ImuData)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool ImuData::IsInitialized() const {
+  return true;
+}
+
+void ImuData::InternalSwap(ImuData* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(ImuData, _impl_.timestamp_us_)
+      + sizeof(ImuData::_impl_.timestamp_us_)
+      - PROTOBUF_FIELD_OFFSET(ImuData, _impl_.acceleration_)>(
+          reinterpret_cast<char*>(&_impl_.acceleration_),
+          reinterpret_cast<char*>(&other->_impl_.acceleration_));
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata ImuData::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_telemetry_2eproto_getter, &descriptor_table_telemetry_2eproto_once,
+      file_level_metadata_telemetry_2eproto[2]);
 }
 
 // ===================================================================
@@ -788,7 +1501,7 @@ void SensorData::InternalSwap(SensorData* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata SensorData::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_telemetry_2eproto_getter, &descriptor_table_telemetry_2eproto_once,
-      file_level_metadata_telemetry_2eproto[1]);
+      file_level_metadata_telemetry_2eproto[3]);
 }
 
 // ===================================================================
@@ -1191,7 +1904,7 @@ void JoystickCommand::InternalSwap(JoystickCommand* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata JoystickCommand::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_telemetry_2eproto_getter, &descriptor_table_telemetry_2eproto_once,
-      file_level_metadata_telemetry_2eproto[2]);
+      file_level_metadata_telemetry_2eproto[4]);
 }
 
 // ===================================================================
@@ -1394,7 +2107,7 @@ void test::InternalSwap(test* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata test::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_telemetry_2eproto_getter, &descriptor_table_telemetry_2eproto_once,
-      file_level_metadata_telemetry_2eproto[3]);
+      file_level_metadata_telemetry_2eproto[5]);
 }
 
 // @@protoc_insertion_point(namespace_scope)
@@ -1404,6 +2117,14 @@ PROTOBUF_NAMESPACE_OPEN
 template<> PROTOBUF_NOINLINE ::rov::telemetry::Vector3D*
 Arena::CreateMaybeMessage< ::rov::telemetry::Vector3D >(Arena* arena) {
   return Arena::CreateMessageInternal< ::rov::telemetry::Vector3D >(arena);
+}
+template<> PROTOBUF_NOINLINE ::rov::telemetry::Quaternion*
+Arena::CreateMaybeMessage< ::rov::telemetry::Quaternion >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::rov::telemetry::Quaternion >(arena);
+}
+template<> PROTOBUF_NOINLINE ::rov::telemetry::ImuData*
+Arena::CreateMaybeMessage< ::rov::telemetry::ImuData >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::rov::telemetry::ImuData >(arena);
 }
 template<> PROTOBUF_NOINLINE ::rov::telemetry::SensorData*
 Arena::CreateMaybeMessage< ::rov::telemetry::SensorData >(Arena* arena) {

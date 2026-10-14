@@ -296,6 +296,46 @@ export PYTHONPATH=<project_root>
 
 ---
 
+## 🧭 IMU Node (OAK-D W Pro / BNO086)
+
+[`src/python/sensors/imu_node.py`](src/python/sensors/imu_node.py) reads the OAK-D W Pro's onboard BNO086 IMU via DepthAI and publishes each sample as an `ImuData` protobuf message (see `proto/telemetry.proto`) over ZMQ - the sensor feed for the upcoming vertical-stabilization PID loop.
+
+### OAK-D / BNO086 Configuration
+
+The pipeline enables three report types at a configurable rate (default 100 Hz, `--rate-hz`):
+- **`ACCELEROMETER`** - calibrated linear acceleration (m/s²)
+- **`GYROSCOPE_CALIBRATED`** - calibrated angular velocity (rad/s)
+- **`ROTATION_VECTOR`** - the BNO086's on-chip sensor-fused orientation (quaternion), used instead of integrating raw gyro data on the host so orientation doesn't drift
+
+Batching is set to `setBatchReportThreshold(1)` / `setMaxBatchReports(10)` - samples are sent as soon as one is ready (lowest latency, favoring responsiveness for a control-loop input over USB throughput). Note the BNO086 rounds the requested rate up to the nearest supported rate, and Luxonis's docs note gyro rates above ~400 Hz can jitter on RVC2 hardware - the 100 Hz default is well under that.
+
+### Dependencies
+
+- **DepthAI v2.x, not v3.** `pip install depthai` installs the latest release (v3), which restructured the pipeline API (`dai.node.XLinkOut` no longer exists) and breaks this file as well as the existing `cv_camera_connect.py`. Install the v2 line explicitly:
+  ```bash
+  pip install "depthai<3"
+  ```
+  - IMU node docs: https://docs.luxonis.com/software/depthai-components/nodes/imu/
+  - Official IMU example source (field names/API used in `packet_to_proto`): https://github.com/luxonis/depthai-python/tree/main/examples/IMU
+- **udev rule** so DepthAI can access the camera over USB without root (one-time, per machine):
+  ```bash
+  echo 'SUBSYSTEM=="usb", ATTR{idVendor}=="03e7", MODE="0666"' | sudo tee /etc/udev/rules.d/80-movidius.rules
+  sudo udevadm control --reload-rules && sudo udevadm trigger
+  ```
+  Then **physically unplug and replug the camera** - a device already enumerated before the rule existed needs to re-enumerate to pick up the new permissions.
+
+### Running
+
+```bash
+export PYTHONPATH=$(pwd)
+.venv/bin/python src/python/sensors/imu_node.py
+```
+Defaults to `tcp://127.0.0.1:5557`, topic `imu` (see the port table below). Only one process can hold the DepthAI device open at a time - make sure nothing else (e.g. `cv_camera_connect.py`) is using the camera first.
+
+To test the ZMQ/protobuf wiring without the camera attached, `testing/imu_fixture_publisher.py` publishes synthetic data on the same address/topic/schema.
+
+---
+
 ## 🌐 Network Ports & Field Deployment Guide
 
 When running on the Raspberry Pi connected to the Surface Topside Laptop via Ethernet/tether network:
@@ -304,6 +344,7 @@ When running on the Raspberry Pi connected to the Surface Topside Laptop via Eth
 |:---:|:---:|:---|:---|
 | **5555** | ZMQ (TCP) | Surface Telemetry | Receives telemetry packets on topic `telemetry` |
 | **5556** | ZMQ (TCP) | Surface IP Publisher | Receives Surface IP broadcast on topic `surface_ip` |
+| **5557** | ZMQ (TCP) | IMU Node | Publishes `ImuData` packets on topic `imu` |
 | **8554** | RTSP (TCP) | Go2RTC Server | Pushes RTSP camera streams to Surface media server |
 
 ### Running on Raspberry Pi (Hardware Network Setup):

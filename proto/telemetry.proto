@@ -9,6 +9,23 @@ message Vector3D {
   float z = 3;
 }
 
+// Fused orientation output from the IMU (e.g. BNO086 rotation vector)
+message Quaternion {
+  float x = 1;
+  float y = 2;
+  float z = 3;
+  float w = 4;
+  float accuracy_rad = 5;  // orientation accuracy estimate, radians
+}
+
+// Raw/calibrated + fused IMU reading, published by imu_node
+message ImuData {
+  uint64 timestamp_us = 1;
+  Vector3D acceleration = 2;      // m/s^2, calibrated
+  Vector3D angular_velocity = 3;  // rad/s, calibrated
+  Quaternion orientation = 4;     // fused rotation vector
+}
+
 // Telemetry from the ROV sensors to the topside
 message SensorData {
   uint64 timestamp_us = 1;
