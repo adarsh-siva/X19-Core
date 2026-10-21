@@ -27,10 +27,12 @@ public:
   double moving_avg = 0;
 
   int num_items = 0;
+  bool has_measurement = false;
 
   Controller(Weights w) : weights(w) {};
   double compute(double measurement, double dt);
   double compute_filtered(double dt);
   void record_measurement(double measurement);
   double get_measurement();
+  void reset(); // clear PID and filter state, e.g. when control is re-enabled
 };

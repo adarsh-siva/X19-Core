@@ -1,3 +1,5 @@
+#pragma once
+
 /*
  * takes joystick command + depth control command and
  * outputs thruster command for ROV
@@ -7,7 +9,7 @@
 #include <Eigen/Dense>
 #include <Eigen/Geometry>
 
-Eigen::Isometry3d genThrusterCommand(
+inline Eigen::Isometry3d genThrusterCommand(
     Eigen::AngleAxisd measuredPose,
     Eigen::Isometry3d joystickCommand,
     float depthControlCommand)

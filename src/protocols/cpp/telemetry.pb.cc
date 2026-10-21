@@ -37,6 +37,39 @@ struct Vector3DDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 Vector3DDefaultTypeInternal _Vector3D_default_instance_;
+PROTOBUF_CONSTEXPR Quaternion::Quaternion(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.x_)*/0
+  , /*decltype(_impl_.y_)*/0
+  , /*decltype(_impl_.z_)*/0
+  , /*decltype(_impl_.w_)*/0
+  , /*decltype(_impl_.accuracy_rad_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct QuaternionDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR QuaternionDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~QuaternionDefaultTypeInternal() {}
+  union {
+    Quaternion _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 QuaternionDefaultTypeInternal _Quaternion_default_instance_;
+PROTOBUF_CONSTEXPR ImuData::ImuData(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.acceleration_)*/nullptr
+  , /*decltype(_impl_.angular_velocity_)*/nullptr
+  , /*decltype(_impl_.orientation_)*/nullptr
+  , /*decltype(_impl_.timestamp_us_)*/uint64_t{0u}
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct ImuDataDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR ImuDataDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~ImuDataDefaultTypeInternal() {}
+  union {
+    ImuData _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ImuDataDefaultTypeInternal _ImuData_default_instance_;
 PROTOBUF_CONSTEXPR SensorData::SensorData(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_.acceleration_)*/nullptr
@@ -54,25 +87,6 @@ struct SensorDataDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SensorDataDefaultTypeInternal _SensorData_default_instance_;
-PROTOBUF_CONSTEXPR JoystickCommand::JoystickCommand(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.timestamp_us_)*/uint64_t{0u}
-  , /*decltype(_impl_.forward_)*/0
-  , /*decltype(_impl_.strafe_)*/0
-  , /*decltype(_impl_.vertical_)*/0
-  , /*decltype(_impl_.pitch_)*/0
-  , /*decltype(_impl_.roll_)*/0
-  , /*decltype(_impl_.yaw_)*/0
-  , /*decltype(_impl_._cached_size_)*/{}} {}
-struct JoystickCommandDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR JoystickCommandDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~JoystickCommandDefaultTypeInternal() {}
-  union {
-    JoystickCommand _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 JoystickCommandDefaultTypeInternal _JoystickCommand_default_instance_;
 PROTOBUF_CONSTEXPR test::test(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_.msg_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
@@ -86,9 +100,131 @@ struct testDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 testDefaultTypeInternal _test_default_instance_;
+PROTOBUF_CONSTEXPR ControllerTuning::ControllerTuning(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.enable_tuning_)*/false
+  , /*decltype(_impl_.k_p_)*/0
+  , /*decltype(_impl_.k_i_)*/0
+  , /*decltype(_impl_.k_d_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct ControllerTuningDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR ControllerTuningDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~ControllerTuningDefaultTypeInternal() {}
+  union {
+    ControllerTuning _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ControllerTuningDefaultTypeInternal _ControllerTuning_default_instance_;
+PROTOBUF_CONSTEXPR ControllerCommand::ControllerCommand(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.x_)*/0
+  , /*decltype(_impl_.y_)*/0
+  , /*decltype(_impl_.z_)*/0
+  , /*decltype(_impl_.roll_)*/0
+  , /*decltype(_impl_.pitch_)*/0
+  , /*decltype(_impl_.yaw_)*/0
+  , /*decltype(_impl_.enable_depth_control_)*/false
+  , /*decltype(_impl_.target_depth_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct ControllerCommandDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR ControllerCommandDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~ControllerCommandDefaultTypeInternal() {}
+  union {
+    ControllerCommand _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ControllerCommandDefaultTypeInternal _ControllerCommand_default_instance_;
+PROTOBUF_CONSTEXPR depthControlCommand::depthControlCommand(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.enable_control_)*/false
+  , /*decltype(_impl_.enable_testing_)*/false
+  , /*decltype(_impl_.target_depth_)*/0
+  , /*decltype(_impl_.k_p_)*/0
+  , /*decltype(_impl_.k_i_)*/0
+  , /*decltype(_impl_.k_d_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct depthControlCommandDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR depthControlCommandDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~depthControlCommandDefaultTypeInternal() {}
+  union {
+    depthControlCommand _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 depthControlCommandDefaultTypeInternal _depthControlCommand_default_instance_;
+PROTOBUF_CONSTEXPR depthControlData::depthControlData(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.k_p_)*/0
+  , /*decltype(_impl_.k_i_)*/0
+  , /*decltype(_impl_.k_d_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct depthControlDataDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR depthControlDataDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~depthControlDataDefaultTypeInternal() {}
+  union {
+    depthControlData _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 depthControlDataDefaultTypeInternal _depthControlData_default_instance_;
+PROTOBUF_CONSTEXPR depthControlOutput::depthControlOutput(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.timestamp_us_)*/uint64_t{0u}
+  , /*decltype(_impl_.enabled_)*/false
+  , /*decltype(_impl_.command_)*/0
+  , /*decltype(_impl_.measured_depth_)*/0
+  , /*decltype(_impl_.target_depth_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct depthControlOutputDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR depthControlOutputDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~depthControlOutputDefaultTypeInternal() {}
+  union {
+    depthControlOutput _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 depthControlOutputDefaultTypeInternal _depthControlOutput_default_instance_;
+PROTOBUF_CONSTEXPR ThrusterCommand::ThrusterCommand(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.timestamp_us_)*/uint64_t{0u}
+  , /*decltype(_impl_.x_)*/0
+  , /*decltype(_impl_.y_)*/0
+  , /*decltype(_impl_.z_)*/0
+  , /*decltype(_impl_.roll_)*/0
+  , /*decltype(_impl_.pitch_)*/0
+  , /*decltype(_impl_.yaw_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct ThrusterCommandDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR ThrusterCommandDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~ThrusterCommandDefaultTypeInternal() {}
+  union {
+    ThrusterCommand _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ThrusterCommandDefaultTypeInternal _ThrusterCommand_default_instance_;
+PROTOBUF_CONSTEXPR AutonomyStatus::AutonomyStatus(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.behavior_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.phase_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.timestamp_us_)*/uint64_t{0u}
+  , /*decltype(_impl_.target_heading_)*/0
+  , /*decltype(_impl_.target_depth_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct AutonomyStatusDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR AutonomyStatusDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~AutonomyStatusDefaultTypeInternal() {}
+  union {
+    AutonomyStatus _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 AutonomyStatusDefaultTypeInternal _AutonomyStatus_default_instance_;
 }  // namespace telemetry
 }  // namespace rov
-static ::_pb::Metadata file_level_metadata_telemetry_2eproto[4];
+static ::_pb::Metadata file_level_metadata_telemetry_2eproto[12];
 static constexpr ::_pb::EnumDescriptor const** file_level_enum_descriptors_telemetry_2eproto = nullptr;
 static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_telemetry_2eproto = nullptr;
 
@@ -103,6 +239,27 @@ const uint32_t TableStruct_telemetry_2eproto::offsets[] PROTOBUF_SECTION_VARIABL
   PROTOBUF_FIELD_OFFSET(::rov::telemetry::Vector3D, _impl_.y_),
   PROTOBUF_FIELD_OFFSET(::rov::telemetry::Vector3D, _impl_.z_),
   ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::rov::telemetry::Quaternion, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::rov::telemetry::Quaternion, _impl_.x_),
+  PROTOBUF_FIELD_OFFSET(::rov::telemetry::Quaternion, _impl_.y_),
+  PROTOBUF_FIELD_OFFSET(::rov::telemetry::Quaternion, _impl_.z_),
+  PROTOBUF_FIELD_OFFSET(::rov::telemetry::Quaternion, _impl_.w_),
+  PROTOBUF_FIELD_OFFSET(::rov::telemetry::Quaternion, _impl_.accuracy_rad_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::rov::telemetry::ImuData, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::rov::telemetry::ImuData, _impl_.timestamp_us_),
+  PROTOBUF_FIELD_OFFSET(::rov::telemetry::ImuData, _impl_.acceleration_),
+  PROTOBUF_FIELD_OFFSET(::rov::telemetry::ImuData, _impl_.angular_velocity_),
+  PROTOBUF_FIELD_OFFSET(::rov::telemetry::ImuData, _impl_.orientation_),
+  ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::rov::telemetry::SensorData, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
@@ -114,58 +271,163 @@ const uint32_t TableStruct_telemetry_2eproto::offsets[] PROTOBUF_SECTION_VARIABL
   PROTOBUF_FIELD_OFFSET(::rov::telemetry::SensorData, _impl_.depth_),
   PROTOBUF_FIELD_OFFSET(::rov::telemetry::SensorData, _impl_.temperature_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::rov::telemetry::JoystickCommand, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::rov::telemetry::JoystickCommand, _impl_.timestamp_us_),
-  PROTOBUF_FIELD_OFFSET(::rov::telemetry::JoystickCommand, _impl_.forward_),
-  PROTOBUF_FIELD_OFFSET(::rov::telemetry::JoystickCommand, _impl_.strafe_),
-  PROTOBUF_FIELD_OFFSET(::rov::telemetry::JoystickCommand, _impl_.vertical_),
-  PROTOBUF_FIELD_OFFSET(::rov::telemetry::JoystickCommand, _impl_.pitch_),
-  PROTOBUF_FIELD_OFFSET(::rov::telemetry::JoystickCommand, _impl_.roll_),
-  PROTOBUF_FIELD_OFFSET(::rov::telemetry::JoystickCommand, _impl_.yaw_),
-  ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::rov::telemetry::test, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::rov::telemetry::test, _impl_.msg_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::rov::telemetry::ControllerTuning, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::rov::telemetry::ControllerTuning, _impl_.enable_tuning_),
+  PROTOBUF_FIELD_OFFSET(::rov::telemetry::ControllerTuning, _impl_.k_p_),
+  PROTOBUF_FIELD_OFFSET(::rov::telemetry::ControllerTuning, _impl_.k_i_),
+  PROTOBUF_FIELD_OFFSET(::rov::telemetry::ControllerTuning, _impl_.k_d_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::rov::telemetry::ControllerCommand, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::rov::telemetry::ControllerCommand, _impl_.x_),
+  PROTOBUF_FIELD_OFFSET(::rov::telemetry::ControllerCommand, _impl_.y_),
+  PROTOBUF_FIELD_OFFSET(::rov::telemetry::ControllerCommand, _impl_.z_),
+  PROTOBUF_FIELD_OFFSET(::rov::telemetry::ControllerCommand, _impl_.roll_),
+  PROTOBUF_FIELD_OFFSET(::rov::telemetry::ControllerCommand, _impl_.pitch_),
+  PROTOBUF_FIELD_OFFSET(::rov::telemetry::ControllerCommand, _impl_.yaw_),
+  PROTOBUF_FIELD_OFFSET(::rov::telemetry::ControllerCommand, _impl_.enable_depth_control_),
+  PROTOBUF_FIELD_OFFSET(::rov::telemetry::ControllerCommand, _impl_.target_depth_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::rov::telemetry::depthControlCommand, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::rov::telemetry::depthControlCommand, _impl_.enable_control_),
+  PROTOBUF_FIELD_OFFSET(::rov::telemetry::depthControlCommand, _impl_.enable_testing_),
+  PROTOBUF_FIELD_OFFSET(::rov::telemetry::depthControlCommand, _impl_.target_depth_),
+  PROTOBUF_FIELD_OFFSET(::rov::telemetry::depthControlCommand, _impl_.k_p_),
+  PROTOBUF_FIELD_OFFSET(::rov::telemetry::depthControlCommand, _impl_.k_i_),
+  PROTOBUF_FIELD_OFFSET(::rov::telemetry::depthControlCommand, _impl_.k_d_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::rov::telemetry::depthControlData, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::rov::telemetry::depthControlData, _impl_.k_p_),
+  PROTOBUF_FIELD_OFFSET(::rov::telemetry::depthControlData, _impl_.k_i_),
+  PROTOBUF_FIELD_OFFSET(::rov::telemetry::depthControlData, _impl_.k_d_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::rov::telemetry::depthControlOutput, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::rov::telemetry::depthControlOutput, _impl_.timestamp_us_),
+  PROTOBUF_FIELD_OFFSET(::rov::telemetry::depthControlOutput, _impl_.enabled_),
+  PROTOBUF_FIELD_OFFSET(::rov::telemetry::depthControlOutput, _impl_.command_),
+  PROTOBUF_FIELD_OFFSET(::rov::telemetry::depthControlOutput, _impl_.measured_depth_),
+  PROTOBUF_FIELD_OFFSET(::rov::telemetry::depthControlOutput, _impl_.target_depth_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::rov::telemetry::ThrusterCommand, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::rov::telemetry::ThrusterCommand, _impl_.timestamp_us_),
+  PROTOBUF_FIELD_OFFSET(::rov::telemetry::ThrusterCommand, _impl_.x_),
+  PROTOBUF_FIELD_OFFSET(::rov::telemetry::ThrusterCommand, _impl_.y_),
+  PROTOBUF_FIELD_OFFSET(::rov::telemetry::ThrusterCommand, _impl_.z_),
+  PROTOBUF_FIELD_OFFSET(::rov::telemetry::ThrusterCommand, _impl_.roll_),
+  PROTOBUF_FIELD_OFFSET(::rov::telemetry::ThrusterCommand, _impl_.pitch_),
+  PROTOBUF_FIELD_OFFSET(::rov::telemetry::ThrusterCommand, _impl_.yaw_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::rov::telemetry::AutonomyStatus, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::rov::telemetry::AutonomyStatus, _impl_.timestamp_us_),
+  PROTOBUF_FIELD_OFFSET(::rov::telemetry::AutonomyStatus, _impl_.behavior_),
+  PROTOBUF_FIELD_OFFSET(::rov::telemetry::AutonomyStatus, _impl_.phase_),
+  PROTOBUF_FIELD_OFFSET(::rov::telemetry::AutonomyStatus, _impl_.target_heading_),
+  PROTOBUF_FIELD_OFFSET(::rov::telemetry::AutonomyStatus, _impl_.target_depth_),
 };
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::rov::telemetry::Vector3D)},
-  { 9, -1, -1, sizeof(::rov::telemetry::SensorData)},
-  { 20, -1, -1, sizeof(::rov::telemetry::JoystickCommand)},
-  { 33, -1, -1, sizeof(::rov::telemetry::test)},
+  { 9, -1, -1, sizeof(::rov::telemetry::Quaternion)},
+  { 20, -1, -1, sizeof(::rov::telemetry::ImuData)},
+  { 30, -1, -1, sizeof(::rov::telemetry::SensorData)},
+  { 41, -1, -1, sizeof(::rov::telemetry::test)},
+  { 48, -1, -1, sizeof(::rov::telemetry::ControllerTuning)},
+  { 58, -1, -1, sizeof(::rov::telemetry::ControllerCommand)},
+  { 72, -1, -1, sizeof(::rov::telemetry::depthControlCommand)},
+  { 84, -1, -1, sizeof(::rov::telemetry::depthControlData)},
+  { 93, -1, -1, sizeof(::rov::telemetry::depthControlOutput)},
+  { 104, -1, -1, sizeof(::rov::telemetry::ThrusterCommand)},
+  { 117, -1, -1, sizeof(::rov::telemetry::AutonomyStatus)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
   &::rov::telemetry::_Vector3D_default_instance_._instance,
+  &::rov::telemetry::_Quaternion_default_instance_._instance,
+  &::rov::telemetry::_ImuData_default_instance_._instance,
   &::rov::telemetry::_SensorData_default_instance_._instance,
-  &::rov::telemetry::_JoystickCommand_default_instance_._instance,
   &::rov::telemetry::_test_default_instance_._instance,
+  &::rov::telemetry::_ControllerTuning_default_instance_._instance,
+  &::rov::telemetry::_ControllerCommand_default_instance_._instance,
+  &::rov::telemetry::_depthControlCommand_default_instance_._instance,
+  &::rov::telemetry::_depthControlData_default_instance_._instance,
+  &::rov::telemetry::_depthControlOutput_default_instance_._instance,
+  &::rov::telemetry::_ThrusterCommand_default_instance_._instance,
+  &::rov::telemetry::_AutonomyStatus_default_instance_._instance,
 };
 
 const char descriptor_table_protodef_telemetry_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\017telemetry.proto\022\rrov.telemetry\"+\n\010Vect"
-  "or3D\022\t\n\001x\030\001 \001(\002\022\t\n\001y\030\002 \001(\002\022\t\n\001z\030\003 \001(\002\"\250\001"
-  "\n\nSensorData\022\024\n\014timestamp_us\030\001 \001(\004\022-\n\014ac"
-  "celeration\030\002 \001(\0132\027.rov.telemetry.Vector3"
-  "D\0221\n\020angular_velocity\030\003 \001(\0132\027.rov.teleme"
-  "try.Vector3D\022\r\n\005depth\030\004 \001(\002\022\023\n\013temperatu"
-  "re\030\005 \001(\002\"\204\001\n\017JoystickCommand\022\024\n\014timestam"
-  "p_us\030\001 \001(\004\022\017\n\007forward\030\002 \001(\002\022\016\n\006strafe\030\003 "
-  "\001(\002\022\020\n\010vertical\030\004 \001(\002\022\r\n\005pitch\030\005 \001(\002\022\014\n\004"
-  "roll\030\006 \001(\002\022\013\n\003yaw\030\007 \001(\002\"\023\n\004test\022\013\n\003msg\030\001"
-  " \001(\tb\006proto3"
+  "or3D\022\t\n\001x\030\001 \001(\002\022\t\n\001y\030\002 \001(\002\022\t\n\001z\030\003 \001(\002\"N\n"
+  "\nQuaternion\022\t\n\001x\030\001 \001(\002\022\t\n\001y\030\002 \001(\002\022\t\n\001z\030\003"
+  " \001(\002\022\t\n\001w\030\004 \001(\002\022\024\n\014accuracy_rad\030\005 \001(\002\"\261\001"
+  "\n\007ImuData\022\024\n\014timestamp_us\030\001 \001(\004\022-\n\014accel"
+  "eration\030\002 \001(\0132\027.rov.telemetry.Vector3D\0221"
+  "\n\020angular_velocity\030\003 \001(\0132\027.rov.telemetry"
+  ".Vector3D\022.\n\013orientation\030\004 \001(\0132\031.rov.tel"
+  "emetry.Quaternion\"\250\001\n\nSensorData\022\024\n\014time"
+  "stamp_us\030\001 \001(\004\022-\n\014acceleration\030\002 \001(\0132\027.r"
+  "ov.telemetry.Vector3D\0221\n\020angular_velocit"
+  "y\030\003 \001(\0132\027.rov.telemetry.Vector3D\022\r\n\005dept"
+  "h\030\004 \001(\002\022\023\n\013temperature\030\005 \001(\002\"\023\n\004test\022\013\n\003"
+  "msg\030\001 \001(\t\"P\n\020ControllerTuning\022\025\n\renable_"
+  "tuning\030\001 \001(\010\022\013\n\003k_p\030\002 \001(\002\022\013\n\003k_i\030\003 \001(\002\022\013"
+  "\n\003k_d\030\004 \001(\002\"\222\001\n\021ControllerCommand\022\t\n\001x\030\001"
+  " \001(\002\022\t\n\001y\030\002 \001(\002\022\t\n\001z\030\003 \001(\002\022\014\n\004roll\030\004 \001(\002"
+  "\022\r\n\005pitch\030\005 \001(\002\022\013\n\003yaw\030\006 \001(\002\022\034\n\024enable_d"
+  "epth_control\030\007 \001(\010\022\024\n\014target_depth\030\010 \001(\002"
+  "\"\202\001\n\023depthControlCommand\022\026\n\016enable_contr"
+  "ol\030\001 \001(\010\022\026\n\016enable_testing\030\002 \001(\010\022\024\n\014targ"
+  "et_depth\030\003 \001(\002\022\013\n\003k_p\030\004 \001(\002\022\013\n\003k_i\030\005 \001(\002"
+  "\022\013\n\003k_d\030\006 \001(\002\"9\n\020depthControlData\022\013\n\003k_p"
+  "\030\001 \001(\002\022\013\n\003k_i\030\002 \001(\002\022\013\n\003k_d\030\003 \001(\002\"z\n\022dept"
+  "hControlOutput\022\024\n\014timestamp_us\030\001 \001(\004\022\017\n\007"
+  "enabled\030\002 \001(\010\022\017\n\007command\030\003 \001(\002\022\026\n\016measur"
+  "ed_depth\030\004 \001(\002\022\024\n\014target_depth\030\005 \001(\002\"r\n\017"
+  "ThrusterCommand\022\024\n\014timestamp_us\030\001 \001(\004\022\t\n"
+  "\001x\030\002 \001(\002\022\t\n\001y\030\003 \001(\002\022\t\n\001z\030\004 \001(\002\022\014\n\004roll\030\005"
+  " \001(\002\022\r\n\005pitch\030\006 \001(\002\022\013\n\003yaw\030\007 \001(\002\"u\n\016Auto"
+  "nomyStatus\022\024\n\014timestamp_us\030\001 \001(\004\022\020\n\010beha"
+  "vior\030\002 \001(\t\022\r\n\005phase\030\003 \001(\t\022\026\n\016target_head"
+  "ing\030\004 \001(\002\022\024\n\014target_depth\030\005 \001(\002b\006proto3"
   ;
 static ::_pbi::once_flag descriptor_table_telemetry_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_telemetry_2eproto = {
-    false, false, 412, descriptor_table_protodef_telemetry_2eproto,
+    false, false, 1319, descriptor_table_protodef_telemetry_2eproto,
     "telemetry.proto",
-    &descriptor_table_telemetry_2eproto_once, nullptr, 0, 4,
+    &descriptor_table_telemetry_2eproto_once, nullptr, 0, 12,
     schemas, file_default_instances, TableStruct_telemetry_2eproto::offsets,
     file_level_metadata_telemetry_2eproto, file_level_enum_descriptors_telemetry_2eproto,
     file_level_service_descriptors_telemetry_2eproto,
@@ -448,6 +710,655 @@ void Vector3D::InternalSwap(Vector3D* other) {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_telemetry_2eproto_getter, &descriptor_table_telemetry_2eproto_once,
       file_level_metadata_telemetry_2eproto[0]);
+}
+
+// ===================================================================
+
+class Quaternion::_Internal {
+ public:
+};
+
+Quaternion::Quaternion(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:rov.telemetry.Quaternion)
+}
+Quaternion::Quaternion(const Quaternion& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  Quaternion* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.x_){}
+    , decltype(_impl_.y_){}
+    , decltype(_impl_.z_){}
+    , decltype(_impl_.w_){}
+    , decltype(_impl_.accuracy_rad_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::memcpy(&_impl_.x_, &from._impl_.x_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.accuracy_rad_) -
+    reinterpret_cast<char*>(&_impl_.x_)) + sizeof(_impl_.accuracy_rad_));
+  // @@protoc_insertion_point(copy_constructor:rov.telemetry.Quaternion)
+}
+
+inline void Quaternion::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.x_){0}
+    , decltype(_impl_.y_){0}
+    , decltype(_impl_.z_){0}
+    , decltype(_impl_.w_){0}
+    , decltype(_impl_.accuracy_rad_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+}
+
+Quaternion::~Quaternion() {
+  // @@protoc_insertion_point(destructor:rov.telemetry.Quaternion)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void Quaternion::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+}
+
+void Quaternion::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void Quaternion::Clear() {
+// @@protoc_insertion_point(message_clear_start:rov.telemetry.Quaternion)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  ::memset(&_impl_.x_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&_impl_.accuracy_rad_) -
+      reinterpret_cast<char*>(&_impl_.x_)) + sizeof(_impl_.accuracy_rad_));
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* Quaternion::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // float x = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 13)) {
+          _impl_.x_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else
+          goto handle_unusual;
+        continue;
+      // float y = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 21)) {
+          _impl_.y_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else
+          goto handle_unusual;
+        continue;
+      // float z = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 29)) {
+          _impl_.z_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else
+          goto handle_unusual;
+        continue;
+      // float w = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 37)) {
+          _impl_.w_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else
+          goto handle_unusual;
+        continue;
+      // float accuracy_rad = 5;
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 45)) {
+          _impl_.accuracy_rad_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* Quaternion::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:rov.telemetry.Quaternion)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // float x = 1;
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_x = this->_internal_x();
+  uint32_t raw_x;
+  memcpy(&raw_x, &tmp_x, sizeof(tmp_x));
+  if (raw_x != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(1, this->_internal_x(), target);
+  }
+
+  // float y = 2;
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_y = this->_internal_y();
+  uint32_t raw_y;
+  memcpy(&raw_y, &tmp_y, sizeof(tmp_y));
+  if (raw_y != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(2, this->_internal_y(), target);
+  }
+
+  // float z = 3;
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_z = this->_internal_z();
+  uint32_t raw_z;
+  memcpy(&raw_z, &tmp_z, sizeof(tmp_z));
+  if (raw_z != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(3, this->_internal_z(), target);
+  }
+
+  // float w = 4;
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_w = this->_internal_w();
+  uint32_t raw_w;
+  memcpy(&raw_w, &tmp_w, sizeof(tmp_w));
+  if (raw_w != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(4, this->_internal_w(), target);
+  }
+
+  // float accuracy_rad = 5;
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_accuracy_rad = this->_internal_accuracy_rad();
+  uint32_t raw_accuracy_rad;
+  memcpy(&raw_accuracy_rad, &tmp_accuracy_rad, sizeof(tmp_accuracy_rad));
+  if (raw_accuracy_rad != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(5, this->_internal_accuracy_rad(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:rov.telemetry.Quaternion)
+  return target;
+}
+
+size_t Quaternion::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:rov.telemetry.Quaternion)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // float x = 1;
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_x = this->_internal_x();
+  uint32_t raw_x;
+  memcpy(&raw_x, &tmp_x, sizeof(tmp_x));
+  if (raw_x != 0) {
+    total_size += 1 + 4;
+  }
+
+  // float y = 2;
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_y = this->_internal_y();
+  uint32_t raw_y;
+  memcpy(&raw_y, &tmp_y, sizeof(tmp_y));
+  if (raw_y != 0) {
+    total_size += 1 + 4;
+  }
+
+  // float z = 3;
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_z = this->_internal_z();
+  uint32_t raw_z;
+  memcpy(&raw_z, &tmp_z, sizeof(tmp_z));
+  if (raw_z != 0) {
+    total_size += 1 + 4;
+  }
+
+  // float w = 4;
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_w = this->_internal_w();
+  uint32_t raw_w;
+  memcpy(&raw_w, &tmp_w, sizeof(tmp_w));
+  if (raw_w != 0) {
+    total_size += 1 + 4;
+  }
+
+  // float accuracy_rad = 5;
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_accuracy_rad = this->_internal_accuracy_rad();
+  uint32_t raw_accuracy_rad;
+  memcpy(&raw_accuracy_rad, &tmp_accuracy_rad, sizeof(tmp_accuracy_rad));
+  if (raw_accuracy_rad != 0) {
+    total_size += 1 + 4;
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData Quaternion::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    Quaternion::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Quaternion::GetClassData() const { return &_class_data_; }
+
+
+void Quaternion::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<Quaternion*>(&to_msg);
+  auto& from = static_cast<const Quaternion&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:rov.telemetry.Quaternion)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_x = from._internal_x();
+  uint32_t raw_x;
+  memcpy(&raw_x, &tmp_x, sizeof(tmp_x));
+  if (raw_x != 0) {
+    _this->_internal_set_x(from._internal_x());
+  }
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_y = from._internal_y();
+  uint32_t raw_y;
+  memcpy(&raw_y, &tmp_y, sizeof(tmp_y));
+  if (raw_y != 0) {
+    _this->_internal_set_y(from._internal_y());
+  }
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_z = from._internal_z();
+  uint32_t raw_z;
+  memcpy(&raw_z, &tmp_z, sizeof(tmp_z));
+  if (raw_z != 0) {
+    _this->_internal_set_z(from._internal_z());
+  }
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_w = from._internal_w();
+  uint32_t raw_w;
+  memcpy(&raw_w, &tmp_w, sizeof(tmp_w));
+  if (raw_w != 0) {
+    _this->_internal_set_w(from._internal_w());
+  }
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_accuracy_rad = from._internal_accuracy_rad();
+  uint32_t raw_accuracy_rad;
+  memcpy(&raw_accuracy_rad, &tmp_accuracy_rad, sizeof(tmp_accuracy_rad));
+  if (raw_accuracy_rad != 0) {
+    _this->_internal_set_accuracy_rad(from._internal_accuracy_rad());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void Quaternion::CopyFrom(const Quaternion& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:rov.telemetry.Quaternion)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool Quaternion::IsInitialized() const {
+  return true;
+}
+
+void Quaternion::InternalSwap(Quaternion* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(Quaternion, _impl_.accuracy_rad_)
+      + sizeof(Quaternion::_impl_.accuracy_rad_)
+      - PROTOBUF_FIELD_OFFSET(Quaternion, _impl_.x_)>(
+          reinterpret_cast<char*>(&_impl_.x_),
+          reinterpret_cast<char*>(&other->_impl_.x_));
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata Quaternion::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_telemetry_2eproto_getter, &descriptor_table_telemetry_2eproto_once,
+      file_level_metadata_telemetry_2eproto[1]);
+}
+
+// ===================================================================
+
+class ImuData::_Internal {
+ public:
+  static const ::rov::telemetry::Vector3D& acceleration(const ImuData* msg);
+  static const ::rov::telemetry::Vector3D& angular_velocity(const ImuData* msg);
+  static const ::rov::telemetry::Quaternion& orientation(const ImuData* msg);
+};
+
+const ::rov::telemetry::Vector3D&
+ImuData::_Internal::acceleration(const ImuData* msg) {
+  return *msg->_impl_.acceleration_;
+}
+const ::rov::telemetry::Vector3D&
+ImuData::_Internal::angular_velocity(const ImuData* msg) {
+  return *msg->_impl_.angular_velocity_;
+}
+const ::rov::telemetry::Quaternion&
+ImuData::_Internal::orientation(const ImuData* msg) {
+  return *msg->_impl_.orientation_;
+}
+ImuData::ImuData(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:rov.telemetry.ImuData)
+}
+ImuData::ImuData(const ImuData& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  ImuData* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.acceleration_){nullptr}
+    , decltype(_impl_.angular_velocity_){nullptr}
+    , decltype(_impl_.orientation_){nullptr}
+    , decltype(_impl_.timestamp_us_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  if (from._internal_has_acceleration()) {
+    _this->_impl_.acceleration_ = new ::rov::telemetry::Vector3D(*from._impl_.acceleration_);
+  }
+  if (from._internal_has_angular_velocity()) {
+    _this->_impl_.angular_velocity_ = new ::rov::telemetry::Vector3D(*from._impl_.angular_velocity_);
+  }
+  if (from._internal_has_orientation()) {
+    _this->_impl_.orientation_ = new ::rov::telemetry::Quaternion(*from._impl_.orientation_);
+  }
+  _this->_impl_.timestamp_us_ = from._impl_.timestamp_us_;
+  // @@protoc_insertion_point(copy_constructor:rov.telemetry.ImuData)
+}
+
+inline void ImuData::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.acceleration_){nullptr}
+    , decltype(_impl_.angular_velocity_){nullptr}
+    , decltype(_impl_.orientation_){nullptr}
+    , decltype(_impl_.timestamp_us_){uint64_t{0u}}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+}
+
+ImuData::~ImuData() {
+  // @@protoc_insertion_point(destructor:rov.telemetry.ImuData)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void ImuData::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  if (this != internal_default_instance()) delete _impl_.acceleration_;
+  if (this != internal_default_instance()) delete _impl_.angular_velocity_;
+  if (this != internal_default_instance()) delete _impl_.orientation_;
+}
+
+void ImuData::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void ImuData::Clear() {
+// @@protoc_insertion_point(message_clear_start:rov.telemetry.ImuData)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  if (GetArenaForAllocation() == nullptr && _impl_.acceleration_ != nullptr) {
+    delete _impl_.acceleration_;
+  }
+  _impl_.acceleration_ = nullptr;
+  if (GetArenaForAllocation() == nullptr && _impl_.angular_velocity_ != nullptr) {
+    delete _impl_.angular_velocity_;
+  }
+  _impl_.angular_velocity_ = nullptr;
+  if (GetArenaForAllocation() == nullptr && _impl_.orientation_ != nullptr) {
+    delete _impl_.orientation_;
+  }
+  _impl_.orientation_ = nullptr;
+  _impl_.timestamp_us_ = uint64_t{0u};
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* ImuData::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // uint64 timestamp_us = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _impl_.timestamp_us_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // .rov.telemetry.Vector3D acceleration = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          ptr = ctx->ParseMessage(_internal_mutable_acceleration(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // .rov.telemetry.Vector3D angular_velocity = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
+          ptr = ctx->ParseMessage(_internal_mutable_angular_velocity(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // .rov.telemetry.Quaternion orientation = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
+          ptr = ctx->ParseMessage(_internal_mutable_orientation(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* ImuData::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:rov.telemetry.ImuData)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // uint64 timestamp_us = 1;
+  if (this->_internal_timestamp_us() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(1, this->_internal_timestamp_us(), target);
+  }
+
+  // .rov.telemetry.Vector3D acceleration = 2;
+  if (this->_internal_has_acceleration()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(2, _Internal::acceleration(this),
+        _Internal::acceleration(this).GetCachedSize(), target, stream);
+  }
+
+  // .rov.telemetry.Vector3D angular_velocity = 3;
+  if (this->_internal_has_angular_velocity()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(3, _Internal::angular_velocity(this),
+        _Internal::angular_velocity(this).GetCachedSize(), target, stream);
+  }
+
+  // .rov.telemetry.Quaternion orientation = 4;
+  if (this->_internal_has_orientation()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(4, _Internal::orientation(this),
+        _Internal::orientation(this).GetCachedSize(), target, stream);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:rov.telemetry.ImuData)
+  return target;
+}
+
+size_t ImuData::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:rov.telemetry.ImuData)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // .rov.telemetry.Vector3D acceleration = 2;
+  if (this->_internal_has_acceleration()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *_impl_.acceleration_);
+  }
+
+  // .rov.telemetry.Vector3D angular_velocity = 3;
+  if (this->_internal_has_angular_velocity()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *_impl_.angular_velocity_);
+  }
+
+  // .rov.telemetry.Quaternion orientation = 4;
+  if (this->_internal_has_orientation()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *_impl_.orientation_);
+  }
+
+  // uint64 timestamp_us = 1;
+  if (this->_internal_timestamp_us() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_timestamp_us());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData ImuData::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    ImuData::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*ImuData::GetClassData() const { return &_class_data_; }
+
+
+void ImuData::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<ImuData*>(&to_msg);
+  auto& from = static_cast<const ImuData&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:rov.telemetry.ImuData)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from._internal_has_acceleration()) {
+    _this->_internal_mutable_acceleration()->::rov::telemetry::Vector3D::MergeFrom(
+        from._internal_acceleration());
+  }
+  if (from._internal_has_angular_velocity()) {
+    _this->_internal_mutable_angular_velocity()->::rov::telemetry::Vector3D::MergeFrom(
+        from._internal_angular_velocity());
+  }
+  if (from._internal_has_orientation()) {
+    _this->_internal_mutable_orientation()->::rov::telemetry::Quaternion::MergeFrom(
+        from._internal_orientation());
+  }
+  if (from._internal_timestamp_us() != 0) {
+    _this->_internal_set_timestamp_us(from._internal_timestamp_us());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void ImuData::CopyFrom(const ImuData& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:rov.telemetry.ImuData)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool ImuData::IsInitialized() const {
+  return true;
+}
+
+void ImuData::InternalSwap(ImuData* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(ImuData, _impl_.timestamp_us_)
+      + sizeof(ImuData::_impl_.timestamp_us_)
+      - PROTOBUF_FIELD_OFFSET(ImuData, _impl_.acceleration_)>(
+          reinterpret_cast<char*>(&_impl_.acceleration_),
+          reinterpret_cast<char*>(&other->_impl_.acceleration_));
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata ImuData::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_telemetry_2eproto_getter, &descriptor_table_telemetry_2eproto_once,
+      file_level_metadata_telemetry_2eproto[2]);
 }
 
 // ===================================================================
@@ -788,410 +1699,7 @@ void SensorData::InternalSwap(SensorData* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata SensorData::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_telemetry_2eproto_getter, &descriptor_table_telemetry_2eproto_once,
-      file_level_metadata_telemetry_2eproto[1]);
-}
-
-// ===================================================================
-
-class JoystickCommand::_Internal {
- public:
-};
-
-JoystickCommand::JoystickCommand(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
-  // @@protoc_insertion_point(arena_constructor:rov.telemetry.JoystickCommand)
-}
-JoystickCommand::JoystickCommand(const JoystickCommand& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  JoystickCommand* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.timestamp_us_){}
-    , decltype(_impl_.forward_){}
-    , decltype(_impl_.strafe_){}
-    , decltype(_impl_.vertical_){}
-    , decltype(_impl_.pitch_){}
-    , decltype(_impl_.roll_){}
-    , decltype(_impl_.yaw_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&_impl_.timestamp_us_, &from._impl_.timestamp_us_,
-    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.yaw_) -
-    reinterpret_cast<char*>(&_impl_.timestamp_us_)) + sizeof(_impl_.yaw_));
-  // @@protoc_insertion_point(copy_constructor:rov.telemetry.JoystickCommand)
-}
-
-inline void JoystickCommand::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.timestamp_us_){uint64_t{0u}}
-    , decltype(_impl_.forward_){0}
-    , decltype(_impl_.strafe_){0}
-    , decltype(_impl_.vertical_){0}
-    , decltype(_impl_.pitch_){0}
-    , decltype(_impl_.roll_){0}
-    , decltype(_impl_.yaw_){0}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
-}
-
-JoystickCommand::~JoystickCommand() {
-  // @@protoc_insertion_point(destructor:rov.telemetry.JoystickCommand)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
-  SharedDtor();
-}
-
-inline void JoystickCommand::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-}
-
-void JoystickCommand::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
-}
-
-void JoystickCommand::Clear() {
-// @@protoc_insertion_point(message_clear_start:rov.telemetry.JoystickCommand)
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  ::memset(&_impl_.timestamp_us_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&_impl_.yaw_) -
-      reinterpret_cast<char*>(&_impl_.timestamp_us_)) + sizeof(_impl_.yaw_));
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-const char* JoystickCommand::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
-    switch (tag >> 3) {
-      // uint64 timestamp_us = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          _impl_.timestamp_us_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // float forward = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 21)) {
-          _impl_.forward_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else
-          goto handle_unusual;
-        continue;
-      // float strafe = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 29)) {
-          _impl_.strafe_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else
-          goto handle_unusual;
-        continue;
-      // float vertical = 4;
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 37)) {
-          _impl_.vertical_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else
-          goto handle_unusual;
-        continue;
-      // float pitch = 5;
-      case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 45)) {
-          _impl_.pitch_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else
-          goto handle_unusual;
-        continue;
-      // float roll = 6;
-      case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 53)) {
-          _impl_.roll_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else
-          goto handle_unusual;
-        continue;
-      // float yaw = 7;
-      case 7:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 61)) {
-          _impl_.yaw_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else
-          goto handle_unusual;
-        continue;
-      default:
-        goto handle_unusual;
-    }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
-  }  // while
-message_done:
-  return ptr;
-failure:
-  ptr = nullptr;
-  goto message_done;
-#undef CHK_
-}
-
-uint8_t* JoystickCommand::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:rov.telemetry.JoystickCommand)
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // uint64 timestamp_us = 1;
-  if (this->_internal_timestamp_us() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(1, this->_internal_timestamp_us(), target);
-  }
-
-  // float forward = 2;
-  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
-  float tmp_forward = this->_internal_forward();
-  uint32_t raw_forward;
-  memcpy(&raw_forward, &tmp_forward, sizeof(tmp_forward));
-  if (raw_forward != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(2, this->_internal_forward(), target);
-  }
-
-  // float strafe = 3;
-  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
-  float tmp_strafe = this->_internal_strafe();
-  uint32_t raw_strafe;
-  memcpy(&raw_strafe, &tmp_strafe, sizeof(tmp_strafe));
-  if (raw_strafe != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(3, this->_internal_strafe(), target);
-  }
-
-  // float vertical = 4;
-  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
-  float tmp_vertical = this->_internal_vertical();
-  uint32_t raw_vertical;
-  memcpy(&raw_vertical, &tmp_vertical, sizeof(tmp_vertical));
-  if (raw_vertical != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(4, this->_internal_vertical(), target);
-  }
-
-  // float pitch = 5;
-  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
-  float tmp_pitch = this->_internal_pitch();
-  uint32_t raw_pitch;
-  memcpy(&raw_pitch, &tmp_pitch, sizeof(tmp_pitch));
-  if (raw_pitch != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(5, this->_internal_pitch(), target);
-  }
-
-  // float roll = 6;
-  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
-  float tmp_roll = this->_internal_roll();
-  uint32_t raw_roll;
-  memcpy(&raw_roll, &tmp_roll, sizeof(tmp_roll));
-  if (raw_roll != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(6, this->_internal_roll(), target);
-  }
-
-  // float yaw = 7;
-  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
-  float tmp_yaw = this->_internal_yaw();
-  uint32_t raw_yaw;
-  memcpy(&raw_yaw, &tmp_yaw, sizeof(tmp_yaw));
-  if (raw_yaw != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(7, this->_internal_yaw(), target);
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:rov.telemetry.JoystickCommand)
-  return target;
-}
-
-size_t JoystickCommand::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:rov.telemetry.JoystickCommand)
-  size_t total_size = 0;
-
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  // uint64 timestamp_us = 1;
-  if (this->_internal_timestamp_us() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_timestamp_us());
-  }
-
-  // float forward = 2;
-  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
-  float tmp_forward = this->_internal_forward();
-  uint32_t raw_forward;
-  memcpy(&raw_forward, &tmp_forward, sizeof(tmp_forward));
-  if (raw_forward != 0) {
-    total_size += 1 + 4;
-  }
-
-  // float strafe = 3;
-  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
-  float tmp_strafe = this->_internal_strafe();
-  uint32_t raw_strafe;
-  memcpy(&raw_strafe, &tmp_strafe, sizeof(tmp_strafe));
-  if (raw_strafe != 0) {
-    total_size += 1 + 4;
-  }
-
-  // float vertical = 4;
-  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
-  float tmp_vertical = this->_internal_vertical();
-  uint32_t raw_vertical;
-  memcpy(&raw_vertical, &tmp_vertical, sizeof(tmp_vertical));
-  if (raw_vertical != 0) {
-    total_size += 1 + 4;
-  }
-
-  // float pitch = 5;
-  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
-  float tmp_pitch = this->_internal_pitch();
-  uint32_t raw_pitch;
-  memcpy(&raw_pitch, &tmp_pitch, sizeof(tmp_pitch));
-  if (raw_pitch != 0) {
-    total_size += 1 + 4;
-  }
-
-  // float roll = 6;
-  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
-  float tmp_roll = this->_internal_roll();
-  uint32_t raw_roll;
-  memcpy(&raw_roll, &tmp_roll, sizeof(tmp_roll));
-  if (raw_roll != 0) {
-    total_size += 1 + 4;
-  }
-
-  // float yaw = 7;
-  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
-  float tmp_yaw = this->_internal_yaw();
-  uint32_t raw_yaw;
-  memcpy(&raw_yaw, &tmp_yaw, sizeof(tmp_yaw));
-  if (raw_yaw != 0) {
-    total_size += 1 + 4;
-  }
-
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
-}
-
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData JoystickCommand::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    JoystickCommand::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*JoystickCommand::GetClassData() const { return &_class_data_; }
-
-
-void JoystickCommand::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<JoystickCommand*>(&to_msg);
-  auto& from = static_cast<const JoystickCommand&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:rov.telemetry.JoystickCommand)
-  GOOGLE_DCHECK_NE(&from, _this);
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  if (from._internal_timestamp_us() != 0) {
-    _this->_internal_set_timestamp_us(from._internal_timestamp_us());
-  }
-  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
-  float tmp_forward = from._internal_forward();
-  uint32_t raw_forward;
-  memcpy(&raw_forward, &tmp_forward, sizeof(tmp_forward));
-  if (raw_forward != 0) {
-    _this->_internal_set_forward(from._internal_forward());
-  }
-  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
-  float tmp_strafe = from._internal_strafe();
-  uint32_t raw_strafe;
-  memcpy(&raw_strafe, &tmp_strafe, sizeof(tmp_strafe));
-  if (raw_strafe != 0) {
-    _this->_internal_set_strafe(from._internal_strafe());
-  }
-  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
-  float tmp_vertical = from._internal_vertical();
-  uint32_t raw_vertical;
-  memcpy(&raw_vertical, &tmp_vertical, sizeof(tmp_vertical));
-  if (raw_vertical != 0) {
-    _this->_internal_set_vertical(from._internal_vertical());
-  }
-  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
-  float tmp_pitch = from._internal_pitch();
-  uint32_t raw_pitch;
-  memcpy(&raw_pitch, &tmp_pitch, sizeof(tmp_pitch));
-  if (raw_pitch != 0) {
-    _this->_internal_set_pitch(from._internal_pitch());
-  }
-  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
-  float tmp_roll = from._internal_roll();
-  uint32_t raw_roll;
-  memcpy(&raw_roll, &tmp_roll, sizeof(tmp_roll));
-  if (raw_roll != 0) {
-    _this->_internal_set_roll(from._internal_roll());
-  }
-  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
-  float tmp_yaw = from._internal_yaw();
-  uint32_t raw_yaw;
-  memcpy(&raw_yaw, &tmp_yaw, sizeof(tmp_yaw));
-  if (raw_yaw != 0) {
-    _this->_internal_set_yaw(from._internal_yaw());
-  }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-}
-
-void JoystickCommand::CopyFrom(const JoystickCommand& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:rov.telemetry.JoystickCommand)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool JoystickCommand::IsInitialized() const {
-  return true;
-}
-
-void JoystickCommand::InternalSwap(JoystickCommand* other) {
-  using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(JoystickCommand, _impl_.yaw_)
-      + sizeof(JoystickCommand::_impl_.yaw_)
-      - PROTOBUF_FIELD_OFFSET(JoystickCommand, _impl_.timestamp_us_)>(
-          reinterpret_cast<char*>(&_impl_.timestamp_us_),
-          reinterpret_cast<char*>(&other->_impl_.timestamp_us_));
-}
-
-::PROTOBUF_NAMESPACE_ID::Metadata JoystickCommand::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_telemetry_2eproto_getter, &descriptor_table_telemetry_2eproto_once,
-      file_level_metadata_telemetry_2eproto[2]);
+      file_level_metadata_telemetry_2eproto[3]);
 }
 
 // ===================================================================
@@ -1394,7 +1902,2450 @@ void test::InternalSwap(test* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata test::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_telemetry_2eproto_getter, &descriptor_table_telemetry_2eproto_once,
-      file_level_metadata_telemetry_2eproto[3]);
+      file_level_metadata_telemetry_2eproto[4]);
+}
+
+// ===================================================================
+
+class ControllerTuning::_Internal {
+ public:
+};
+
+ControllerTuning::ControllerTuning(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:rov.telemetry.ControllerTuning)
+}
+ControllerTuning::ControllerTuning(const ControllerTuning& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  ControllerTuning* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.enable_tuning_){}
+    , decltype(_impl_.k_p_){}
+    , decltype(_impl_.k_i_){}
+    , decltype(_impl_.k_d_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::memcpy(&_impl_.enable_tuning_, &from._impl_.enable_tuning_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.k_d_) -
+    reinterpret_cast<char*>(&_impl_.enable_tuning_)) + sizeof(_impl_.k_d_));
+  // @@protoc_insertion_point(copy_constructor:rov.telemetry.ControllerTuning)
+}
+
+inline void ControllerTuning::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.enable_tuning_){false}
+    , decltype(_impl_.k_p_){0}
+    , decltype(_impl_.k_i_){0}
+    , decltype(_impl_.k_d_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+}
+
+ControllerTuning::~ControllerTuning() {
+  // @@protoc_insertion_point(destructor:rov.telemetry.ControllerTuning)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void ControllerTuning::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+}
+
+void ControllerTuning::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void ControllerTuning::Clear() {
+// @@protoc_insertion_point(message_clear_start:rov.telemetry.ControllerTuning)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  ::memset(&_impl_.enable_tuning_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&_impl_.k_d_) -
+      reinterpret_cast<char*>(&_impl_.enable_tuning_)) + sizeof(_impl_.k_d_));
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* ControllerTuning::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // bool enable_tuning = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _impl_.enable_tuning_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // float k_p = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 21)) {
+          _impl_.k_p_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else
+          goto handle_unusual;
+        continue;
+      // float k_i = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 29)) {
+          _impl_.k_i_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else
+          goto handle_unusual;
+        continue;
+      // float k_d = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 37)) {
+          _impl_.k_d_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* ControllerTuning::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:rov.telemetry.ControllerTuning)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // bool enable_tuning = 1;
+  if (this->_internal_enable_tuning() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(1, this->_internal_enable_tuning(), target);
+  }
+
+  // float k_p = 2;
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_k_p = this->_internal_k_p();
+  uint32_t raw_k_p;
+  memcpy(&raw_k_p, &tmp_k_p, sizeof(tmp_k_p));
+  if (raw_k_p != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(2, this->_internal_k_p(), target);
+  }
+
+  // float k_i = 3;
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_k_i = this->_internal_k_i();
+  uint32_t raw_k_i;
+  memcpy(&raw_k_i, &tmp_k_i, sizeof(tmp_k_i));
+  if (raw_k_i != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(3, this->_internal_k_i(), target);
+  }
+
+  // float k_d = 4;
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_k_d = this->_internal_k_d();
+  uint32_t raw_k_d;
+  memcpy(&raw_k_d, &tmp_k_d, sizeof(tmp_k_d));
+  if (raw_k_d != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(4, this->_internal_k_d(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:rov.telemetry.ControllerTuning)
+  return target;
+}
+
+size_t ControllerTuning::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:rov.telemetry.ControllerTuning)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // bool enable_tuning = 1;
+  if (this->_internal_enable_tuning() != 0) {
+    total_size += 1 + 1;
+  }
+
+  // float k_p = 2;
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_k_p = this->_internal_k_p();
+  uint32_t raw_k_p;
+  memcpy(&raw_k_p, &tmp_k_p, sizeof(tmp_k_p));
+  if (raw_k_p != 0) {
+    total_size += 1 + 4;
+  }
+
+  // float k_i = 3;
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_k_i = this->_internal_k_i();
+  uint32_t raw_k_i;
+  memcpy(&raw_k_i, &tmp_k_i, sizeof(tmp_k_i));
+  if (raw_k_i != 0) {
+    total_size += 1 + 4;
+  }
+
+  // float k_d = 4;
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_k_d = this->_internal_k_d();
+  uint32_t raw_k_d;
+  memcpy(&raw_k_d, &tmp_k_d, sizeof(tmp_k_d));
+  if (raw_k_d != 0) {
+    total_size += 1 + 4;
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData ControllerTuning::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    ControllerTuning::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*ControllerTuning::GetClassData() const { return &_class_data_; }
+
+
+void ControllerTuning::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<ControllerTuning*>(&to_msg);
+  auto& from = static_cast<const ControllerTuning&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:rov.telemetry.ControllerTuning)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from._internal_enable_tuning() != 0) {
+    _this->_internal_set_enable_tuning(from._internal_enable_tuning());
+  }
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_k_p = from._internal_k_p();
+  uint32_t raw_k_p;
+  memcpy(&raw_k_p, &tmp_k_p, sizeof(tmp_k_p));
+  if (raw_k_p != 0) {
+    _this->_internal_set_k_p(from._internal_k_p());
+  }
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_k_i = from._internal_k_i();
+  uint32_t raw_k_i;
+  memcpy(&raw_k_i, &tmp_k_i, sizeof(tmp_k_i));
+  if (raw_k_i != 0) {
+    _this->_internal_set_k_i(from._internal_k_i());
+  }
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_k_d = from._internal_k_d();
+  uint32_t raw_k_d;
+  memcpy(&raw_k_d, &tmp_k_d, sizeof(tmp_k_d));
+  if (raw_k_d != 0) {
+    _this->_internal_set_k_d(from._internal_k_d());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void ControllerTuning::CopyFrom(const ControllerTuning& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:rov.telemetry.ControllerTuning)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool ControllerTuning::IsInitialized() const {
+  return true;
+}
+
+void ControllerTuning::InternalSwap(ControllerTuning* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(ControllerTuning, _impl_.k_d_)
+      + sizeof(ControllerTuning::_impl_.k_d_)
+      - PROTOBUF_FIELD_OFFSET(ControllerTuning, _impl_.enable_tuning_)>(
+          reinterpret_cast<char*>(&_impl_.enable_tuning_),
+          reinterpret_cast<char*>(&other->_impl_.enable_tuning_));
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata ControllerTuning::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_telemetry_2eproto_getter, &descriptor_table_telemetry_2eproto_once,
+      file_level_metadata_telemetry_2eproto[5]);
+}
+
+// ===================================================================
+
+class ControllerCommand::_Internal {
+ public:
+};
+
+ControllerCommand::ControllerCommand(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:rov.telemetry.ControllerCommand)
+}
+ControllerCommand::ControllerCommand(const ControllerCommand& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  ControllerCommand* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.x_){}
+    , decltype(_impl_.y_){}
+    , decltype(_impl_.z_){}
+    , decltype(_impl_.roll_){}
+    , decltype(_impl_.pitch_){}
+    , decltype(_impl_.yaw_){}
+    , decltype(_impl_.enable_depth_control_){}
+    , decltype(_impl_.target_depth_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::memcpy(&_impl_.x_, &from._impl_.x_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.target_depth_) -
+    reinterpret_cast<char*>(&_impl_.x_)) + sizeof(_impl_.target_depth_));
+  // @@protoc_insertion_point(copy_constructor:rov.telemetry.ControllerCommand)
+}
+
+inline void ControllerCommand::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.x_){0}
+    , decltype(_impl_.y_){0}
+    , decltype(_impl_.z_){0}
+    , decltype(_impl_.roll_){0}
+    , decltype(_impl_.pitch_){0}
+    , decltype(_impl_.yaw_){0}
+    , decltype(_impl_.enable_depth_control_){false}
+    , decltype(_impl_.target_depth_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+}
+
+ControllerCommand::~ControllerCommand() {
+  // @@protoc_insertion_point(destructor:rov.telemetry.ControllerCommand)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void ControllerCommand::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+}
+
+void ControllerCommand::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void ControllerCommand::Clear() {
+// @@protoc_insertion_point(message_clear_start:rov.telemetry.ControllerCommand)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  ::memset(&_impl_.x_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&_impl_.target_depth_) -
+      reinterpret_cast<char*>(&_impl_.x_)) + sizeof(_impl_.target_depth_));
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* ControllerCommand::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // float x = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 13)) {
+          _impl_.x_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else
+          goto handle_unusual;
+        continue;
+      // float y = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 21)) {
+          _impl_.y_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else
+          goto handle_unusual;
+        continue;
+      // float z = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 29)) {
+          _impl_.z_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else
+          goto handle_unusual;
+        continue;
+      // float roll = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 37)) {
+          _impl_.roll_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else
+          goto handle_unusual;
+        continue;
+      // float pitch = 5;
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 45)) {
+          _impl_.pitch_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else
+          goto handle_unusual;
+        continue;
+      // float yaw = 6;
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 53)) {
+          _impl_.yaw_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else
+          goto handle_unusual;
+        continue;
+      // bool enable_depth_control = 7;
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 56)) {
+          _impl_.enable_depth_control_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // float target_depth = 8;
+      case 8:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 69)) {
+          _impl_.target_depth_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* ControllerCommand::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:rov.telemetry.ControllerCommand)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // float x = 1;
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_x = this->_internal_x();
+  uint32_t raw_x;
+  memcpy(&raw_x, &tmp_x, sizeof(tmp_x));
+  if (raw_x != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(1, this->_internal_x(), target);
+  }
+
+  // float y = 2;
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_y = this->_internal_y();
+  uint32_t raw_y;
+  memcpy(&raw_y, &tmp_y, sizeof(tmp_y));
+  if (raw_y != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(2, this->_internal_y(), target);
+  }
+
+  // float z = 3;
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_z = this->_internal_z();
+  uint32_t raw_z;
+  memcpy(&raw_z, &tmp_z, sizeof(tmp_z));
+  if (raw_z != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(3, this->_internal_z(), target);
+  }
+
+  // float roll = 4;
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_roll = this->_internal_roll();
+  uint32_t raw_roll;
+  memcpy(&raw_roll, &tmp_roll, sizeof(tmp_roll));
+  if (raw_roll != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(4, this->_internal_roll(), target);
+  }
+
+  // float pitch = 5;
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_pitch = this->_internal_pitch();
+  uint32_t raw_pitch;
+  memcpy(&raw_pitch, &tmp_pitch, sizeof(tmp_pitch));
+  if (raw_pitch != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(5, this->_internal_pitch(), target);
+  }
+
+  // float yaw = 6;
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_yaw = this->_internal_yaw();
+  uint32_t raw_yaw;
+  memcpy(&raw_yaw, &tmp_yaw, sizeof(tmp_yaw));
+  if (raw_yaw != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(6, this->_internal_yaw(), target);
+  }
+
+  // bool enable_depth_control = 7;
+  if (this->_internal_enable_depth_control() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(7, this->_internal_enable_depth_control(), target);
+  }
+
+  // float target_depth = 8;
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_target_depth = this->_internal_target_depth();
+  uint32_t raw_target_depth;
+  memcpy(&raw_target_depth, &tmp_target_depth, sizeof(tmp_target_depth));
+  if (raw_target_depth != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(8, this->_internal_target_depth(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:rov.telemetry.ControllerCommand)
+  return target;
+}
+
+size_t ControllerCommand::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:rov.telemetry.ControllerCommand)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // float x = 1;
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_x = this->_internal_x();
+  uint32_t raw_x;
+  memcpy(&raw_x, &tmp_x, sizeof(tmp_x));
+  if (raw_x != 0) {
+    total_size += 1 + 4;
+  }
+
+  // float y = 2;
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_y = this->_internal_y();
+  uint32_t raw_y;
+  memcpy(&raw_y, &tmp_y, sizeof(tmp_y));
+  if (raw_y != 0) {
+    total_size += 1 + 4;
+  }
+
+  // float z = 3;
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_z = this->_internal_z();
+  uint32_t raw_z;
+  memcpy(&raw_z, &tmp_z, sizeof(tmp_z));
+  if (raw_z != 0) {
+    total_size += 1 + 4;
+  }
+
+  // float roll = 4;
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_roll = this->_internal_roll();
+  uint32_t raw_roll;
+  memcpy(&raw_roll, &tmp_roll, sizeof(tmp_roll));
+  if (raw_roll != 0) {
+    total_size += 1 + 4;
+  }
+
+  // float pitch = 5;
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_pitch = this->_internal_pitch();
+  uint32_t raw_pitch;
+  memcpy(&raw_pitch, &tmp_pitch, sizeof(tmp_pitch));
+  if (raw_pitch != 0) {
+    total_size += 1 + 4;
+  }
+
+  // float yaw = 6;
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_yaw = this->_internal_yaw();
+  uint32_t raw_yaw;
+  memcpy(&raw_yaw, &tmp_yaw, sizeof(tmp_yaw));
+  if (raw_yaw != 0) {
+    total_size += 1 + 4;
+  }
+
+  // bool enable_depth_control = 7;
+  if (this->_internal_enable_depth_control() != 0) {
+    total_size += 1 + 1;
+  }
+
+  // float target_depth = 8;
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_target_depth = this->_internal_target_depth();
+  uint32_t raw_target_depth;
+  memcpy(&raw_target_depth, &tmp_target_depth, sizeof(tmp_target_depth));
+  if (raw_target_depth != 0) {
+    total_size += 1 + 4;
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData ControllerCommand::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    ControllerCommand::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*ControllerCommand::GetClassData() const { return &_class_data_; }
+
+
+void ControllerCommand::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<ControllerCommand*>(&to_msg);
+  auto& from = static_cast<const ControllerCommand&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:rov.telemetry.ControllerCommand)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_x = from._internal_x();
+  uint32_t raw_x;
+  memcpy(&raw_x, &tmp_x, sizeof(tmp_x));
+  if (raw_x != 0) {
+    _this->_internal_set_x(from._internal_x());
+  }
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_y = from._internal_y();
+  uint32_t raw_y;
+  memcpy(&raw_y, &tmp_y, sizeof(tmp_y));
+  if (raw_y != 0) {
+    _this->_internal_set_y(from._internal_y());
+  }
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_z = from._internal_z();
+  uint32_t raw_z;
+  memcpy(&raw_z, &tmp_z, sizeof(tmp_z));
+  if (raw_z != 0) {
+    _this->_internal_set_z(from._internal_z());
+  }
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_roll = from._internal_roll();
+  uint32_t raw_roll;
+  memcpy(&raw_roll, &tmp_roll, sizeof(tmp_roll));
+  if (raw_roll != 0) {
+    _this->_internal_set_roll(from._internal_roll());
+  }
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_pitch = from._internal_pitch();
+  uint32_t raw_pitch;
+  memcpy(&raw_pitch, &tmp_pitch, sizeof(tmp_pitch));
+  if (raw_pitch != 0) {
+    _this->_internal_set_pitch(from._internal_pitch());
+  }
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_yaw = from._internal_yaw();
+  uint32_t raw_yaw;
+  memcpy(&raw_yaw, &tmp_yaw, sizeof(tmp_yaw));
+  if (raw_yaw != 0) {
+    _this->_internal_set_yaw(from._internal_yaw());
+  }
+  if (from._internal_enable_depth_control() != 0) {
+    _this->_internal_set_enable_depth_control(from._internal_enable_depth_control());
+  }
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_target_depth = from._internal_target_depth();
+  uint32_t raw_target_depth;
+  memcpy(&raw_target_depth, &tmp_target_depth, sizeof(tmp_target_depth));
+  if (raw_target_depth != 0) {
+    _this->_internal_set_target_depth(from._internal_target_depth());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void ControllerCommand::CopyFrom(const ControllerCommand& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:rov.telemetry.ControllerCommand)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool ControllerCommand::IsInitialized() const {
+  return true;
+}
+
+void ControllerCommand::InternalSwap(ControllerCommand* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(ControllerCommand, _impl_.target_depth_)
+      + sizeof(ControllerCommand::_impl_.target_depth_)
+      - PROTOBUF_FIELD_OFFSET(ControllerCommand, _impl_.x_)>(
+          reinterpret_cast<char*>(&_impl_.x_),
+          reinterpret_cast<char*>(&other->_impl_.x_));
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata ControllerCommand::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_telemetry_2eproto_getter, &descriptor_table_telemetry_2eproto_once,
+      file_level_metadata_telemetry_2eproto[6]);
+}
+
+// ===================================================================
+
+class depthControlCommand::_Internal {
+ public:
+};
+
+depthControlCommand::depthControlCommand(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:rov.telemetry.depthControlCommand)
+}
+depthControlCommand::depthControlCommand(const depthControlCommand& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  depthControlCommand* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.enable_control_){}
+    , decltype(_impl_.enable_testing_){}
+    , decltype(_impl_.target_depth_){}
+    , decltype(_impl_.k_p_){}
+    , decltype(_impl_.k_i_){}
+    , decltype(_impl_.k_d_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::memcpy(&_impl_.enable_control_, &from._impl_.enable_control_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.k_d_) -
+    reinterpret_cast<char*>(&_impl_.enable_control_)) + sizeof(_impl_.k_d_));
+  // @@protoc_insertion_point(copy_constructor:rov.telemetry.depthControlCommand)
+}
+
+inline void depthControlCommand::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.enable_control_){false}
+    , decltype(_impl_.enable_testing_){false}
+    , decltype(_impl_.target_depth_){0}
+    , decltype(_impl_.k_p_){0}
+    , decltype(_impl_.k_i_){0}
+    , decltype(_impl_.k_d_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+}
+
+depthControlCommand::~depthControlCommand() {
+  // @@protoc_insertion_point(destructor:rov.telemetry.depthControlCommand)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void depthControlCommand::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+}
+
+void depthControlCommand::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void depthControlCommand::Clear() {
+// @@protoc_insertion_point(message_clear_start:rov.telemetry.depthControlCommand)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  ::memset(&_impl_.enable_control_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&_impl_.k_d_) -
+      reinterpret_cast<char*>(&_impl_.enable_control_)) + sizeof(_impl_.k_d_));
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* depthControlCommand::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // bool enable_control = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _impl_.enable_control_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // bool enable_testing = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          _impl_.enable_testing_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // float target_depth = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 29)) {
+          _impl_.target_depth_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else
+          goto handle_unusual;
+        continue;
+      // float k_p = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 37)) {
+          _impl_.k_p_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else
+          goto handle_unusual;
+        continue;
+      // float k_i = 5;
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 45)) {
+          _impl_.k_i_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else
+          goto handle_unusual;
+        continue;
+      // float k_d = 6;
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 53)) {
+          _impl_.k_d_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* depthControlCommand::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:rov.telemetry.depthControlCommand)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // bool enable_control = 1;
+  if (this->_internal_enable_control() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(1, this->_internal_enable_control(), target);
+  }
+
+  // bool enable_testing = 2;
+  if (this->_internal_enable_testing() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(2, this->_internal_enable_testing(), target);
+  }
+
+  // float target_depth = 3;
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_target_depth = this->_internal_target_depth();
+  uint32_t raw_target_depth;
+  memcpy(&raw_target_depth, &tmp_target_depth, sizeof(tmp_target_depth));
+  if (raw_target_depth != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(3, this->_internal_target_depth(), target);
+  }
+
+  // float k_p = 4;
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_k_p = this->_internal_k_p();
+  uint32_t raw_k_p;
+  memcpy(&raw_k_p, &tmp_k_p, sizeof(tmp_k_p));
+  if (raw_k_p != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(4, this->_internal_k_p(), target);
+  }
+
+  // float k_i = 5;
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_k_i = this->_internal_k_i();
+  uint32_t raw_k_i;
+  memcpy(&raw_k_i, &tmp_k_i, sizeof(tmp_k_i));
+  if (raw_k_i != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(5, this->_internal_k_i(), target);
+  }
+
+  // float k_d = 6;
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_k_d = this->_internal_k_d();
+  uint32_t raw_k_d;
+  memcpy(&raw_k_d, &tmp_k_d, sizeof(tmp_k_d));
+  if (raw_k_d != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(6, this->_internal_k_d(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:rov.telemetry.depthControlCommand)
+  return target;
+}
+
+size_t depthControlCommand::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:rov.telemetry.depthControlCommand)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // bool enable_control = 1;
+  if (this->_internal_enable_control() != 0) {
+    total_size += 1 + 1;
+  }
+
+  // bool enable_testing = 2;
+  if (this->_internal_enable_testing() != 0) {
+    total_size += 1 + 1;
+  }
+
+  // float target_depth = 3;
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_target_depth = this->_internal_target_depth();
+  uint32_t raw_target_depth;
+  memcpy(&raw_target_depth, &tmp_target_depth, sizeof(tmp_target_depth));
+  if (raw_target_depth != 0) {
+    total_size += 1 + 4;
+  }
+
+  // float k_p = 4;
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_k_p = this->_internal_k_p();
+  uint32_t raw_k_p;
+  memcpy(&raw_k_p, &tmp_k_p, sizeof(tmp_k_p));
+  if (raw_k_p != 0) {
+    total_size += 1 + 4;
+  }
+
+  // float k_i = 5;
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_k_i = this->_internal_k_i();
+  uint32_t raw_k_i;
+  memcpy(&raw_k_i, &tmp_k_i, sizeof(tmp_k_i));
+  if (raw_k_i != 0) {
+    total_size += 1 + 4;
+  }
+
+  // float k_d = 6;
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_k_d = this->_internal_k_d();
+  uint32_t raw_k_d;
+  memcpy(&raw_k_d, &tmp_k_d, sizeof(tmp_k_d));
+  if (raw_k_d != 0) {
+    total_size += 1 + 4;
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData depthControlCommand::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    depthControlCommand::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*depthControlCommand::GetClassData() const { return &_class_data_; }
+
+
+void depthControlCommand::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<depthControlCommand*>(&to_msg);
+  auto& from = static_cast<const depthControlCommand&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:rov.telemetry.depthControlCommand)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from._internal_enable_control() != 0) {
+    _this->_internal_set_enable_control(from._internal_enable_control());
+  }
+  if (from._internal_enable_testing() != 0) {
+    _this->_internal_set_enable_testing(from._internal_enable_testing());
+  }
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_target_depth = from._internal_target_depth();
+  uint32_t raw_target_depth;
+  memcpy(&raw_target_depth, &tmp_target_depth, sizeof(tmp_target_depth));
+  if (raw_target_depth != 0) {
+    _this->_internal_set_target_depth(from._internal_target_depth());
+  }
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_k_p = from._internal_k_p();
+  uint32_t raw_k_p;
+  memcpy(&raw_k_p, &tmp_k_p, sizeof(tmp_k_p));
+  if (raw_k_p != 0) {
+    _this->_internal_set_k_p(from._internal_k_p());
+  }
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_k_i = from._internal_k_i();
+  uint32_t raw_k_i;
+  memcpy(&raw_k_i, &tmp_k_i, sizeof(tmp_k_i));
+  if (raw_k_i != 0) {
+    _this->_internal_set_k_i(from._internal_k_i());
+  }
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_k_d = from._internal_k_d();
+  uint32_t raw_k_d;
+  memcpy(&raw_k_d, &tmp_k_d, sizeof(tmp_k_d));
+  if (raw_k_d != 0) {
+    _this->_internal_set_k_d(from._internal_k_d());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void depthControlCommand::CopyFrom(const depthControlCommand& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:rov.telemetry.depthControlCommand)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool depthControlCommand::IsInitialized() const {
+  return true;
+}
+
+void depthControlCommand::InternalSwap(depthControlCommand* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(depthControlCommand, _impl_.k_d_)
+      + sizeof(depthControlCommand::_impl_.k_d_)
+      - PROTOBUF_FIELD_OFFSET(depthControlCommand, _impl_.enable_control_)>(
+          reinterpret_cast<char*>(&_impl_.enable_control_),
+          reinterpret_cast<char*>(&other->_impl_.enable_control_));
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata depthControlCommand::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_telemetry_2eproto_getter, &descriptor_table_telemetry_2eproto_once,
+      file_level_metadata_telemetry_2eproto[7]);
+}
+
+// ===================================================================
+
+class depthControlData::_Internal {
+ public:
+};
+
+depthControlData::depthControlData(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:rov.telemetry.depthControlData)
+}
+depthControlData::depthControlData(const depthControlData& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  depthControlData* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.k_p_){}
+    , decltype(_impl_.k_i_){}
+    , decltype(_impl_.k_d_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::memcpy(&_impl_.k_p_, &from._impl_.k_p_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.k_d_) -
+    reinterpret_cast<char*>(&_impl_.k_p_)) + sizeof(_impl_.k_d_));
+  // @@protoc_insertion_point(copy_constructor:rov.telemetry.depthControlData)
+}
+
+inline void depthControlData::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.k_p_){0}
+    , decltype(_impl_.k_i_){0}
+    , decltype(_impl_.k_d_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+}
+
+depthControlData::~depthControlData() {
+  // @@protoc_insertion_point(destructor:rov.telemetry.depthControlData)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void depthControlData::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+}
+
+void depthControlData::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void depthControlData::Clear() {
+// @@protoc_insertion_point(message_clear_start:rov.telemetry.depthControlData)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  ::memset(&_impl_.k_p_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&_impl_.k_d_) -
+      reinterpret_cast<char*>(&_impl_.k_p_)) + sizeof(_impl_.k_d_));
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* depthControlData::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // float k_p = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 13)) {
+          _impl_.k_p_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else
+          goto handle_unusual;
+        continue;
+      // float k_i = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 21)) {
+          _impl_.k_i_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else
+          goto handle_unusual;
+        continue;
+      // float k_d = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 29)) {
+          _impl_.k_d_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* depthControlData::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:rov.telemetry.depthControlData)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // float k_p = 1;
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_k_p = this->_internal_k_p();
+  uint32_t raw_k_p;
+  memcpy(&raw_k_p, &tmp_k_p, sizeof(tmp_k_p));
+  if (raw_k_p != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(1, this->_internal_k_p(), target);
+  }
+
+  // float k_i = 2;
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_k_i = this->_internal_k_i();
+  uint32_t raw_k_i;
+  memcpy(&raw_k_i, &tmp_k_i, sizeof(tmp_k_i));
+  if (raw_k_i != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(2, this->_internal_k_i(), target);
+  }
+
+  // float k_d = 3;
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_k_d = this->_internal_k_d();
+  uint32_t raw_k_d;
+  memcpy(&raw_k_d, &tmp_k_d, sizeof(tmp_k_d));
+  if (raw_k_d != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(3, this->_internal_k_d(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:rov.telemetry.depthControlData)
+  return target;
+}
+
+size_t depthControlData::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:rov.telemetry.depthControlData)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // float k_p = 1;
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_k_p = this->_internal_k_p();
+  uint32_t raw_k_p;
+  memcpy(&raw_k_p, &tmp_k_p, sizeof(tmp_k_p));
+  if (raw_k_p != 0) {
+    total_size += 1 + 4;
+  }
+
+  // float k_i = 2;
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_k_i = this->_internal_k_i();
+  uint32_t raw_k_i;
+  memcpy(&raw_k_i, &tmp_k_i, sizeof(tmp_k_i));
+  if (raw_k_i != 0) {
+    total_size += 1 + 4;
+  }
+
+  // float k_d = 3;
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_k_d = this->_internal_k_d();
+  uint32_t raw_k_d;
+  memcpy(&raw_k_d, &tmp_k_d, sizeof(tmp_k_d));
+  if (raw_k_d != 0) {
+    total_size += 1 + 4;
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData depthControlData::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    depthControlData::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*depthControlData::GetClassData() const { return &_class_data_; }
+
+
+void depthControlData::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<depthControlData*>(&to_msg);
+  auto& from = static_cast<const depthControlData&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:rov.telemetry.depthControlData)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_k_p = from._internal_k_p();
+  uint32_t raw_k_p;
+  memcpy(&raw_k_p, &tmp_k_p, sizeof(tmp_k_p));
+  if (raw_k_p != 0) {
+    _this->_internal_set_k_p(from._internal_k_p());
+  }
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_k_i = from._internal_k_i();
+  uint32_t raw_k_i;
+  memcpy(&raw_k_i, &tmp_k_i, sizeof(tmp_k_i));
+  if (raw_k_i != 0) {
+    _this->_internal_set_k_i(from._internal_k_i());
+  }
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_k_d = from._internal_k_d();
+  uint32_t raw_k_d;
+  memcpy(&raw_k_d, &tmp_k_d, sizeof(tmp_k_d));
+  if (raw_k_d != 0) {
+    _this->_internal_set_k_d(from._internal_k_d());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void depthControlData::CopyFrom(const depthControlData& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:rov.telemetry.depthControlData)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool depthControlData::IsInitialized() const {
+  return true;
+}
+
+void depthControlData::InternalSwap(depthControlData* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(depthControlData, _impl_.k_d_)
+      + sizeof(depthControlData::_impl_.k_d_)
+      - PROTOBUF_FIELD_OFFSET(depthControlData, _impl_.k_p_)>(
+          reinterpret_cast<char*>(&_impl_.k_p_),
+          reinterpret_cast<char*>(&other->_impl_.k_p_));
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata depthControlData::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_telemetry_2eproto_getter, &descriptor_table_telemetry_2eproto_once,
+      file_level_metadata_telemetry_2eproto[8]);
+}
+
+// ===================================================================
+
+class depthControlOutput::_Internal {
+ public:
+};
+
+depthControlOutput::depthControlOutput(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:rov.telemetry.depthControlOutput)
+}
+depthControlOutput::depthControlOutput(const depthControlOutput& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  depthControlOutput* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.timestamp_us_){}
+    , decltype(_impl_.enabled_){}
+    , decltype(_impl_.command_){}
+    , decltype(_impl_.measured_depth_){}
+    , decltype(_impl_.target_depth_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::memcpy(&_impl_.timestamp_us_, &from._impl_.timestamp_us_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.target_depth_) -
+    reinterpret_cast<char*>(&_impl_.timestamp_us_)) + sizeof(_impl_.target_depth_));
+  // @@protoc_insertion_point(copy_constructor:rov.telemetry.depthControlOutput)
+}
+
+inline void depthControlOutput::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.timestamp_us_){uint64_t{0u}}
+    , decltype(_impl_.enabled_){false}
+    , decltype(_impl_.command_){0}
+    , decltype(_impl_.measured_depth_){0}
+    , decltype(_impl_.target_depth_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+}
+
+depthControlOutput::~depthControlOutput() {
+  // @@protoc_insertion_point(destructor:rov.telemetry.depthControlOutput)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void depthControlOutput::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+}
+
+void depthControlOutput::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void depthControlOutput::Clear() {
+// @@protoc_insertion_point(message_clear_start:rov.telemetry.depthControlOutput)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  ::memset(&_impl_.timestamp_us_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&_impl_.target_depth_) -
+      reinterpret_cast<char*>(&_impl_.timestamp_us_)) + sizeof(_impl_.target_depth_));
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* depthControlOutput::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // uint64 timestamp_us = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _impl_.timestamp_us_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // bool enabled = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          _impl_.enabled_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // float command = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 29)) {
+          _impl_.command_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else
+          goto handle_unusual;
+        continue;
+      // float measured_depth = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 37)) {
+          _impl_.measured_depth_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else
+          goto handle_unusual;
+        continue;
+      // float target_depth = 5;
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 45)) {
+          _impl_.target_depth_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* depthControlOutput::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:rov.telemetry.depthControlOutput)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // uint64 timestamp_us = 1;
+  if (this->_internal_timestamp_us() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(1, this->_internal_timestamp_us(), target);
+  }
+
+  // bool enabled = 2;
+  if (this->_internal_enabled() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(2, this->_internal_enabled(), target);
+  }
+
+  // float command = 3;
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_command = this->_internal_command();
+  uint32_t raw_command;
+  memcpy(&raw_command, &tmp_command, sizeof(tmp_command));
+  if (raw_command != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(3, this->_internal_command(), target);
+  }
+
+  // float measured_depth = 4;
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_measured_depth = this->_internal_measured_depth();
+  uint32_t raw_measured_depth;
+  memcpy(&raw_measured_depth, &tmp_measured_depth, sizeof(tmp_measured_depth));
+  if (raw_measured_depth != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(4, this->_internal_measured_depth(), target);
+  }
+
+  // float target_depth = 5;
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_target_depth = this->_internal_target_depth();
+  uint32_t raw_target_depth;
+  memcpy(&raw_target_depth, &tmp_target_depth, sizeof(tmp_target_depth));
+  if (raw_target_depth != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(5, this->_internal_target_depth(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:rov.telemetry.depthControlOutput)
+  return target;
+}
+
+size_t depthControlOutput::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:rov.telemetry.depthControlOutput)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // uint64 timestamp_us = 1;
+  if (this->_internal_timestamp_us() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_timestamp_us());
+  }
+
+  // bool enabled = 2;
+  if (this->_internal_enabled() != 0) {
+    total_size += 1 + 1;
+  }
+
+  // float command = 3;
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_command = this->_internal_command();
+  uint32_t raw_command;
+  memcpy(&raw_command, &tmp_command, sizeof(tmp_command));
+  if (raw_command != 0) {
+    total_size += 1 + 4;
+  }
+
+  // float measured_depth = 4;
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_measured_depth = this->_internal_measured_depth();
+  uint32_t raw_measured_depth;
+  memcpy(&raw_measured_depth, &tmp_measured_depth, sizeof(tmp_measured_depth));
+  if (raw_measured_depth != 0) {
+    total_size += 1 + 4;
+  }
+
+  // float target_depth = 5;
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_target_depth = this->_internal_target_depth();
+  uint32_t raw_target_depth;
+  memcpy(&raw_target_depth, &tmp_target_depth, sizeof(tmp_target_depth));
+  if (raw_target_depth != 0) {
+    total_size += 1 + 4;
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData depthControlOutput::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    depthControlOutput::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*depthControlOutput::GetClassData() const { return &_class_data_; }
+
+
+void depthControlOutput::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<depthControlOutput*>(&to_msg);
+  auto& from = static_cast<const depthControlOutput&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:rov.telemetry.depthControlOutput)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from._internal_timestamp_us() != 0) {
+    _this->_internal_set_timestamp_us(from._internal_timestamp_us());
+  }
+  if (from._internal_enabled() != 0) {
+    _this->_internal_set_enabled(from._internal_enabled());
+  }
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_command = from._internal_command();
+  uint32_t raw_command;
+  memcpy(&raw_command, &tmp_command, sizeof(tmp_command));
+  if (raw_command != 0) {
+    _this->_internal_set_command(from._internal_command());
+  }
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_measured_depth = from._internal_measured_depth();
+  uint32_t raw_measured_depth;
+  memcpy(&raw_measured_depth, &tmp_measured_depth, sizeof(tmp_measured_depth));
+  if (raw_measured_depth != 0) {
+    _this->_internal_set_measured_depth(from._internal_measured_depth());
+  }
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_target_depth = from._internal_target_depth();
+  uint32_t raw_target_depth;
+  memcpy(&raw_target_depth, &tmp_target_depth, sizeof(tmp_target_depth));
+  if (raw_target_depth != 0) {
+    _this->_internal_set_target_depth(from._internal_target_depth());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void depthControlOutput::CopyFrom(const depthControlOutput& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:rov.telemetry.depthControlOutput)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool depthControlOutput::IsInitialized() const {
+  return true;
+}
+
+void depthControlOutput::InternalSwap(depthControlOutput* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(depthControlOutput, _impl_.target_depth_)
+      + sizeof(depthControlOutput::_impl_.target_depth_)
+      - PROTOBUF_FIELD_OFFSET(depthControlOutput, _impl_.timestamp_us_)>(
+          reinterpret_cast<char*>(&_impl_.timestamp_us_),
+          reinterpret_cast<char*>(&other->_impl_.timestamp_us_));
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata depthControlOutput::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_telemetry_2eproto_getter, &descriptor_table_telemetry_2eproto_once,
+      file_level_metadata_telemetry_2eproto[9]);
+}
+
+// ===================================================================
+
+class ThrusterCommand::_Internal {
+ public:
+};
+
+ThrusterCommand::ThrusterCommand(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:rov.telemetry.ThrusterCommand)
+}
+ThrusterCommand::ThrusterCommand(const ThrusterCommand& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  ThrusterCommand* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.timestamp_us_){}
+    , decltype(_impl_.x_){}
+    , decltype(_impl_.y_){}
+    , decltype(_impl_.z_){}
+    , decltype(_impl_.roll_){}
+    , decltype(_impl_.pitch_){}
+    , decltype(_impl_.yaw_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::memcpy(&_impl_.timestamp_us_, &from._impl_.timestamp_us_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.yaw_) -
+    reinterpret_cast<char*>(&_impl_.timestamp_us_)) + sizeof(_impl_.yaw_));
+  // @@protoc_insertion_point(copy_constructor:rov.telemetry.ThrusterCommand)
+}
+
+inline void ThrusterCommand::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.timestamp_us_){uint64_t{0u}}
+    , decltype(_impl_.x_){0}
+    , decltype(_impl_.y_){0}
+    , decltype(_impl_.z_){0}
+    , decltype(_impl_.roll_){0}
+    , decltype(_impl_.pitch_){0}
+    , decltype(_impl_.yaw_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+}
+
+ThrusterCommand::~ThrusterCommand() {
+  // @@protoc_insertion_point(destructor:rov.telemetry.ThrusterCommand)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void ThrusterCommand::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+}
+
+void ThrusterCommand::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void ThrusterCommand::Clear() {
+// @@protoc_insertion_point(message_clear_start:rov.telemetry.ThrusterCommand)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  ::memset(&_impl_.timestamp_us_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&_impl_.yaw_) -
+      reinterpret_cast<char*>(&_impl_.timestamp_us_)) + sizeof(_impl_.yaw_));
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* ThrusterCommand::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // uint64 timestamp_us = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _impl_.timestamp_us_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // float x = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 21)) {
+          _impl_.x_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else
+          goto handle_unusual;
+        continue;
+      // float y = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 29)) {
+          _impl_.y_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else
+          goto handle_unusual;
+        continue;
+      // float z = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 37)) {
+          _impl_.z_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else
+          goto handle_unusual;
+        continue;
+      // float roll = 5;
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 45)) {
+          _impl_.roll_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else
+          goto handle_unusual;
+        continue;
+      // float pitch = 6;
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 53)) {
+          _impl_.pitch_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else
+          goto handle_unusual;
+        continue;
+      // float yaw = 7;
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 61)) {
+          _impl_.yaw_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* ThrusterCommand::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:rov.telemetry.ThrusterCommand)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // uint64 timestamp_us = 1;
+  if (this->_internal_timestamp_us() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(1, this->_internal_timestamp_us(), target);
+  }
+
+  // float x = 2;
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_x = this->_internal_x();
+  uint32_t raw_x;
+  memcpy(&raw_x, &tmp_x, sizeof(tmp_x));
+  if (raw_x != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(2, this->_internal_x(), target);
+  }
+
+  // float y = 3;
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_y = this->_internal_y();
+  uint32_t raw_y;
+  memcpy(&raw_y, &tmp_y, sizeof(tmp_y));
+  if (raw_y != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(3, this->_internal_y(), target);
+  }
+
+  // float z = 4;
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_z = this->_internal_z();
+  uint32_t raw_z;
+  memcpy(&raw_z, &tmp_z, sizeof(tmp_z));
+  if (raw_z != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(4, this->_internal_z(), target);
+  }
+
+  // float roll = 5;
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_roll = this->_internal_roll();
+  uint32_t raw_roll;
+  memcpy(&raw_roll, &tmp_roll, sizeof(tmp_roll));
+  if (raw_roll != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(5, this->_internal_roll(), target);
+  }
+
+  // float pitch = 6;
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_pitch = this->_internal_pitch();
+  uint32_t raw_pitch;
+  memcpy(&raw_pitch, &tmp_pitch, sizeof(tmp_pitch));
+  if (raw_pitch != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(6, this->_internal_pitch(), target);
+  }
+
+  // float yaw = 7;
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_yaw = this->_internal_yaw();
+  uint32_t raw_yaw;
+  memcpy(&raw_yaw, &tmp_yaw, sizeof(tmp_yaw));
+  if (raw_yaw != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(7, this->_internal_yaw(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:rov.telemetry.ThrusterCommand)
+  return target;
+}
+
+size_t ThrusterCommand::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:rov.telemetry.ThrusterCommand)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // uint64 timestamp_us = 1;
+  if (this->_internal_timestamp_us() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_timestamp_us());
+  }
+
+  // float x = 2;
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_x = this->_internal_x();
+  uint32_t raw_x;
+  memcpy(&raw_x, &tmp_x, sizeof(tmp_x));
+  if (raw_x != 0) {
+    total_size += 1 + 4;
+  }
+
+  // float y = 3;
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_y = this->_internal_y();
+  uint32_t raw_y;
+  memcpy(&raw_y, &tmp_y, sizeof(tmp_y));
+  if (raw_y != 0) {
+    total_size += 1 + 4;
+  }
+
+  // float z = 4;
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_z = this->_internal_z();
+  uint32_t raw_z;
+  memcpy(&raw_z, &tmp_z, sizeof(tmp_z));
+  if (raw_z != 0) {
+    total_size += 1 + 4;
+  }
+
+  // float roll = 5;
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_roll = this->_internal_roll();
+  uint32_t raw_roll;
+  memcpy(&raw_roll, &tmp_roll, sizeof(tmp_roll));
+  if (raw_roll != 0) {
+    total_size += 1 + 4;
+  }
+
+  // float pitch = 6;
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_pitch = this->_internal_pitch();
+  uint32_t raw_pitch;
+  memcpy(&raw_pitch, &tmp_pitch, sizeof(tmp_pitch));
+  if (raw_pitch != 0) {
+    total_size += 1 + 4;
+  }
+
+  // float yaw = 7;
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_yaw = this->_internal_yaw();
+  uint32_t raw_yaw;
+  memcpy(&raw_yaw, &tmp_yaw, sizeof(tmp_yaw));
+  if (raw_yaw != 0) {
+    total_size += 1 + 4;
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData ThrusterCommand::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    ThrusterCommand::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*ThrusterCommand::GetClassData() const { return &_class_data_; }
+
+
+void ThrusterCommand::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<ThrusterCommand*>(&to_msg);
+  auto& from = static_cast<const ThrusterCommand&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:rov.telemetry.ThrusterCommand)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from._internal_timestamp_us() != 0) {
+    _this->_internal_set_timestamp_us(from._internal_timestamp_us());
+  }
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_x = from._internal_x();
+  uint32_t raw_x;
+  memcpy(&raw_x, &tmp_x, sizeof(tmp_x));
+  if (raw_x != 0) {
+    _this->_internal_set_x(from._internal_x());
+  }
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_y = from._internal_y();
+  uint32_t raw_y;
+  memcpy(&raw_y, &tmp_y, sizeof(tmp_y));
+  if (raw_y != 0) {
+    _this->_internal_set_y(from._internal_y());
+  }
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_z = from._internal_z();
+  uint32_t raw_z;
+  memcpy(&raw_z, &tmp_z, sizeof(tmp_z));
+  if (raw_z != 0) {
+    _this->_internal_set_z(from._internal_z());
+  }
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_roll = from._internal_roll();
+  uint32_t raw_roll;
+  memcpy(&raw_roll, &tmp_roll, sizeof(tmp_roll));
+  if (raw_roll != 0) {
+    _this->_internal_set_roll(from._internal_roll());
+  }
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_pitch = from._internal_pitch();
+  uint32_t raw_pitch;
+  memcpy(&raw_pitch, &tmp_pitch, sizeof(tmp_pitch));
+  if (raw_pitch != 0) {
+    _this->_internal_set_pitch(from._internal_pitch());
+  }
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_yaw = from._internal_yaw();
+  uint32_t raw_yaw;
+  memcpy(&raw_yaw, &tmp_yaw, sizeof(tmp_yaw));
+  if (raw_yaw != 0) {
+    _this->_internal_set_yaw(from._internal_yaw());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void ThrusterCommand::CopyFrom(const ThrusterCommand& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:rov.telemetry.ThrusterCommand)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool ThrusterCommand::IsInitialized() const {
+  return true;
+}
+
+void ThrusterCommand::InternalSwap(ThrusterCommand* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(ThrusterCommand, _impl_.yaw_)
+      + sizeof(ThrusterCommand::_impl_.yaw_)
+      - PROTOBUF_FIELD_OFFSET(ThrusterCommand, _impl_.timestamp_us_)>(
+          reinterpret_cast<char*>(&_impl_.timestamp_us_),
+          reinterpret_cast<char*>(&other->_impl_.timestamp_us_));
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata ThrusterCommand::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_telemetry_2eproto_getter, &descriptor_table_telemetry_2eproto_once,
+      file_level_metadata_telemetry_2eproto[10]);
+}
+
+// ===================================================================
+
+class AutonomyStatus::_Internal {
+ public:
+};
+
+AutonomyStatus::AutonomyStatus(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:rov.telemetry.AutonomyStatus)
+}
+AutonomyStatus::AutonomyStatus(const AutonomyStatus& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  AutonomyStatus* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.behavior_){}
+    , decltype(_impl_.phase_){}
+    , decltype(_impl_.timestamp_us_){}
+    , decltype(_impl_.target_heading_){}
+    , decltype(_impl_.target_depth_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _impl_.behavior_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.behavior_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_behavior().empty()) {
+    _this->_impl_.behavior_.Set(from._internal_behavior(), 
+      _this->GetArenaForAllocation());
+  }
+  _impl_.phase_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.phase_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_phase().empty()) {
+    _this->_impl_.phase_.Set(from._internal_phase(), 
+      _this->GetArenaForAllocation());
+  }
+  ::memcpy(&_impl_.timestamp_us_, &from._impl_.timestamp_us_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.target_depth_) -
+    reinterpret_cast<char*>(&_impl_.timestamp_us_)) + sizeof(_impl_.target_depth_));
+  // @@protoc_insertion_point(copy_constructor:rov.telemetry.AutonomyStatus)
+}
+
+inline void AutonomyStatus::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.behavior_){}
+    , decltype(_impl_.phase_){}
+    , decltype(_impl_.timestamp_us_){uint64_t{0u}}
+    , decltype(_impl_.target_heading_){0}
+    , decltype(_impl_.target_depth_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.behavior_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.behavior_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.phase_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.phase_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+}
+
+AutonomyStatus::~AutonomyStatus() {
+  // @@protoc_insertion_point(destructor:rov.telemetry.AutonomyStatus)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void AutonomyStatus::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.behavior_.Destroy();
+  _impl_.phase_.Destroy();
+}
+
+void AutonomyStatus::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void AutonomyStatus::Clear() {
+// @@protoc_insertion_point(message_clear_start:rov.telemetry.AutonomyStatus)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.behavior_.ClearToEmpty();
+  _impl_.phase_.ClearToEmpty();
+  ::memset(&_impl_.timestamp_us_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&_impl_.target_depth_) -
+      reinterpret_cast<char*>(&_impl_.timestamp_us_)) + sizeof(_impl_.target_depth_));
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* AutonomyStatus::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // uint64 timestamp_us = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _impl_.timestamp_us_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // string behavior = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          auto str = _internal_mutable_behavior();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "rov.telemetry.AutonomyStatus.behavior"));
+        } else
+          goto handle_unusual;
+        continue;
+      // string phase = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
+          auto str = _internal_mutable_phase();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "rov.telemetry.AutonomyStatus.phase"));
+        } else
+          goto handle_unusual;
+        continue;
+      // float target_heading = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 37)) {
+          _impl_.target_heading_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else
+          goto handle_unusual;
+        continue;
+      // float target_depth = 5;
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 45)) {
+          _impl_.target_depth_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* AutonomyStatus::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:rov.telemetry.AutonomyStatus)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // uint64 timestamp_us = 1;
+  if (this->_internal_timestamp_us() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(1, this->_internal_timestamp_us(), target);
+  }
+
+  // string behavior = 2;
+  if (!this->_internal_behavior().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_behavior().data(), static_cast<int>(this->_internal_behavior().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "rov.telemetry.AutonomyStatus.behavior");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_behavior(), target);
+  }
+
+  // string phase = 3;
+  if (!this->_internal_phase().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_phase().data(), static_cast<int>(this->_internal_phase().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "rov.telemetry.AutonomyStatus.phase");
+    target = stream->WriteStringMaybeAliased(
+        3, this->_internal_phase(), target);
+  }
+
+  // float target_heading = 4;
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_target_heading = this->_internal_target_heading();
+  uint32_t raw_target_heading;
+  memcpy(&raw_target_heading, &tmp_target_heading, sizeof(tmp_target_heading));
+  if (raw_target_heading != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(4, this->_internal_target_heading(), target);
+  }
+
+  // float target_depth = 5;
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_target_depth = this->_internal_target_depth();
+  uint32_t raw_target_depth;
+  memcpy(&raw_target_depth, &tmp_target_depth, sizeof(tmp_target_depth));
+  if (raw_target_depth != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(5, this->_internal_target_depth(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:rov.telemetry.AutonomyStatus)
+  return target;
+}
+
+size_t AutonomyStatus::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:rov.telemetry.AutonomyStatus)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string behavior = 2;
+  if (!this->_internal_behavior().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_behavior());
+  }
+
+  // string phase = 3;
+  if (!this->_internal_phase().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_phase());
+  }
+
+  // uint64 timestamp_us = 1;
+  if (this->_internal_timestamp_us() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_timestamp_us());
+  }
+
+  // float target_heading = 4;
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_target_heading = this->_internal_target_heading();
+  uint32_t raw_target_heading;
+  memcpy(&raw_target_heading, &tmp_target_heading, sizeof(tmp_target_heading));
+  if (raw_target_heading != 0) {
+    total_size += 1 + 4;
+  }
+
+  // float target_depth = 5;
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_target_depth = this->_internal_target_depth();
+  uint32_t raw_target_depth;
+  memcpy(&raw_target_depth, &tmp_target_depth, sizeof(tmp_target_depth));
+  if (raw_target_depth != 0) {
+    total_size += 1 + 4;
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData AutonomyStatus::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    AutonomyStatus::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*AutonomyStatus::GetClassData() const { return &_class_data_; }
+
+
+void AutonomyStatus::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<AutonomyStatus*>(&to_msg);
+  auto& from = static_cast<const AutonomyStatus&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:rov.telemetry.AutonomyStatus)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_behavior().empty()) {
+    _this->_internal_set_behavior(from._internal_behavior());
+  }
+  if (!from._internal_phase().empty()) {
+    _this->_internal_set_phase(from._internal_phase());
+  }
+  if (from._internal_timestamp_us() != 0) {
+    _this->_internal_set_timestamp_us(from._internal_timestamp_us());
+  }
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_target_heading = from._internal_target_heading();
+  uint32_t raw_target_heading;
+  memcpy(&raw_target_heading, &tmp_target_heading, sizeof(tmp_target_heading));
+  if (raw_target_heading != 0) {
+    _this->_internal_set_target_heading(from._internal_target_heading());
+  }
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_target_depth = from._internal_target_depth();
+  uint32_t raw_target_depth;
+  memcpy(&raw_target_depth, &tmp_target_depth, sizeof(tmp_target_depth));
+  if (raw_target_depth != 0) {
+    _this->_internal_set_target_depth(from._internal_target_depth());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void AutonomyStatus::CopyFrom(const AutonomyStatus& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:rov.telemetry.AutonomyStatus)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool AutonomyStatus::IsInitialized() const {
+  return true;
+}
+
+void AutonomyStatus::InternalSwap(AutonomyStatus* other) {
+  using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.behavior_, lhs_arena,
+      &other->_impl_.behavior_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.phase_, lhs_arena,
+      &other->_impl_.phase_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(AutonomyStatus, _impl_.target_depth_)
+      + sizeof(AutonomyStatus::_impl_.target_depth_)
+      - PROTOBUF_FIELD_OFFSET(AutonomyStatus, _impl_.timestamp_us_)>(
+          reinterpret_cast<char*>(&_impl_.timestamp_us_),
+          reinterpret_cast<char*>(&other->_impl_.timestamp_us_));
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata AutonomyStatus::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_telemetry_2eproto_getter, &descriptor_table_telemetry_2eproto_once,
+      file_level_metadata_telemetry_2eproto[11]);
 }
 
 // @@protoc_insertion_point(namespace_scope)
@@ -1405,17 +4356,49 @@ template<> PROTOBUF_NOINLINE ::rov::telemetry::Vector3D*
 Arena::CreateMaybeMessage< ::rov::telemetry::Vector3D >(Arena* arena) {
   return Arena::CreateMessageInternal< ::rov::telemetry::Vector3D >(arena);
 }
+template<> PROTOBUF_NOINLINE ::rov::telemetry::Quaternion*
+Arena::CreateMaybeMessage< ::rov::telemetry::Quaternion >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::rov::telemetry::Quaternion >(arena);
+}
+template<> PROTOBUF_NOINLINE ::rov::telemetry::ImuData*
+Arena::CreateMaybeMessage< ::rov::telemetry::ImuData >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::rov::telemetry::ImuData >(arena);
+}
 template<> PROTOBUF_NOINLINE ::rov::telemetry::SensorData*
 Arena::CreateMaybeMessage< ::rov::telemetry::SensorData >(Arena* arena) {
   return Arena::CreateMessageInternal< ::rov::telemetry::SensorData >(arena);
 }
-template<> PROTOBUF_NOINLINE ::rov::telemetry::JoystickCommand*
-Arena::CreateMaybeMessage< ::rov::telemetry::JoystickCommand >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::rov::telemetry::JoystickCommand >(arena);
-}
 template<> PROTOBUF_NOINLINE ::rov::telemetry::test*
 Arena::CreateMaybeMessage< ::rov::telemetry::test >(Arena* arena) {
   return Arena::CreateMessageInternal< ::rov::telemetry::test >(arena);
+}
+template<> PROTOBUF_NOINLINE ::rov::telemetry::ControllerTuning*
+Arena::CreateMaybeMessage< ::rov::telemetry::ControllerTuning >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::rov::telemetry::ControllerTuning >(arena);
+}
+template<> PROTOBUF_NOINLINE ::rov::telemetry::ControllerCommand*
+Arena::CreateMaybeMessage< ::rov::telemetry::ControllerCommand >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::rov::telemetry::ControllerCommand >(arena);
+}
+template<> PROTOBUF_NOINLINE ::rov::telemetry::depthControlCommand*
+Arena::CreateMaybeMessage< ::rov::telemetry::depthControlCommand >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::rov::telemetry::depthControlCommand >(arena);
+}
+template<> PROTOBUF_NOINLINE ::rov::telemetry::depthControlData*
+Arena::CreateMaybeMessage< ::rov::telemetry::depthControlData >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::rov::telemetry::depthControlData >(arena);
+}
+template<> PROTOBUF_NOINLINE ::rov::telemetry::depthControlOutput*
+Arena::CreateMaybeMessage< ::rov::telemetry::depthControlOutput >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::rov::telemetry::depthControlOutput >(arena);
+}
+template<> PROTOBUF_NOINLINE ::rov::telemetry::ThrusterCommand*
+Arena::CreateMaybeMessage< ::rov::telemetry::ThrusterCommand >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::rov::telemetry::ThrusterCommand >(arena);
+}
+template<> PROTOBUF_NOINLINE ::rov::telemetry::AutonomyStatus*
+Arena::CreateMaybeMessage< ::rov::telemetry::AutonomyStatus >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::rov::telemetry::AutonomyStatus >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

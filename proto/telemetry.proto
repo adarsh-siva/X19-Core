@@ -9,6 +9,23 @@ message Vector3D {
   float z = 3;
 }
 
+// Fused orientation output from the IMU (e.g. BNO086 rotation vector)
+message Quaternion {
+  float x = 1;
+  float y = 2;
+  float z = 3;
+  float w = 4;
+  float accuracy_rad = 5;  // orientation accuracy estimate, radians
+}
+
+// Raw/calibrated + fused IMU reading, published by imu_node
+message ImuData {
+  uint64 timestamp_us = 1;
+  Vector3D acceleration = 2;      // m/s^2, calibrated
+  Vector3D angular_velocity = 3;  // rad/s, calibrated
+  Quaternion orientation = 4;     // fused rotation vector
+}
+
 // Telemetry from the ROV sensors to the topside
 message SensorData {
   uint64 timestamp_us = 1;
@@ -40,4 +57,51 @@ message ControllerCommand {
   float yaw = 6;
   bool enable_depth_control = 7;
   float target_depth = 8;
+}
+
+// depth control, surface -> core (same message as X19-Surface's proto)
+message depthControlCommand {
+  bool enable_control = 1;
+  bool enable_testing = 2;
+  float target_depth = 3;
+  float k_p = 4; // updated weights to use while testing
+  float k_i = 5;
+  float k_d = 6;
+}
+
+// depth control, core->surface (same message as X19-Surface's proto)
+message depthControlData {
+  float k_p = 1; // default hard-coded weights
+  float k_i = 2;
+  float k_d = 3;
+}
+
+// depth control -> thruster control: the PID output each control tick
+message depthControlOutput {
+  uint64 timestamp_us = 1;
+  bool enabled = 2;          // false: depth control is off, ignore command
+  float command = 3;         // -1.0 to 1.0, positive = go deeper
+  float measured_depth = 4;  // m, filtered
+  float target_depth = 5;    // m
+}
+
+// thruster control -> thruster mapping: body-frame effort per axis,
+// -1.0 to 1.0 of that axis's full authority
+message ThrusterCommand {
+  uint64 timestamp_us = 1;
+  float x = 2;      // surge, + forward
+  float y = 3;      // sway, + left
+  float z = 4;      // heave, + up (body frame)
+  float roll = 5;
+  float pitch = 6;
+  float yaw = 7;    // + counter-clockwise seen from above
+}
+
+// autonomy node status, for the surface / test harness
+message AutonomyStatus {
+  uint64 timestamp_us = 1;
+  string behavior = 2;        // e.g. "straight_line"
+  string phase = 3;           // e.g. "settle", "cruise", "stop"
+  float target_heading = 4;   // rad
+  float target_depth = 5;     // m
 }

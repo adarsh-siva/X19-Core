@@ -46,24 +46,56 @@ struct TableStruct_telemetry_2eproto {
 extern const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_telemetry_2eproto;
 namespace rov {
 namespace telemetry {
-class JoystickCommand;
-struct JoystickCommandDefaultTypeInternal;
-extern JoystickCommandDefaultTypeInternal _JoystickCommand_default_instance_;
+class AutonomyStatus;
+struct AutonomyStatusDefaultTypeInternal;
+extern AutonomyStatusDefaultTypeInternal _AutonomyStatus_default_instance_;
+class ControllerCommand;
+struct ControllerCommandDefaultTypeInternal;
+extern ControllerCommandDefaultTypeInternal _ControllerCommand_default_instance_;
+class ControllerTuning;
+struct ControllerTuningDefaultTypeInternal;
+extern ControllerTuningDefaultTypeInternal _ControllerTuning_default_instance_;
+class ImuData;
+struct ImuDataDefaultTypeInternal;
+extern ImuDataDefaultTypeInternal _ImuData_default_instance_;
+class Quaternion;
+struct QuaternionDefaultTypeInternal;
+extern QuaternionDefaultTypeInternal _Quaternion_default_instance_;
 class SensorData;
 struct SensorDataDefaultTypeInternal;
 extern SensorDataDefaultTypeInternal _SensorData_default_instance_;
+class ThrusterCommand;
+struct ThrusterCommandDefaultTypeInternal;
+extern ThrusterCommandDefaultTypeInternal _ThrusterCommand_default_instance_;
 class Vector3D;
 struct Vector3DDefaultTypeInternal;
 extern Vector3DDefaultTypeInternal _Vector3D_default_instance_;
+class depthControlCommand;
+struct depthControlCommandDefaultTypeInternal;
+extern depthControlCommandDefaultTypeInternal _depthControlCommand_default_instance_;
+class depthControlData;
+struct depthControlDataDefaultTypeInternal;
+extern depthControlDataDefaultTypeInternal _depthControlData_default_instance_;
+class depthControlOutput;
+struct depthControlOutputDefaultTypeInternal;
+extern depthControlOutputDefaultTypeInternal _depthControlOutput_default_instance_;
 class test;
 struct testDefaultTypeInternal;
 extern testDefaultTypeInternal _test_default_instance_;
 }  // namespace telemetry
 }  // namespace rov
 PROTOBUF_NAMESPACE_OPEN
-template<> ::rov::telemetry::JoystickCommand* Arena::CreateMaybeMessage<::rov::telemetry::JoystickCommand>(Arena*);
+template<> ::rov::telemetry::AutonomyStatus* Arena::CreateMaybeMessage<::rov::telemetry::AutonomyStatus>(Arena*);
+template<> ::rov::telemetry::ControllerCommand* Arena::CreateMaybeMessage<::rov::telemetry::ControllerCommand>(Arena*);
+template<> ::rov::telemetry::ControllerTuning* Arena::CreateMaybeMessage<::rov::telemetry::ControllerTuning>(Arena*);
+template<> ::rov::telemetry::ImuData* Arena::CreateMaybeMessage<::rov::telemetry::ImuData>(Arena*);
+template<> ::rov::telemetry::Quaternion* Arena::CreateMaybeMessage<::rov::telemetry::Quaternion>(Arena*);
 template<> ::rov::telemetry::SensorData* Arena::CreateMaybeMessage<::rov::telemetry::SensorData>(Arena*);
+template<> ::rov::telemetry::ThrusterCommand* Arena::CreateMaybeMessage<::rov::telemetry::ThrusterCommand>(Arena*);
 template<> ::rov::telemetry::Vector3D* Arena::CreateMaybeMessage<::rov::telemetry::Vector3D>(Arena*);
+template<> ::rov::telemetry::depthControlCommand* Arena::CreateMaybeMessage<::rov::telemetry::depthControlCommand>(Arena*);
+template<> ::rov::telemetry::depthControlData* Arena::CreateMaybeMessage<::rov::telemetry::depthControlData>(Arena*);
+template<> ::rov::telemetry::depthControlOutput* Arena::CreateMaybeMessage<::rov::telemetry::depthControlOutput>(Arena*);
 template<> ::rov::telemetry::test* Arena::CreateMaybeMessage<::rov::telemetry::test>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace rov {
@@ -241,6 +273,406 @@ class Vector3D final :
 };
 // -------------------------------------------------------------------
 
+class Quaternion final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:rov.telemetry.Quaternion) */ {
+ public:
+  inline Quaternion() : Quaternion(nullptr) {}
+  ~Quaternion() override;
+  explicit PROTOBUF_CONSTEXPR Quaternion(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  Quaternion(const Quaternion& from);
+  Quaternion(Quaternion&& from) noexcept
+    : Quaternion() {
+    *this = ::std::move(from);
+  }
+
+  inline Quaternion& operator=(const Quaternion& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline Quaternion& operator=(Quaternion&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const Quaternion& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const Quaternion* internal_default_instance() {
+    return reinterpret_cast<const Quaternion*>(
+               &_Quaternion_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    1;
+
+  friend void swap(Quaternion& a, Quaternion& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(Quaternion* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(Quaternion* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  Quaternion* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<Quaternion>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const Quaternion& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const Quaternion& from) {
+    Quaternion::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(Quaternion* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "rov.telemetry.Quaternion";
+  }
+  protected:
+  explicit Quaternion(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kXFieldNumber = 1,
+    kYFieldNumber = 2,
+    kZFieldNumber = 3,
+    kWFieldNumber = 4,
+    kAccuracyRadFieldNumber = 5,
+  };
+  // float x = 1;
+  void clear_x();
+  float x() const;
+  void set_x(float value);
+  private:
+  float _internal_x() const;
+  void _internal_set_x(float value);
+  public:
+
+  // float y = 2;
+  void clear_y();
+  float y() const;
+  void set_y(float value);
+  private:
+  float _internal_y() const;
+  void _internal_set_y(float value);
+  public:
+
+  // float z = 3;
+  void clear_z();
+  float z() const;
+  void set_z(float value);
+  private:
+  float _internal_z() const;
+  void _internal_set_z(float value);
+  public:
+
+  // float w = 4;
+  void clear_w();
+  float w() const;
+  void set_w(float value);
+  private:
+  float _internal_w() const;
+  void _internal_set_w(float value);
+  public:
+
+  // float accuracy_rad = 5;
+  void clear_accuracy_rad();
+  float accuracy_rad() const;
+  void set_accuracy_rad(float value);
+  private:
+  float _internal_accuracy_rad() const;
+  void _internal_set_accuracy_rad(float value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:rov.telemetry.Quaternion)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    float x_;
+    float y_;
+    float z_;
+    float w_;
+    float accuracy_rad_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_telemetry_2eproto;
+};
+// -------------------------------------------------------------------
+
+class ImuData final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:rov.telemetry.ImuData) */ {
+ public:
+  inline ImuData() : ImuData(nullptr) {}
+  ~ImuData() override;
+  explicit PROTOBUF_CONSTEXPR ImuData(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  ImuData(const ImuData& from);
+  ImuData(ImuData&& from) noexcept
+    : ImuData() {
+    *this = ::std::move(from);
+  }
+
+  inline ImuData& operator=(const ImuData& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline ImuData& operator=(ImuData&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const ImuData& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const ImuData* internal_default_instance() {
+    return reinterpret_cast<const ImuData*>(
+               &_ImuData_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    2;
+
+  friend void swap(ImuData& a, ImuData& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(ImuData* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(ImuData* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  ImuData* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<ImuData>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const ImuData& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const ImuData& from) {
+    ImuData::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ImuData* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "rov.telemetry.ImuData";
+  }
+  protected:
+  explicit ImuData(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kAccelerationFieldNumber = 2,
+    kAngularVelocityFieldNumber = 3,
+    kOrientationFieldNumber = 4,
+    kTimestampUsFieldNumber = 1,
+  };
+  // .rov.telemetry.Vector3D acceleration = 2;
+  bool has_acceleration() const;
+  private:
+  bool _internal_has_acceleration() const;
+  public:
+  void clear_acceleration();
+  const ::rov::telemetry::Vector3D& acceleration() const;
+  PROTOBUF_NODISCARD ::rov::telemetry::Vector3D* release_acceleration();
+  ::rov::telemetry::Vector3D* mutable_acceleration();
+  void set_allocated_acceleration(::rov::telemetry::Vector3D* acceleration);
+  private:
+  const ::rov::telemetry::Vector3D& _internal_acceleration() const;
+  ::rov::telemetry::Vector3D* _internal_mutable_acceleration();
+  public:
+  void unsafe_arena_set_allocated_acceleration(
+      ::rov::telemetry::Vector3D* acceleration);
+  ::rov::telemetry::Vector3D* unsafe_arena_release_acceleration();
+
+  // .rov.telemetry.Vector3D angular_velocity = 3;
+  bool has_angular_velocity() const;
+  private:
+  bool _internal_has_angular_velocity() const;
+  public:
+  void clear_angular_velocity();
+  const ::rov::telemetry::Vector3D& angular_velocity() const;
+  PROTOBUF_NODISCARD ::rov::telemetry::Vector3D* release_angular_velocity();
+  ::rov::telemetry::Vector3D* mutable_angular_velocity();
+  void set_allocated_angular_velocity(::rov::telemetry::Vector3D* angular_velocity);
+  private:
+  const ::rov::telemetry::Vector3D& _internal_angular_velocity() const;
+  ::rov::telemetry::Vector3D* _internal_mutable_angular_velocity();
+  public:
+  void unsafe_arena_set_allocated_angular_velocity(
+      ::rov::telemetry::Vector3D* angular_velocity);
+  ::rov::telemetry::Vector3D* unsafe_arena_release_angular_velocity();
+
+  // .rov.telemetry.Quaternion orientation = 4;
+  bool has_orientation() const;
+  private:
+  bool _internal_has_orientation() const;
+  public:
+  void clear_orientation();
+  const ::rov::telemetry::Quaternion& orientation() const;
+  PROTOBUF_NODISCARD ::rov::telemetry::Quaternion* release_orientation();
+  ::rov::telemetry::Quaternion* mutable_orientation();
+  void set_allocated_orientation(::rov::telemetry::Quaternion* orientation);
+  private:
+  const ::rov::telemetry::Quaternion& _internal_orientation() const;
+  ::rov::telemetry::Quaternion* _internal_mutable_orientation();
+  public:
+  void unsafe_arena_set_allocated_orientation(
+      ::rov::telemetry::Quaternion* orientation);
+  ::rov::telemetry::Quaternion* unsafe_arena_release_orientation();
+
+  // uint64 timestamp_us = 1;
+  void clear_timestamp_us();
+  uint64_t timestamp_us() const;
+  void set_timestamp_us(uint64_t value);
+  private:
+  uint64_t _internal_timestamp_us() const;
+  void _internal_set_timestamp_us(uint64_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:rov.telemetry.ImuData)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::rov::telemetry::Vector3D* acceleration_;
+    ::rov::telemetry::Vector3D* angular_velocity_;
+    ::rov::telemetry::Quaternion* orientation_;
+    uint64_t timestamp_us_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_telemetry_2eproto;
+};
+// -------------------------------------------------------------------
+
 class SensorData final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:rov.telemetry.SensorData) */ {
  public:
@@ -289,7 +721,7 @@ class SensorData final :
                &_SensorData_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    1;
+    3;
 
   friend void swap(SensorData& a, SensorData& b) {
     a.Swap(&b);
@@ -451,220 +883,6 @@ class SensorData final :
 };
 // -------------------------------------------------------------------
 
-class JoystickCommand final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:rov.telemetry.JoystickCommand) */ {
- public:
-  inline JoystickCommand() : JoystickCommand(nullptr) {}
-  ~JoystickCommand() override;
-  explicit PROTOBUF_CONSTEXPR JoystickCommand(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
-
-  JoystickCommand(const JoystickCommand& from);
-  JoystickCommand(JoystickCommand&& from) noexcept
-    : JoystickCommand() {
-    *this = ::std::move(from);
-  }
-
-  inline JoystickCommand& operator=(const JoystickCommand& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline JoystickCommand& operator=(JoystickCommand&& from) noexcept {
-    if (this == &from) return *this;
-    if (GetOwningArena() == from.GetOwningArena()
-  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
-        && GetOwningArena() != nullptr
-  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
-    ) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
-  static const JoystickCommand& default_instance() {
-    return *internal_default_instance();
-  }
-  static inline const JoystickCommand* internal_default_instance() {
-    return reinterpret_cast<const JoystickCommand*>(
-               &_JoystickCommand_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    2;
-
-  friend void swap(JoystickCommand& a, JoystickCommand& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(JoystickCommand* other) {
-    if (other == this) return;
-  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetOwningArena() != nullptr &&
-        GetOwningArena() == other->GetOwningArena()) {
-   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetOwningArena() == other->GetOwningArena()) {
-  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
-      InternalSwap(other);
-    } else {
-      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(JoystickCommand* other) {
-    if (other == this) return;
-    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  JoystickCommand* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<JoystickCommand>(arena);
-  }
-  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const JoystickCommand& from);
-  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom( const JoystickCommand& from) {
-    JoystickCommand::MergeImpl(*this, from);
-  }
-  private:
-  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
-  public:
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
-  uint8_t* _InternalSerialize(
-      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
-
-  private:
-  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(JoystickCommand* other);
-
-  private:
-  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
-  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "rov.telemetry.JoystickCommand";
-  }
-  protected:
-  explicit JoystickCommand(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                       bool is_message_owned = false);
-  public:
-
-  static const ClassData _class_data_;
-  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
-
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  enum : int {
-    kTimestampUsFieldNumber = 1,
-    kForwardFieldNumber = 2,
-    kStrafeFieldNumber = 3,
-    kVerticalFieldNumber = 4,
-    kPitchFieldNumber = 5,
-    kRollFieldNumber = 6,
-    kYawFieldNumber = 7,
-  };
-  // uint64 timestamp_us = 1;
-  void clear_timestamp_us();
-  uint64_t timestamp_us() const;
-  void set_timestamp_us(uint64_t value);
-  private:
-  uint64_t _internal_timestamp_us() const;
-  void _internal_set_timestamp_us(uint64_t value);
-  public:
-
-  // float forward = 2;
-  void clear_forward();
-  float forward() const;
-  void set_forward(float value);
-  private:
-  float _internal_forward() const;
-  void _internal_set_forward(float value);
-  public:
-
-  // float strafe = 3;
-  void clear_strafe();
-  float strafe() const;
-  void set_strafe(float value);
-  private:
-  float _internal_strafe() const;
-  void _internal_set_strafe(float value);
-  public:
-
-  // float vertical = 4;
-  void clear_vertical();
-  float vertical() const;
-  void set_vertical(float value);
-  private:
-  float _internal_vertical() const;
-  void _internal_set_vertical(float value);
-  public:
-
-  // float pitch = 5;
-  void clear_pitch();
-  float pitch() const;
-  void set_pitch(float value);
-  private:
-  float _internal_pitch() const;
-  void _internal_set_pitch(float value);
-  public:
-
-  // float roll = 6;
-  void clear_roll();
-  float roll() const;
-  void set_roll(float value);
-  private:
-  float _internal_roll() const;
-  void _internal_set_roll(float value);
-  public:
-
-  // float yaw = 7;
-  void clear_yaw();
-  float yaw() const;
-  void set_yaw(float value);
-  private:
-  float _internal_yaw() const;
-  void _internal_set_yaw(float value);
-  public:
-
-  // @@protoc_insertion_point(class_scope:rov.telemetry.JoystickCommand)
- private:
-  class _Internal;
-
-  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
-  typedef void InternalArenaConstructable_;
-  typedef void DestructorSkippable_;
-  struct Impl_ {
-    uint64_t timestamp_us_;
-    float forward_;
-    float strafe_;
-    float vertical_;
-    float pitch_;
-    float roll_;
-    float yaw_;
-    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  };
-  union { Impl_ _impl_; };
-  friend struct ::TableStruct_telemetry_2eproto;
-};
-// -------------------------------------------------------------------
-
 class test final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:rov.telemetry.test) */ {
  public:
@@ -713,7 +931,7 @@ class test final :
                &_test_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    3;
+    4;
 
   friend void swap(test& a, test& b) {
     a.Swap(&b);
@@ -816,6 +1034,1393 @@ class test final :
   union { Impl_ _impl_; };
   friend struct ::TableStruct_telemetry_2eproto;
 };
+// -------------------------------------------------------------------
+
+class ControllerTuning final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:rov.telemetry.ControllerTuning) */ {
+ public:
+  inline ControllerTuning() : ControllerTuning(nullptr) {}
+  ~ControllerTuning() override;
+  explicit PROTOBUF_CONSTEXPR ControllerTuning(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  ControllerTuning(const ControllerTuning& from);
+  ControllerTuning(ControllerTuning&& from) noexcept
+    : ControllerTuning() {
+    *this = ::std::move(from);
+  }
+
+  inline ControllerTuning& operator=(const ControllerTuning& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline ControllerTuning& operator=(ControllerTuning&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const ControllerTuning& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const ControllerTuning* internal_default_instance() {
+    return reinterpret_cast<const ControllerTuning*>(
+               &_ControllerTuning_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    5;
+
+  friend void swap(ControllerTuning& a, ControllerTuning& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(ControllerTuning* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(ControllerTuning* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  ControllerTuning* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<ControllerTuning>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const ControllerTuning& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const ControllerTuning& from) {
+    ControllerTuning::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ControllerTuning* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "rov.telemetry.ControllerTuning";
+  }
+  protected:
+  explicit ControllerTuning(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kEnableTuningFieldNumber = 1,
+    kKPFieldNumber = 2,
+    kKIFieldNumber = 3,
+    kKDFieldNumber = 4,
+  };
+  // bool enable_tuning = 1;
+  void clear_enable_tuning();
+  bool enable_tuning() const;
+  void set_enable_tuning(bool value);
+  private:
+  bool _internal_enable_tuning() const;
+  void _internal_set_enable_tuning(bool value);
+  public:
+
+  // float k_p = 2;
+  void clear_k_p();
+  float k_p() const;
+  void set_k_p(float value);
+  private:
+  float _internal_k_p() const;
+  void _internal_set_k_p(float value);
+  public:
+
+  // float k_i = 3;
+  void clear_k_i();
+  float k_i() const;
+  void set_k_i(float value);
+  private:
+  float _internal_k_i() const;
+  void _internal_set_k_i(float value);
+  public:
+
+  // float k_d = 4;
+  void clear_k_d();
+  float k_d() const;
+  void set_k_d(float value);
+  private:
+  float _internal_k_d() const;
+  void _internal_set_k_d(float value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:rov.telemetry.ControllerTuning)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    bool enable_tuning_;
+    float k_p_;
+    float k_i_;
+    float k_d_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_telemetry_2eproto;
+};
+// -------------------------------------------------------------------
+
+class ControllerCommand final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:rov.telemetry.ControllerCommand) */ {
+ public:
+  inline ControllerCommand() : ControllerCommand(nullptr) {}
+  ~ControllerCommand() override;
+  explicit PROTOBUF_CONSTEXPR ControllerCommand(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  ControllerCommand(const ControllerCommand& from);
+  ControllerCommand(ControllerCommand&& from) noexcept
+    : ControllerCommand() {
+    *this = ::std::move(from);
+  }
+
+  inline ControllerCommand& operator=(const ControllerCommand& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline ControllerCommand& operator=(ControllerCommand&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const ControllerCommand& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const ControllerCommand* internal_default_instance() {
+    return reinterpret_cast<const ControllerCommand*>(
+               &_ControllerCommand_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    6;
+
+  friend void swap(ControllerCommand& a, ControllerCommand& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(ControllerCommand* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(ControllerCommand* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  ControllerCommand* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<ControllerCommand>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const ControllerCommand& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const ControllerCommand& from) {
+    ControllerCommand::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ControllerCommand* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "rov.telemetry.ControllerCommand";
+  }
+  protected:
+  explicit ControllerCommand(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kXFieldNumber = 1,
+    kYFieldNumber = 2,
+    kZFieldNumber = 3,
+    kRollFieldNumber = 4,
+    kPitchFieldNumber = 5,
+    kYawFieldNumber = 6,
+    kEnableDepthControlFieldNumber = 7,
+    kTargetDepthFieldNumber = 8,
+  };
+  // float x = 1;
+  void clear_x();
+  float x() const;
+  void set_x(float value);
+  private:
+  float _internal_x() const;
+  void _internal_set_x(float value);
+  public:
+
+  // float y = 2;
+  void clear_y();
+  float y() const;
+  void set_y(float value);
+  private:
+  float _internal_y() const;
+  void _internal_set_y(float value);
+  public:
+
+  // float z = 3;
+  void clear_z();
+  float z() const;
+  void set_z(float value);
+  private:
+  float _internal_z() const;
+  void _internal_set_z(float value);
+  public:
+
+  // float roll = 4;
+  void clear_roll();
+  float roll() const;
+  void set_roll(float value);
+  private:
+  float _internal_roll() const;
+  void _internal_set_roll(float value);
+  public:
+
+  // float pitch = 5;
+  void clear_pitch();
+  float pitch() const;
+  void set_pitch(float value);
+  private:
+  float _internal_pitch() const;
+  void _internal_set_pitch(float value);
+  public:
+
+  // float yaw = 6;
+  void clear_yaw();
+  float yaw() const;
+  void set_yaw(float value);
+  private:
+  float _internal_yaw() const;
+  void _internal_set_yaw(float value);
+  public:
+
+  // bool enable_depth_control = 7;
+  void clear_enable_depth_control();
+  bool enable_depth_control() const;
+  void set_enable_depth_control(bool value);
+  private:
+  bool _internal_enable_depth_control() const;
+  void _internal_set_enable_depth_control(bool value);
+  public:
+
+  // float target_depth = 8;
+  void clear_target_depth();
+  float target_depth() const;
+  void set_target_depth(float value);
+  private:
+  float _internal_target_depth() const;
+  void _internal_set_target_depth(float value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:rov.telemetry.ControllerCommand)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    float x_;
+    float y_;
+    float z_;
+    float roll_;
+    float pitch_;
+    float yaw_;
+    bool enable_depth_control_;
+    float target_depth_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_telemetry_2eproto;
+};
+// -------------------------------------------------------------------
+
+class depthControlCommand final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:rov.telemetry.depthControlCommand) */ {
+ public:
+  inline depthControlCommand() : depthControlCommand(nullptr) {}
+  ~depthControlCommand() override;
+  explicit PROTOBUF_CONSTEXPR depthControlCommand(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  depthControlCommand(const depthControlCommand& from);
+  depthControlCommand(depthControlCommand&& from) noexcept
+    : depthControlCommand() {
+    *this = ::std::move(from);
+  }
+
+  inline depthControlCommand& operator=(const depthControlCommand& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline depthControlCommand& operator=(depthControlCommand&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const depthControlCommand& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const depthControlCommand* internal_default_instance() {
+    return reinterpret_cast<const depthControlCommand*>(
+               &_depthControlCommand_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    7;
+
+  friend void swap(depthControlCommand& a, depthControlCommand& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(depthControlCommand* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(depthControlCommand* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  depthControlCommand* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<depthControlCommand>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const depthControlCommand& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const depthControlCommand& from) {
+    depthControlCommand::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(depthControlCommand* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "rov.telemetry.depthControlCommand";
+  }
+  protected:
+  explicit depthControlCommand(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kEnableControlFieldNumber = 1,
+    kEnableTestingFieldNumber = 2,
+    kTargetDepthFieldNumber = 3,
+    kKPFieldNumber = 4,
+    kKIFieldNumber = 5,
+    kKDFieldNumber = 6,
+  };
+  // bool enable_control = 1;
+  void clear_enable_control();
+  bool enable_control() const;
+  void set_enable_control(bool value);
+  private:
+  bool _internal_enable_control() const;
+  void _internal_set_enable_control(bool value);
+  public:
+
+  // bool enable_testing = 2;
+  void clear_enable_testing();
+  bool enable_testing() const;
+  void set_enable_testing(bool value);
+  private:
+  bool _internal_enable_testing() const;
+  void _internal_set_enable_testing(bool value);
+  public:
+
+  // float target_depth = 3;
+  void clear_target_depth();
+  float target_depth() const;
+  void set_target_depth(float value);
+  private:
+  float _internal_target_depth() const;
+  void _internal_set_target_depth(float value);
+  public:
+
+  // float k_p = 4;
+  void clear_k_p();
+  float k_p() const;
+  void set_k_p(float value);
+  private:
+  float _internal_k_p() const;
+  void _internal_set_k_p(float value);
+  public:
+
+  // float k_i = 5;
+  void clear_k_i();
+  float k_i() const;
+  void set_k_i(float value);
+  private:
+  float _internal_k_i() const;
+  void _internal_set_k_i(float value);
+  public:
+
+  // float k_d = 6;
+  void clear_k_d();
+  float k_d() const;
+  void set_k_d(float value);
+  private:
+  float _internal_k_d() const;
+  void _internal_set_k_d(float value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:rov.telemetry.depthControlCommand)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    bool enable_control_;
+    bool enable_testing_;
+    float target_depth_;
+    float k_p_;
+    float k_i_;
+    float k_d_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_telemetry_2eproto;
+};
+// -------------------------------------------------------------------
+
+class depthControlData final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:rov.telemetry.depthControlData) */ {
+ public:
+  inline depthControlData() : depthControlData(nullptr) {}
+  ~depthControlData() override;
+  explicit PROTOBUF_CONSTEXPR depthControlData(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  depthControlData(const depthControlData& from);
+  depthControlData(depthControlData&& from) noexcept
+    : depthControlData() {
+    *this = ::std::move(from);
+  }
+
+  inline depthControlData& operator=(const depthControlData& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline depthControlData& operator=(depthControlData&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const depthControlData& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const depthControlData* internal_default_instance() {
+    return reinterpret_cast<const depthControlData*>(
+               &_depthControlData_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    8;
+
+  friend void swap(depthControlData& a, depthControlData& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(depthControlData* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(depthControlData* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  depthControlData* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<depthControlData>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const depthControlData& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const depthControlData& from) {
+    depthControlData::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(depthControlData* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "rov.telemetry.depthControlData";
+  }
+  protected:
+  explicit depthControlData(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kKPFieldNumber = 1,
+    kKIFieldNumber = 2,
+    kKDFieldNumber = 3,
+  };
+  // float k_p = 1;
+  void clear_k_p();
+  float k_p() const;
+  void set_k_p(float value);
+  private:
+  float _internal_k_p() const;
+  void _internal_set_k_p(float value);
+  public:
+
+  // float k_i = 2;
+  void clear_k_i();
+  float k_i() const;
+  void set_k_i(float value);
+  private:
+  float _internal_k_i() const;
+  void _internal_set_k_i(float value);
+  public:
+
+  // float k_d = 3;
+  void clear_k_d();
+  float k_d() const;
+  void set_k_d(float value);
+  private:
+  float _internal_k_d() const;
+  void _internal_set_k_d(float value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:rov.telemetry.depthControlData)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    float k_p_;
+    float k_i_;
+    float k_d_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_telemetry_2eproto;
+};
+// -------------------------------------------------------------------
+
+class depthControlOutput final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:rov.telemetry.depthControlOutput) */ {
+ public:
+  inline depthControlOutput() : depthControlOutput(nullptr) {}
+  ~depthControlOutput() override;
+  explicit PROTOBUF_CONSTEXPR depthControlOutput(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  depthControlOutput(const depthControlOutput& from);
+  depthControlOutput(depthControlOutput&& from) noexcept
+    : depthControlOutput() {
+    *this = ::std::move(from);
+  }
+
+  inline depthControlOutput& operator=(const depthControlOutput& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline depthControlOutput& operator=(depthControlOutput&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const depthControlOutput& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const depthControlOutput* internal_default_instance() {
+    return reinterpret_cast<const depthControlOutput*>(
+               &_depthControlOutput_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    9;
+
+  friend void swap(depthControlOutput& a, depthControlOutput& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(depthControlOutput* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(depthControlOutput* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  depthControlOutput* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<depthControlOutput>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const depthControlOutput& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const depthControlOutput& from) {
+    depthControlOutput::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(depthControlOutput* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "rov.telemetry.depthControlOutput";
+  }
+  protected:
+  explicit depthControlOutput(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kTimestampUsFieldNumber = 1,
+    kEnabledFieldNumber = 2,
+    kCommandFieldNumber = 3,
+    kMeasuredDepthFieldNumber = 4,
+    kTargetDepthFieldNumber = 5,
+  };
+  // uint64 timestamp_us = 1;
+  void clear_timestamp_us();
+  uint64_t timestamp_us() const;
+  void set_timestamp_us(uint64_t value);
+  private:
+  uint64_t _internal_timestamp_us() const;
+  void _internal_set_timestamp_us(uint64_t value);
+  public:
+
+  // bool enabled = 2;
+  void clear_enabled();
+  bool enabled() const;
+  void set_enabled(bool value);
+  private:
+  bool _internal_enabled() const;
+  void _internal_set_enabled(bool value);
+  public:
+
+  // float command = 3;
+  void clear_command();
+  float command() const;
+  void set_command(float value);
+  private:
+  float _internal_command() const;
+  void _internal_set_command(float value);
+  public:
+
+  // float measured_depth = 4;
+  void clear_measured_depth();
+  float measured_depth() const;
+  void set_measured_depth(float value);
+  private:
+  float _internal_measured_depth() const;
+  void _internal_set_measured_depth(float value);
+  public:
+
+  // float target_depth = 5;
+  void clear_target_depth();
+  float target_depth() const;
+  void set_target_depth(float value);
+  private:
+  float _internal_target_depth() const;
+  void _internal_set_target_depth(float value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:rov.telemetry.depthControlOutput)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    uint64_t timestamp_us_;
+    bool enabled_;
+    float command_;
+    float measured_depth_;
+    float target_depth_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_telemetry_2eproto;
+};
+// -------------------------------------------------------------------
+
+class ThrusterCommand final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:rov.telemetry.ThrusterCommand) */ {
+ public:
+  inline ThrusterCommand() : ThrusterCommand(nullptr) {}
+  ~ThrusterCommand() override;
+  explicit PROTOBUF_CONSTEXPR ThrusterCommand(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  ThrusterCommand(const ThrusterCommand& from);
+  ThrusterCommand(ThrusterCommand&& from) noexcept
+    : ThrusterCommand() {
+    *this = ::std::move(from);
+  }
+
+  inline ThrusterCommand& operator=(const ThrusterCommand& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline ThrusterCommand& operator=(ThrusterCommand&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const ThrusterCommand& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const ThrusterCommand* internal_default_instance() {
+    return reinterpret_cast<const ThrusterCommand*>(
+               &_ThrusterCommand_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    10;
+
+  friend void swap(ThrusterCommand& a, ThrusterCommand& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(ThrusterCommand* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(ThrusterCommand* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  ThrusterCommand* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<ThrusterCommand>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const ThrusterCommand& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const ThrusterCommand& from) {
+    ThrusterCommand::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ThrusterCommand* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "rov.telemetry.ThrusterCommand";
+  }
+  protected:
+  explicit ThrusterCommand(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kTimestampUsFieldNumber = 1,
+    kXFieldNumber = 2,
+    kYFieldNumber = 3,
+    kZFieldNumber = 4,
+    kRollFieldNumber = 5,
+    kPitchFieldNumber = 6,
+    kYawFieldNumber = 7,
+  };
+  // uint64 timestamp_us = 1;
+  void clear_timestamp_us();
+  uint64_t timestamp_us() const;
+  void set_timestamp_us(uint64_t value);
+  private:
+  uint64_t _internal_timestamp_us() const;
+  void _internal_set_timestamp_us(uint64_t value);
+  public:
+
+  // float x = 2;
+  void clear_x();
+  float x() const;
+  void set_x(float value);
+  private:
+  float _internal_x() const;
+  void _internal_set_x(float value);
+  public:
+
+  // float y = 3;
+  void clear_y();
+  float y() const;
+  void set_y(float value);
+  private:
+  float _internal_y() const;
+  void _internal_set_y(float value);
+  public:
+
+  // float z = 4;
+  void clear_z();
+  float z() const;
+  void set_z(float value);
+  private:
+  float _internal_z() const;
+  void _internal_set_z(float value);
+  public:
+
+  // float roll = 5;
+  void clear_roll();
+  float roll() const;
+  void set_roll(float value);
+  private:
+  float _internal_roll() const;
+  void _internal_set_roll(float value);
+  public:
+
+  // float pitch = 6;
+  void clear_pitch();
+  float pitch() const;
+  void set_pitch(float value);
+  private:
+  float _internal_pitch() const;
+  void _internal_set_pitch(float value);
+  public:
+
+  // float yaw = 7;
+  void clear_yaw();
+  float yaw() const;
+  void set_yaw(float value);
+  private:
+  float _internal_yaw() const;
+  void _internal_set_yaw(float value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:rov.telemetry.ThrusterCommand)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    uint64_t timestamp_us_;
+    float x_;
+    float y_;
+    float z_;
+    float roll_;
+    float pitch_;
+    float yaw_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_telemetry_2eproto;
+};
+// -------------------------------------------------------------------
+
+class AutonomyStatus final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:rov.telemetry.AutonomyStatus) */ {
+ public:
+  inline AutonomyStatus() : AutonomyStatus(nullptr) {}
+  ~AutonomyStatus() override;
+  explicit PROTOBUF_CONSTEXPR AutonomyStatus(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  AutonomyStatus(const AutonomyStatus& from);
+  AutonomyStatus(AutonomyStatus&& from) noexcept
+    : AutonomyStatus() {
+    *this = ::std::move(from);
+  }
+
+  inline AutonomyStatus& operator=(const AutonomyStatus& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline AutonomyStatus& operator=(AutonomyStatus&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const AutonomyStatus& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const AutonomyStatus* internal_default_instance() {
+    return reinterpret_cast<const AutonomyStatus*>(
+               &_AutonomyStatus_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    11;
+
+  friend void swap(AutonomyStatus& a, AutonomyStatus& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(AutonomyStatus* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(AutonomyStatus* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  AutonomyStatus* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<AutonomyStatus>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const AutonomyStatus& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const AutonomyStatus& from) {
+    AutonomyStatus::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(AutonomyStatus* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "rov.telemetry.AutonomyStatus";
+  }
+  protected:
+  explicit AutonomyStatus(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kBehaviorFieldNumber = 2,
+    kPhaseFieldNumber = 3,
+    kTimestampUsFieldNumber = 1,
+    kTargetHeadingFieldNumber = 4,
+    kTargetDepthFieldNumber = 5,
+  };
+  // string behavior = 2;
+  void clear_behavior();
+  const std::string& behavior() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_behavior(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_behavior();
+  PROTOBUF_NODISCARD std::string* release_behavior();
+  void set_allocated_behavior(std::string* behavior);
+  private:
+  const std::string& _internal_behavior() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_behavior(const std::string& value);
+  std::string* _internal_mutable_behavior();
+  public:
+
+  // string phase = 3;
+  void clear_phase();
+  const std::string& phase() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_phase(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_phase();
+  PROTOBUF_NODISCARD std::string* release_phase();
+  void set_allocated_phase(std::string* phase);
+  private:
+  const std::string& _internal_phase() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_phase(const std::string& value);
+  std::string* _internal_mutable_phase();
+  public:
+
+  // uint64 timestamp_us = 1;
+  void clear_timestamp_us();
+  uint64_t timestamp_us() const;
+  void set_timestamp_us(uint64_t value);
+  private:
+  uint64_t _internal_timestamp_us() const;
+  void _internal_set_timestamp_us(uint64_t value);
+  public:
+
+  // float target_heading = 4;
+  void clear_target_heading();
+  float target_heading() const;
+  void set_target_heading(float value);
+  private:
+  float _internal_target_heading() const;
+  void _internal_set_target_heading(float value);
+  public:
+
+  // float target_depth = 5;
+  void clear_target_depth();
+  float target_depth() const;
+  void set_target_depth(float value);
+  private:
+  float _internal_target_depth() const;
+  void _internal_set_target_depth(float value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:rov.telemetry.AutonomyStatus)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr behavior_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr phase_;
+    uint64_t timestamp_us_;
+    float target_heading_;
+    float target_depth_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_telemetry_2eproto;
+};
 // ===================================================================
 
 
@@ -885,6 +2490,404 @@ inline void Vector3D::_internal_set_z(float value) {
 inline void Vector3D::set_z(float value) {
   _internal_set_z(value);
   // @@protoc_insertion_point(field_set:rov.telemetry.Vector3D.z)
+}
+
+// -------------------------------------------------------------------
+
+// Quaternion
+
+// float x = 1;
+inline void Quaternion::clear_x() {
+  _impl_.x_ = 0;
+}
+inline float Quaternion::_internal_x() const {
+  return _impl_.x_;
+}
+inline float Quaternion::x() const {
+  // @@protoc_insertion_point(field_get:rov.telemetry.Quaternion.x)
+  return _internal_x();
+}
+inline void Quaternion::_internal_set_x(float value) {
+  
+  _impl_.x_ = value;
+}
+inline void Quaternion::set_x(float value) {
+  _internal_set_x(value);
+  // @@protoc_insertion_point(field_set:rov.telemetry.Quaternion.x)
+}
+
+// float y = 2;
+inline void Quaternion::clear_y() {
+  _impl_.y_ = 0;
+}
+inline float Quaternion::_internal_y() const {
+  return _impl_.y_;
+}
+inline float Quaternion::y() const {
+  // @@protoc_insertion_point(field_get:rov.telemetry.Quaternion.y)
+  return _internal_y();
+}
+inline void Quaternion::_internal_set_y(float value) {
+  
+  _impl_.y_ = value;
+}
+inline void Quaternion::set_y(float value) {
+  _internal_set_y(value);
+  // @@protoc_insertion_point(field_set:rov.telemetry.Quaternion.y)
+}
+
+// float z = 3;
+inline void Quaternion::clear_z() {
+  _impl_.z_ = 0;
+}
+inline float Quaternion::_internal_z() const {
+  return _impl_.z_;
+}
+inline float Quaternion::z() const {
+  // @@protoc_insertion_point(field_get:rov.telemetry.Quaternion.z)
+  return _internal_z();
+}
+inline void Quaternion::_internal_set_z(float value) {
+  
+  _impl_.z_ = value;
+}
+inline void Quaternion::set_z(float value) {
+  _internal_set_z(value);
+  // @@protoc_insertion_point(field_set:rov.telemetry.Quaternion.z)
+}
+
+// float w = 4;
+inline void Quaternion::clear_w() {
+  _impl_.w_ = 0;
+}
+inline float Quaternion::_internal_w() const {
+  return _impl_.w_;
+}
+inline float Quaternion::w() const {
+  // @@protoc_insertion_point(field_get:rov.telemetry.Quaternion.w)
+  return _internal_w();
+}
+inline void Quaternion::_internal_set_w(float value) {
+  
+  _impl_.w_ = value;
+}
+inline void Quaternion::set_w(float value) {
+  _internal_set_w(value);
+  // @@protoc_insertion_point(field_set:rov.telemetry.Quaternion.w)
+}
+
+// float accuracy_rad = 5;
+inline void Quaternion::clear_accuracy_rad() {
+  _impl_.accuracy_rad_ = 0;
+}
+inline float Quaternion::_internal_accuracy_rad() const {
+  return _impl_.accuracy_rad_;
+}
+inline float Quaternion::accuracy_rad() const {
+  // @@protoc_insertion_point(field_get:rov.telemetry.Quaternion.accuracy_rad)
+  return _internal_accuracy_rad();
+}
+inline void Quaternion::_internal_set_accuracy_rad(float value) {
+  
+  _impl_.accuracy_rad_ = value;
+}
+inline void Quaternion::set_accuracy_rad(float value) {
+  _internal_set_accuracy_rad(value);
+  // @@protoc_insertion_point(field_set:rov.telemetry.Quaternion.accuracy_rad)
+}
+
+// -------------------------------------------------------------------
+
+// ImuData
+
+// uint64 timestamp_us = 1;
+inline void ImuData::clear_timestamp_us() {
+  _impl_.timestamp_us_ = uint64_t{0u};
+}
+inline uint64_t ImuData::_internal_timestamp_us() const {
+  return _impl_.timestamp_us_;
+}
+inline uint64_t ImuData::timestamp_us() const {
+  // @@protoc_insertion_point(field_get:rov.telemetry.ImuData.timestamp_us)
+  return _internal_timestamp_us();
+}
+inline void ImuData::_internal_set_timestamp_us(uint64_t value) {
+  
+  _impl_.timestamp_us_ = value;
+}
+inline void ImuData::set_timestamp_us(uint64_t value) {
+  _internal_set_timestamp_us(value);
+  // @@protoc_insertion_point(field_set:rov.telemetry.ImuData.timestamp_us)
+}
+
+// .rov.telemetry.Vector3D acceleration = 2;
+inline bool ImuData::_internal_has_acceleration() const {
+  return this != internal_default_instance() && _impl_.acceleration_ != nullptr;
+}
+inline bool ImuData::has_acceleration() const {
+  return _internal_has_acceleration();
+}
+inline void ImuData::clear_acceleration() {
+  if (GetArenaForAllocation() == nullptr && _impl_.acceleration_ != nullptr) {
+    delete _impl_.acceleration_;
+  }
+  _impl_.acceleration_ = nullptr;
+}
+inline const ::rov::telemetry::Vector3D& ImuData::_internal_acceleration() const {
+  const ::rov::telemetry::Vector3D* p = _impl_.acceleration_;
+  return p != nullptr ? *p : reinterpret_cast<const ::rov::telemetry::Vector3D&>(
+      ::rov::telemetry::_Vector3D_default_instance_);
+}
+inline const ::rov::telemetry::Vector3D& ImuData::acceleration() const {
+  // @@protoc_insertion_point(field_get:rov.telemetry.ImuData.acceleration)
+  return _internal_acceleration();
+}
+inline void ImuData::unsafe_arena_set_allocated_acceleration(
+    ::rov::telemetry::Vector3D* acceleration) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.acceleration_);
+  }
+  _impl_.acceleration_ = acceleration;
+  if (acceleration) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:rov.telemetry.ImuData.acceleration)
+}
+inline ::rov::telemetry::Vector3D* ImuData::release_acceleration() {
+  
+  ::rov::telemetry::Vector3D* temp = _impl_.acceleration_;
+  _impl_.acceleration_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::rov::telemetry::Vector3D* ImuData::unsafe_arena_release_acceleration() {
+  // @@protoc_insertion_point(field_release:rov.telemetry.ImuData.acceleration)
+  
+  ::rov::telemetry::Vector3D* temp = _impl_.acceleration_;
+  _impl_.acceleration_ = nullptr;
+  return temp;
+}
+inline ::rov::telemetry::Vector3D* ImuData::_internal_mutable_acceleration() {
+  
+  if (_impl_.acceleration_ == nullptr) {
+    auto* p = CreateMaybeMessage<::rov::telemetry::Vector3D>(GetArenaForAllocation());
+    _impl_.acceleration_ = p;
+  }
+  return _impl_.acceleration_;
+}
+inline ::rov::telemetry::Vector3D* ImuData::mutable_acceleration() {
+  ::rov::telemetry::Vector3D* _msg = _internal_mutable_acceleration();
+  // @@protoc_insertion_point(field_mutable:rov.telemetry.ImuData.acceleration)
+  return _msg;
+}
+inline void ImuData::set_allocated_acceleration(::rov::telemetry::Vector3D* acceleration) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete _impl_.acceleration_;
+  }
+  if (acceleration) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(acceleration);
+    if (message_arena != submessage_arena) {
+      acceleration = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, acceleration, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  _impl_.acceleration_ = acceleration;
+  // @@protoc_insertion_point(field_set_allocated:rov.telemetry.ImuData.acceleration)
+}
+
+// .rov.telemetry.Vector3D angular_velocity = 3;
+inline bool ImuData::_internal_has_angular_velocity() const {
+  return this != internal_default_instance() && _impl_.angular_velocity_ != nullptr;
+}
+inline bool ImuData::has_angular_velocity() const {
+  return _internal_has_angular_velocity();
+}
+inline void ImuData::clear_angular_velocity() {
+  if (GetArenaForAllocation() == nullptr && _impl_.angular_velocity_ != nullptr) {
+    delete _impl_.angular_velocity_;
+  }
+  _impl_.angular_velocity_ = nullptr;
+}
+inline const ::rov::telemetry::Vector3D& ImuData::_internal_angular_velocity() const {
+  const ::rov::telemetry::Vector3D* p = _impl_.angular_velocity_;
+  return p != nullptr ? *p : reinterpret_cast<const ::rov::telemetry::Vector3D&>(
+      ::rov::telemetry::_Vector3D_default_instance_);
+}
+inline const ::rov::telemetry::Vector3D& ImuData::angular_velocity() const {
+  // @@protoc_insertion_point(field_get:rov.telemetry.ImuData.angular_velocity)
+  return _internal_angular_velocity();
+}
+inline void ImuData::unsafe_arena_set_allocated_angular_velocity(
+    ::rov::telemetry::Vector3D* angular_velocity) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.angular_velocity_);
+  }
+  _impl_.angular_velocity_ = angular_velocity;
+  if (angular_velocity) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:rov.telemetry.ImuData.angular_velocity)
+}
+inline ::rov::telemetry::Vector3D* ImuData::release_angular_velocity() {
+  
+  ::rov::telemetry::Vector3D* temp = _impl_.angular_velocity_;
+  _impl_.angular_velocity_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::rov::telemetry::Vector3D* ImuData::unsafe_arena_release_angular_velocity() {
+  // @@protoc_insertion_point(field_release:rov.telemetry.ImuData.angular_velocity)
+  
+  ::rov::telemetry::Vector3D* temp = _impl_.angular_velocity_;
+  _impl_.angular_velocity_ = nullptr;
+  return temp;
+}
+inline ::rov::telemetry::Vector3D* ImuData::_internal_mutable_angular_velocity() {
+  
+  if (_impl_.angular_velocity_ == nullptr) {
+    auto* p = CreateMaybeMessage<::rov::telemetry::Vector3D>(GetArenaForAllocation());
+    _impl_.angular_velocity_ = p;
+  }
+  return _impl_.angular_velocity_;
+}
+inline ::rov::telemetry::Vector3D* ImuData::mutable_angular_velocity() {
+  ::rov::telemetry::Vector3D* _msg = _internal_mutable_angular_velocity();
+  // @@protoc_insertion_point(field_mutable:rov.telemetry.ImuData.angular_velocity)
+  return _msg;
+}
+inline void ImuData::set_allocated_angular_velocity(::rov::telemetry::Vector3D* angular_velocity) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete _impl_.angular_velocity_;
+  }
+  if (angular_velocity) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(angular_velocity);
+    if (message_arena != submessage_arena) {
+      angular_velocity = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, angular_velocity, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  _impl_.angular_velocity_ = angular_velocity;
+  // @@protoc_insertion_point(field_set_allocated:rov.telemetry.ImuData.angular_velocity)
+}
+
+// .rov.telemetry.Quaternion orientation = 4;
+inline bool ImuData::_internal_has_orientation() const {
+  return this != internal_default_instance() && _impl_.orientation_ != nullptr;
+}
+inline bool ImuData::has_orientation() const {
+  return _internal_has_orientation();
+}
+inline void ImuData::clear_orientation() {
+  if (GetArenaForAllocation() == nullptr && _impl_.orientation_ != nullptr) {
+    delete _impl_.orientation_;
+  }
+  _impl_.orientation_ = nullptr;
+}
+inline const ::rov::telemetry::Quaternion& ImuData::_internal_orientation() const {
+  const ::rov::telemetry::Quaternion* p = _impl_.orientation_;
+  return p != nullptr ? *p : reinterpret_cast<const ::rov::telemetry::Quaternion&>(
+      ::rov::telemetry::_Quaternion_default_instance_);
+}
+inline const ::rov::telemetry::Quaternion& ImuData::orientation() const {
+  // @@protoc_insertion_point(field_get:rov.telemetry.ImuData.orientation)
+  return _internal_orientation();
+}
+inline void ImuData::unsafe_arena_set_allocated_orientation(
+    ::rov::telemetry::Quaternion* orientation) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.orientation_);
+  }
+  _impl_.orientation_ = orientation;
+  if (orientation) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:rov.telemetry.ImuData.orientation)
+}
+inline ::rov::telemetry::Quaternion* ImuData::release_orientation() {
+  
+  ::rov::telemetry::Quaternion* temp = _impl_.orientation_;
+  _impl_.orientation_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::rov::telemetry::Quaternion* ImuData::unsafe_arena_release_orientation() {
+  // @@protoc_insertion_point(field_release:rov.telemetry.ImuData.orientation)
+  
+  ::rov::telemetry::Quaternion* temp = _impl_.orientation_;
+  _impl_.orientation_ = nullptr;
+  return temp;
+}
+inline ::rov::telemetry::Quaternion* ImuData::_internal_mutable_orientation() {
+  
+  if (_impl_.orientation_ == nullptr) {
+    auto* p = CreateMaybeMessage<::rov::telemetry::Quaternion>(GetArenaForAllocation());
+    _impl_.orientation_ = p;
+  }
+  return _impl_.orientation_;
+}
+inline ::rov::telemetry::Quaternion* ImuData::mutable_orientation() {
+  ::rov::telemetry::Quaternion* _msg = _internal_mutable_orientation();
+  // @@protoc_insertion_point(field_mutable:rov.telemetry.ImuData.orientation)
+  return _msg;
+}
+inline void ImuData::set_allocated_orientation(::rov::telemetry::Quaternion* orientation) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete _impl_.orientation_;
+  }
+  if (orientation) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(orientation);
+    if (message_arena != submessage_arena) {
+      orientation = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, orientation, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  _impl_.orientation_ = orientation;
+  // @@protoc_insertion_point(field_set_allocated:rov.telemetry.ImuData.orientation)
 }
 
 // -------------------------------------------------------------------
@@ -1133,150 +3136,6 @@ inline void SensorData::set_temperature(float value) {
 
 // -------------------------------------------------------------------
 
-// JoystickCommand
-
-// uint64 timestamp_us = 1;
-inline void JoystickCommand::clear_timestamp_us() {
-  _impl_.timestamp_us_ = uint64_t{0u};
-}
-inline uint64_t JoystickCommand::_internal_timestamp_us() const {
-  return _impl_.timestamp_us_;
-}
-inline uint64_t JoystickCommand::timestamp_us() const {
-  // @@protoc_insertion_point(field_get:rov.telemetry.JoystickCommand.timestamp_us)
-  return _internal_timestamp_us();
-}
-inline void JoystickCommand::_internal_set_timestamp_us(uint64_t value) {
-  
-  _impl_.timestamp_us_ = value;
-}
-inline void JoystickCommand::set_timestamp_us(uint64_t value) {
-  _internal_set_timestamp_us(value);
-  // @@protoc_insertion_point(field_set:rov.telemetry.JoystickCommand.timestamp_us)
-}
-
-// float forward = 2;
-inline void JoystickCommand::clear_forward() {
-  _impl_.forward_ = 0;
-}
-inline float JoystickCommand::_internal_forward() const {
-  return _impl_.forward_;
-}
-inline float JoystickCommand::forward() const {
-  // @@protoc_insertion_point(field_get:rov.telemetry.JoystickCommand.forward)
-  return _internal_forward();
-}
-inline void JoystickCommand::_internal_set_forward(float value) {
-  
-  _impl_.forward_ = value;
-}
-inline void JoystickCommand::set_forward(float value) {
-  _internal_set_forward(value);
-  // @@protoc_insertion_point(field_set:rov.telemetry.JoystickCommand.forward)
-}
-
-// float strafe = 3;
-inline void JoystickCommand::clear_strafe() {
-  _impl_.strafe_ = 0;
-}
-inline float JoystickCommand::_internal_strafe() const {
-  return _impl_.strafe_;
-}
-inline float JoystickCommand::strafe() const {
-  // @@protoc_insertion_point(field_get:rov.telemetry.JoystickCommand.strafe)
-  return _internal_strafe();
-}
-inline void JoystickCommand::_internal_set_strafe(float value) {
-  
-  _impl_.strafe_ = value;
-}
-inline void JoystickCommand::set_strafe(float value) {
-  _internal_set_strafe(value);
-  // @@protoc_insertion_point(field_set:rov.telemetry.JoystickCommand.strafe)
-}
-
-// float vertical = 4;
-inline void JoystickCommand::clear_vertical() {
-  _impl_.vertical_ = 0;
-}
-inline float JoystickCommand::_internal_vertical() const {
-  return _impl_.vertical_;
-}
-inline float JoystickCommand::vertical() const {
-  // @@protoc_insertion_point(field_get:rov.telemetry.JoystickCommand.vertical)
-  return _internal_vertical();
-}
-inline void JoystickCommand::_internal_set_vertical(float value) {
-  
-  _impl_.vertical_ = value;
-}
-inline void JoystickCommand::set_vertical(float value) {
-  _internal_set_vertical(value);
-  // @@protoc_insertion_point(field_set:rov.telemetry.JoystickCommand.vertical)
-}
-
-// float pitch = 5;
-inline void JoystickCommand::clear_pitch() {
-  _impl_.pitch_ = 0;
-}
-inline float JoystickCommand::_internal_pitch() const {
-  return _impl_.pitch_;
-}
-inline float JoystickCommand::pitch() const {
-  // @@protoc_insertion_point(field_get:rov.telemetry.JoystickCommand.pitch)
-  return _internal_pitch();
-}
-inline void JoystickCommand::_internal_set_pitch(float value) {
-  
-  _impl_.pitch_ = value;
-}
-inline void JoystickCommand::set_pitch(float value) {
-  _internal_set_pitch(value);
-  // @@protoc_insertion_point(field_set:rov.telemetry.JoystickCommand.pitch)
-}
-
-// float roll = 6;
-inline void JoystickCommand::clear_roll() {
-  _impl_.roll_ = 0;
-}
-inline float JoystickCommand::_internal_roll() const {
-  return _impl_.roll_;
-}
-inline float JoystickCommand::roll() const {
-  // @@protoc_insertion_point(field_get:rov.telemetry.JoystickCommand.roll)
-  return _internal_roll();
-}
-inline void JoystickCommand::_internal_set_roll(float value) {
-  
-  _impl_.roll_ = value;
-}
-inline void JoystickCommand::set_roll(float value) {
-  _internal_set_roll(value);
-  // @@protoc_insertion_point(field_set:rov.telemetry.JoystickCommand.roll)
-}
-
-// float yaw = 7;
-inline void JoystickCommand::clear_yaw() {
-  _impl_.yaw_ = 0;
-}
-inline float JoystickCommand::_internal_yaw() const {
-  return _impl_.yaw_;
-}
-inline float JoystickCommand::yaw() const {
-  // @@protoc_insertion_point(field_get:rov.telemetry.JoystickCommand.yaw)
-  return _internal_yaw();
-}
-inline void JoystickCommand::_internal_set_yaw(float value) {
-  
-  _impl_.yaw_ = value;
-}
-inline void JoystickCommand::set_yaw(float value) {
-  _internal_set_yaw(value);
-  // @@protoc_insertion_point(field_set:rov.telemetry.JoystickCommand.yaw)
-}
-
-// -------------------------------------------------------------------
-
 // test
 
 // string msg = 1;
@@ -1329,9 +3188,873 @@ inline void test::set_allocated_msg(std::string* msg) {
   // @@protoc_insertion_point(field_set_allocated:rov.telemetry.test.msg)
 }
 
+// -------------------------------------------------------------------
+
+// ControllerTuning
+
+// bool enable_tuning = 1;
+inline void ControllerTuning::clear_enable_tuning() {
+  _impl_.enable_tuning_ = false;
+}
+inline bool ControllerTuning::_internal_enable_tuning() const {
+  return _impl_.enable_tuning_;
+}
+inline bool ControllerTuning::enable_tuning() const {
+  // @@protoc_insertion_point(field_get:rov.telemetry.ControllerTuning.enable_tuning)
+  return _internal_enable_tuning();
+}
+inline void ControllerTuning::_internal_set_enable_tuning(bool value) {
+  
+  _impl_.enable_tuning_ = value;
+}
+inline void ControllerTuning::set_enable_tuning(bool value) {
+  _internal_set_enable_tuning(value);
+  // @@protoc_insertion_point(field_set:rov.telemetry.ControllerTuning.enable_tuning)
+}
+
+// float k_p = 2;
+inline void ControllerTuning::clear_k_p() {
+  _impl_.k_p_ = 0;
+}
+inline float ControllerTuning::_internal_k_p() const {
+  return _impl_.k_p_;
+}
+inline float ControllerTuning::k_p() const {
+  // @@protoc_insertion_point(field_get:rov.telemetry.ControllerTuning.k_p)
+  return _internal_k_p();
+}
+inline void ControllerTuning::_internal_set_k_p(float value) {
+  
+  _impl_.k_p_ = value;
+}
+inline void ControllerTuning::set_k_p(float value) {
+  _internal_set_k_p(value);
+  // @@protoc_insertion_point(field_set:rov.telemetry.ControllerTuning.k_p)
+}
+
+// float k_i = 3;
+inline void ControllerTuning::clear_k_i() {
+  _impl_.k_i_ = 0;
+}
+inline float ControllerTuning::_internal_k_i() const {
+  return _impl_.k_i_;
+}
+inline float ControllerTuning::k_i() const {
+  // @@protoc_insertion_point(field_get:rov.telemetry.ControllerTuning.k_i)
+  return _internal_k_i();
+}
+inline void ControllerTuning::_internal_set_k_i(float value) {
+  
+  _impl_.k_i_ = value;
+}
+inline void ControllerTuning::set_k_i(float value) {
+  _internal_set_k_i(value);
+  // @@protoc_insertion_point(field_set:rov.telemetry.ControllerTuning.k_i)
+}
+
+// float k_d = 4;
+inline void ControllerTuning::clear_k_d() {
+  _impl_.k_d_ = 0;
+}
+inline float ControllerTuning::_internal_k_d() const {
+  return _impl_.k_d_;
+}
+inline float ControllerTuning::k_d() const {
+  // @@protoc_insertion_point(field_get:rov.telemetry.ControllerTuning.k_d)
+  return _internal_k_d();
+}
+inline void ControllerTuning::_internal_set_k_d(float value) {
+  
+  _impl_.k_d_ = value;
+}
+inline void ControllerTuning::set_k_d(float value) {
+  _internal_set_k_d(value);
+  // @@protoc_insertion_point(field_set:rov.telemetry.ControllerTuning.k_d)
+}
+
+// -------------------------------------------------------------------
+
+// ControllerCommand
+
+// float x = 1;
+inline void ControllerCommand::clear_x() {
+  _impl_.x_ = 0;
+}
+inline float ControllerCommand::_internal_x() const {
+  return _impl_.x_;
+}
+inline float ControllerCommand::x() const {
+  // @@protoc_insertion_point(field_get:rov.telemetry.ControllerCommand.x)
+  return _internal_x();
+}
+inline void ControllerCommand::_internal_set_x(float value) {
+  
+  _impl_.x_ = value;
+}
+inline void ControllerCommand::set_x(float value) {
+  _internal_set_x(value);
+  // @@protoc_insertion_point(field_set:rov.telemetry.ControllerCommand.x)
+}
+
+// float y = 2;
+inline void ControllerCommand::clear_y() {
+  _impl_.y_ = 0;
+}
+inline float ControllerCommand::_internal_y() const {
+  return _impl_.y_;
+}
+inline float ControllerCommand::y() const {
+  // @@protoc_insertion_point(field_get:rov.telemetry.ControllerCommand.y)
+  return _internal_y();
+}
+inline void ControllerCommand::_internal_set_y(float value) {
+  
+  _impl_.y_ = value;
+}
+inline void ControllerCommand::set_y(float value) {
+  _internal_set_y(value);
+  // @@protoc_insertion_point(field_set:rov.telemetry.ControllerCommand.y)
+}
+
+// float z = 3;
+inline void ControllerCommand::clear_z() {
+  _impl_.z_ = 0;
+}
+inline float ControllerCommand::_internal_z() const {
+  return _impl_.z_;
+}
+inline float ControllerCommand::z() const {
+  // @@protoc_insertion_point(field_get:rov.telemetry.ControllerCommand.z)
+  return _internal_z();
+}
+inline void ControllerCommand::_internal_set_z(float value) {
+  
+  _impl_.z_ = value;
+}
+inline void ControllerCommand::set_z(float value) {
+  _internal_set_z(value);
+  // @@protoc_insertion_point(field_set:rov.telemetry.ControllerCommand.z)
+}
+
+// float roll = 4;
+inline void ControllerCommand::clear_roll() {
+  _impl_.roll_ = 0;
+}
+inline float ControllerCommand::_internal_roll() const {
+  return _impl_.roll_;
+}
+inline float ControllerCommand::roll() const {
+  // @@protoc_insertion_point(field_get:rov.telemetry.ControllerCommand.roll)
+  return _internal_roll();
+}
+inline void ControllerCommand::_internal_set_roll(float value) {
+  
+  _impl_.roll_ = value;
+}
+inline void ControllerCommand::set_roll(float value) {
+  _internal_set_roll(value);
+  // @@protoc_insertion_point(field_set:rov.telemetry.ControllerCommand.roll)
+}
+
+// float pitch = 5;
+inline void ControllerCommand::clear_pitch() {
+  _impl_.pitch_ = 0;
+}
+inline float ControllerCommand::_internal_pitch() const {
+  return _impl_.pitch_;
+}
+inline float ControllerCommand::pitch() const {
+  // @@protoc_insertion_point(field_get:rov.telemetry.ControllerCommand.pitch)
+  return _internal_pitch();
+}
+inline void ControllerCommand::_internal_set_pitch(float value) {
+  
+  _impl_.pitch_ = value;
+}
+inline void ControllerCommand::set_pitch(float value) {
+  _internal_set_pitch(value);
+  // @@protoc_insertion_point(field_set:rov.telemetry.ControllerCommand.pitch)
+}
+
+// float yaw = 6;
+inline void ControllerCommand::clear_yaw() {
+  _impl_.yaw_ = 0;
+}
+inline float ControllerCommand::_internal_yaw() const {
+  return _impl_.yaw_;
+}
+inline float ControllerCommand::yaw() const {
+  // @@protoc_insertion_point(field_get:rov.telemetry.ControllerCommand.yaw)
+  return _internal_yaw();
+}
+inline void ControllerCommand::_internal_set_yaw(float value) {
+  
+  _impl_.yaw_ = value;
+}
+inline void ControllerCommand::set_yaw(float value) {
+  _internal_set_yaw(value);
+  // @@protoc_insertion_point(field_set:rov.telemetry.ControllerCommand.yaw)
+}
+
+// bool enable_depth_control = 7;
+inline void ControllerCommand::clear_enable_depth_control() {
+  _impl_.enable_depth_control_ = false;
+}
+inline bool ControllerCommand::_internal_enable_depth_control() const {
+  return _impl_.enable_depth_control_;
+}
+inline bool ControllerCommand::enable_depth_control() const {
+  // @@protoc_insertion_point(field_get:rov.telemetry.ControllerCommand.enable_depth_control)
+  return _internal_enable_depth_control();
+}
+inline void ControllerCommand::_internal_set_enable_depth_control(bool value) {
+  
+  _impl_.enable_depth_control_ = value;
+}
+inline void ControllerCommand::set_enable_depth_control(bool value) {
+  _internal_set_enable_depth_control(value);
+  // @@protoc_insertion_point(field_set:rov.telemetry.ControllerCommand.enable_depth_control)
+}
+
+// float target_depth = 8;
+inline void ControllerCommand::clear_target_depth() {
+  _impl_.target_depth_ = 0;
+}
+inline float ControllerCommand::_internal_target_depth() const {
+  return _impl_.target_depth_;
+}
+inline float ControllerCommand::target_depth() const {
+  // @@protoc_insertion_point(field_get:rov.telemetry.ControllerCommand.target_depth)
+  return _internal_target_depth();
+}
+inline void ControllerCommand::_internal_set_target_depth(float value) {
+  
+  _impl_.target_depth_ = value;
+}
+inline void ControllerCommand::set_target_depth(float value) {
+  _internal_set_target_depth(value);
+  // @@protoc_insertion_point(field_set:rov.telemetry.ControllerCommand.target_depth)
+}
+
+// -------------------------------------------------------------------
+
+// depthControlCommand
+
+// bool enable_control = 1;
+inline void depthControlCommand::clear_enable_control() {
+  _impl_.enable_control_ = false;
+}
+inline bool depthControlCommand::_internal_enable_control() const {
+  return _impl_.enable_control_;
+}
+inline bool depthControlCommand::enable_control() const {
+  // @@protoc_insertion_point(field_get:rov.telemetry.depthControlCommand.enable_control)
+  return _internal_enable_control();
+}
+inline void depthControlCommand::_internal_set_enable_control(bool value) {
+  
+  _impl_.enable_control_ = value;
+}
+inline void depthControlCommand::set_enable_control(bool value) {
+  _internal_set_enable_control(value);
+  // @@protoc_insertion_point(field_set:rov.telemetry.depthControlCommand.enable_control)
+}
+
+// bool enable_testing = 2;
+inline void depthControlCommand::clear_enable_testing() {
+  _impl_.enable_testing_ = false;
+}
+inline bool depthControlCommand::_internal_enable_testing() const {
+  return _impl_.enable_testing_;
+}
+inline bool depthControlCommand::enable_testing() const {
+  // @@protoc_insertion_point(field_get:rov.telemetry.depthControlCommand.enable_testing)
+  return _internal_enable_testing();
+}
+inline void depthControlCommand::_internal_set_enable_testing(bool value) {
+  
+  _impl_.enable_testing_ = value;
+}
+inline void depthControlCommand::set_enable_testing(bool value) {
+  _internal_set_enable_testing(value);
+  // @@protoc_insertion_point(field_set:rov.telemetry.depthControlCommand.enable_testing)
+}
+
+// float target_depth = 3;
+inline void depthControlCommand::clear_target_depth() {
+  _impl_.target_depth_ = 0;
+}
+inline float depthControlCommand::_internal_target_depth() const {
+  return _impl_.target_depth_;
+}
+inline float depthControlCommand::target_depth() const {
+  // @@protoc_insertion_point(field_get:rov.telemetry.depthControlCommand.target_depth)
+  return _internal_target_depth();
+}
+inline void depthControlCommand::_internal_set_target_depth(float value) {
+  
+  _impl_.target_depth_ = value;
+}
+inline void depthControlCommand::set_target_depth(float value) {
+  _internal_set_target_depth(value);
+  // @@protoc_insertion_point(field_set:rov.telemetry.depthControlCommand.target_depth)
+}
+
+// float k_p = 4;
+inline void depthControlCommand::clear_k_p() {
+  _impl_.k_p_ = 0;
+}
+inline float depthControlCommand::_internal_k_p() const {
+  return _impl_.k_p_;
+}
+inline float depthControlCommand::k_p() const {
+  // @@protoc_insertion_point(field_get:rov.telemetry.depthControlCommand.k_p)
+  return _internal_k_p();
+}
+inline void depthControlCommand::_internal_set_k_p(float value) {
+  
+  _impl_.k_p_ = value;
+}
+inline void depthControlCommand::set_k_p(float value) {
+  _internal_set_k_p(value);
+  // @@protoc_insertion_point(field_set:rov.telemetry.depthControlCommand.k_p)
+}
+
+// float k_i = 5;
+inline void depthControlCommand::clear_k_i() {
+  _impl_.k_i_ = 0;
+}
+inline float depthControlCommand::_internal_k_i() const {
+  return _impl_.k_i_;
+}
+inline float depthControlCommand::k_i() const {
+  // @@protoc_insertion_point(field_get:rov.telemetry.depthControlCommand.k_i)
+  return _internal_k_i();
+}
+inline void depthControlCommand::_internal_set_k_i(float value) {
+  
+  _impl_.k_i_ = value;
+}
+inline void depthControlCommand::set_k_i(float value) {
+  _internal_set_k_i(value);
+  // @@protoc_insertion_point(field_set:rov.telemetry.depthControlCommand.k_i)
+}
+
+// float k_d = 6;
+inline void depthControlCommand::clear_k_d() {
+  _impl_.k_d_ = 0;
+}
+inline float depthControlCommand::_internal_k_d() const {
+  return _impl_.k_d_;
+}
+inline float depthControlCommand::k_d() const {
+  // @@protoc_insertion_point(field_get:rov.telemetry.depthControlCommand.k_d)
+  return _internal_k_d();
+}
+inline void depthControlCommand::_internal_set_k_d(float value) {
+  
+  _impl_.k_d_ = value;
+}
+inline void depthControlCommand::set_k_d(float value) {
+  _internal_set_k_d(value);
+  // @@protoc_insertion_point(field_set:rov.telemetry.depthControlCommand.k_d)
+}
+
+// -------------------------------------------------------------------
+
+// depthControlData
+
+// float k_p = 1;
+inline void depthControlData::clear_k_p() {
+  _impl_.k_p_ = 0;
+}
+inline float depthControlData::_internal_k_p() const {
+  return _impl_.k_p_;
+}
+inline float depthControlData::k_p() const {
+  // @@protoc_insertion_point(field_get:rov.telemetry.depthControlData.k_p)
+  return _internal_k_p();
+}
+inline void depthControlData::_internal_set_k_p(float value) {
+  
+  _impl_.k_p_ = value;
+}
+inline void depthControlData::set_k_p(float value) {
+  _internal_set_k_p(value);
+  // @@protoc_insertion_point(field_set:rov.telemetry.depthControlData.k_p)
+}
+
+// float k_i = 2;
+inline void depthControlData::clear_k_i() {
+  _impl_.k_i_ = 0;
+}
+inline float depthControlData::_internal_k_i() const {
+  return _impl_.k_i_;
+}
+inline float depthControlData::k_i() const {
+  // @@protoc_insertion_point(field_get:rov.telemetry.depthControlData.k_i)
+  return _internal_k_i();
+}
+inline void depthControlData::_internal_set_k_i(float value) {
+  
+  _impl_.k_i_ = value;
+}
+inline void depthControlData::set_k_i(float value) {
+  _internal_set_k_i(value);
+  // @@protoc_insertion_point(field_set:rov.telemetry.depthControlData.k_i)
+}
+
+// float k_d = 3;
+inline void depthControlData::clear_k_d() {
+  _impl_.k_d_ = 0;
+}
+inline float depthControlData::_internal_k_d() const {
+  return _impl_.k_d_;
+}
+inline float depthControlData::k_d() const {
+  // @@protoc_insertion_point(field_get:rov.telemetry.depthControlData.k_d)
+  return _internal_k_d();
+}
+inline void depthControlData::_internal_set_k_d(float value) {
+  
+  _impl_.k_d_ = value;
+}
+inline void depthControlData::set_k_d(float value) {
+  _internal_set_k_d(value);
+  // @@protoc_insertion_point(field_set:rov.telemetry.depthControlData.k_d)
+}
+
+// -------------------------------------------------------------------
+
+// depthControlOutput
+
+// uint64 timestamp_us = 1;
+inline void depthControlOutput::clear_timestamp_us() {
+  _impl_.timestamp_us_ = uint64_t{0u};
+}
+inline uint64_t depthControlOutput::_internal_timestamp_us() const {
+  return _impl_.timestamp_us_;
+}
+inline uint64_t depthControlOutput::timestamp_us() const {
+  // @@protoc_insertion_point(field_get:rov.telemetry.depthControlOutput.timestamp_us)
+  return _internal_timestamp_us();
+}
+inline void depthControlOutput::_internal_set_timestamp_us(uint64_t value) {
+  
+  _impl_.timestamp_us_ = value;
+}
+inline void depthControlOutput::set_timestamp_us(uint64_t value) {
+  _internal_set_timestamp_us(value);
+  // @@protoc_insertion_point(field_set:rov.telemetry.depthControlOutput.timestamp_us)
+}
+
+// bool enabled = 2;
+inline void depthControlOutput::clear_enabled() {
+  _impl_.enabled_ = false;
+}
+inline bool depthControlOutput::_internal_enabled() const {
+  return _impl_.enabled_;
+}
+inline bool depthControlOutput::enabled() const {
+  // @@protoc_insertion_point(field_get:rov.telemetry.depthControlOutput.enabled)
+  return _internal_enabled();
+}
+inline void depthControlOutput::_internal_set_enabled(bool value) {
+  
+  _impl_.enabled_ = value;
+}
+inline void depthControlOutput::set_enabled(bool value) {
+  _internal_set_enabled(value);
+  // @@protoc_insertion_point(field_set:rov.telemetry.depthControlOutput.enabled)
+}
+
+// float command = 3;
+inline void depthControlOutput::clear_command() {
+  _impl_.command_ = 0;
+}
+inline float depthControlOutput::_internal_command() const {
+  return _impl_.command_;
+}
+inline float depthControlOutput::command() const {
+  // @@protoc_insertion_point(field_get:rov.telemetry.depthControlOutput.command)
+  return _internal_command();
+}
+inline void depthControlOutput::_internal_set_command(float value) {
+  
+  _impl_.command_ = value;
+}
+inline void depthControlOutput::set_command(float value) {
+  _internal_set_command(value);
+  // @@protoc_insertion_point(field_set:rov.telemetry.depthControlOutput.command)
+}
+
+// float measured_depth = 4;
+inline void depthControlOutput::clear_measured_depth() {
+  _impl_.measured_depth_ = 0;
+}
+inline float depthControlOutput::_internal_measured_depth() const {
+  return _impl_.measured_depth_;
+}
+inline float depthControlOutput::measured_depth() const {
+  // @@protoc_insertion_point(field_get:rov.telemetry.depthControlOutput.measured_depth)
+  return _internal_measured_depth();
+}
+inline void depthControlOutput::_internal_set_measured_depth(float value) {
+  
+  _impl_.measured_depth_ = value;
+}
+inline void depthControlOutput::set_measured_depth(float value) {
+  _internal_set_measured_depth(value);
+  // @@protoc_insertion_point(field_set:rov.telemetry.depthControlOutput.measured_depth)
+}
+
+// float target_depth = 5;
+inline void depthControlOutput::clear_target_depth() {
+  _impl_.target_depth_ = 0;
+}
+inline float depthControlOutput::_internal_target_depth() const {
+  return _impl_.target_depth_;
+}
+inline float depthControlOutput::target_depth() const {
+  // @@protoc_insertion_point(field_get:rov.telemetry.depthControlOutput.target_depth)
+  return _internal_target_depth();
+}
+inline void depthControlOutput::_internal_set_target_depth(float value) {
+  
+  _impl_.target_depth_ = value;
+}
+inline void depthControlOutput::set_target_depth(float value) {
+  _internal_set_target_depth(value);
+  // @@protoc_insertion_point(field_set:rov.telemetry.depthControlOutput.target_depth)
+}
+
+// -------------------------------------------------------------------
+
+// ThrusterCommand
+
+// uint64 timestamp_us = 1;
+inline void ThrusterCommand::clear_timestamp_us() {
+  _impl_.timestamp_us_ = uint64_t{0u};
+}
+inline uint64_t ThrusterCommand::_internal_timestamp_us() const {
+  return _impl_.timestamp_us_;
+}
+inline uint64_t ThrusterCommand::timestamp_us() const {
+  // @@protoc_insertion_point(field_get:rov.telemetry.ThrusterCommand.timestamp_us)
+  return _internal_timestamp_us();
+}
+inline void ThrusterCommand::_internal_set_timestamp_us(uint64_t value) {
+  
+  _impl_.timestamp_us_ = value;
+}
+inline void ThrusterCommand::set_timestamp_us(uint64_t value) {
+  _internal_set_timestamp_us(value);
+  // @@protoc_insertion_point(field_set:rov.telemetry.ThrusterCommand.timestamp_us)
+}
+
+// float x = 2;
+inline void ThrusterCommand::clear_x() {
+  _impl_.x_ = 0;
+}
+inline float ThrusterCommand::_internal_x() const {
+  return _impl_.x_;
+}
+inline float ThrusterCommand::x() const {
+  // @@protoc_insertion_point(field_get:rov.telemetry.ThrusterCommand.x)
+  return _internal_x();
+}
+inline void ThrusterCommand::_internal_set_x(float value) {
+  
+  _impl_.x_ = value;
+}
+inline void ThrusterCommand::set_x(float value) {
+  _internal_set_x(value);
+  // @@protoc_insertion_point(field_set:rov.telemetry.ThrusterCommand.x)
+}
+
+// float y = 3;
+inline void ThrusterCommand::clear_y() {
+  _impl_.y_ = 0;
+}
+inline float ThrusterCommand::_internal_y() const {
+  return _impl_.y_;
+}
+inline float ThrusterCommand::y() const {
+  // @@protoc_insertion_point(field_get:rov.telemetry.ThrusterCommand.y)
+  return _internal_y();
+}
+inline void ThrusterCommand::_internal_set_y(float value) {
+  
+  _impl_.y_ = value;
+}
+inline void ThrusterCommand::set_y(float value) {
+  _internal_set_y(value);
+  // @@protoc_insertion_point(field_set:rov.telemetry.ThrusterCommand.y)
+}
+
+// float z = 4;
+inline void ThrusterCommand::clear_z() {
+  _impl_.z_ = 0;
+}
+inline float ThrusterCommand::_internal_z() const {
+  return _impl_.z_;
+}
+inline float ThrusterCommand::z() const {
+  // @@protoc_insertion_point(field_get:rov.telemetry.ThrusterCommand.z)
+  return _internal_z();
+}
+inline void ThrusterCommand::_internal_set_z(float value) {
+  
+  _impl_.z_ = value;
+}
+inline void ThrusterCommand::set_z(float value) {
+  _internal_set_z(value);
+  // @@protoc_insertion_point(field_set:rov.telemetry.ThrusterCommand.z)
+}
+
+// float roll = 5;
+inline void ThrusterCommand::clear_roll() {
+  _impl_.roll_ = 0;
+}
+inline float ThrusterCommand::_internal_roll() const {
+  return _impl_.roll_;
+}
+inline float ThrusterCommand::roll() const {
+  // @@protoc_insertion_point(field_get:rov.telemetry.ThrusterCommand.roll)
+  return _internal_roll();
+}
+inline void ThrusterCommand::_internal_set_roll(float value) {
+  
+  _impl_.roll_ = value;
+}
+inline void ThrusterCommand::set_roll(float value) {
+  _internal_set_roll(value);
+  // @@protoc_insertion_point(field_set:rov.telemetry.ThrusterCommand.roll)
+}
+
+// float pitch = 6;
+inline void ThrusterCommand::clear_pitch() {
+  _impl_.pitch_ = 0;
+}
+inline float ThrusterCommand::_internal_pitch() const {
+  return _impl_.pitch_;
+}
+inline float ThrusterCommand::pitch() const {
+  // @@protoc_insertion_point(field_get:rov.telemetry.ThrusterCommand.pitch)
+  return _internal_pitch();
+}
+inline void ThrusterCommand::_internal_set_pitch(float value) {
+  
+  _impl_.pitch_ = value;
+}
+inline void ThrusterCommand::set_pitch(float value) {
+  _internal_set_pitch(value);
+  // @@protoc_insertion_point(field_set:rov.telemetry.ThrusterCommand.pitch)
+}
+
+// float yaw = 7;
+inline void ThrusterCommand::clear_yaw() {
+  _impl_.yaw_ = 0;
+}
+inline float ThrusterCommand::_internal_yaw() const {
+  return _impl_.yaw_;
+}
+inline float ThrusterCommand::yaw() const {
+  // @@protoc_insertion_point(field_get:rov.telemetry.ThrusterCommand.yaw)
+  return _internal_yaw();
+}
+inline void ThrusterCommand::_internal_set_yaw(float value) {
+  
+  _impl_.yaw_ = value;
+}
+inline void ThrusterCommand::set_yaw(float value) {
+  _internal_set_yaw(value);
+  // @@protoc_insertion_point(field_set:rov.telemetry.ThrusterCommand.yaw)
+}
+
+// -------------------------------------------------------------------
+
+// AutonomyStatus
+
+// uint64 timestamp_us = 1;
+inline void AutonomyStatus::clear_timestamp_us() {
+  _impl_.timestamp_us_ = uint64_t{0u};
+}
+inline uint64_t AutonomyStatus::_internal_timestamp_us() const {
+  return _impl_.timestamp_us_;
+}
+inline uint64_t AutonomyStatus::timestamp_us() const {
+  // @@protoc_insertion_point(field_get:rov.telemetry.AutonomyStatus.timestamp_us)
+  return _internal_timestamp_us();
+}
+inline void AutonomyStatus::_internal_set_timestamp_us(uint64_t value) {
+  
+  _impl_.timestamp_us_ = value;
+}
+inline void AutonomyStatus::set_timestamp_us(uint64_t value) {
+  _internal_set_timestamp_us(value);
+  // @@protoc_insertion_point(field_set:rov.telemetry.AutonomyStatus.timestamp_us)
+}
+
+// string behavior = 2;
+inline void AutonomyStatus::clear_behavior() {
+  _impl_.behavior_.ClearToEmpty();
+}
+inline const std::string& AutonomyStatus::behavior() const {
+  // @@protoc_insertion_point(field_get:rov.telemetry.AutonomyStatus.behavior)
+  return _internal_behavior();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void AutonomyStatus::set_behavior(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.behavior_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:rov.telemetry.AutonomyStatus.behavior)
+}
+inline std::string* AutonomyStatus::mutable_behavior() {
+  std::string* _s = _internal_mutable_behavior();
+  // @@protoc_insertion_point(field_mutable:rov.telemetry.AutonomyStatus.behavior)
+  return _s;
+}
+inline const std::string& AutonomyStatus::_internal_behavior() const {
+  return _impl_.behavior_.Get();
+}
+inline void AutonomyStatus::_internal_set_behavior(const std::string& value) {
+  
+  _impl_.behavior_.Set(value, GetArenaForAllocation());
+}
+inline std::string* AutonomyStatus::_internal_mutable_behavior() {
+  
+  return _impl_.behavior_.Mutable(GetArenaForAllocation());
+}
+inline std::string* AutonomyStatus::release_behavior() {
+  // @@protoc_insertion_point(field_release:rov.telemetry.AutonomyStatus.behavior)
+  return _impl_.behavior_.Release();
+}
+inline void AutonomyStatus::set_allocated_behavior(std::string* behavior) {
+  if (behavior != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.behavior_.SetAllocated(behavior, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.behavior_.IsDefault()) {
+    _impl_.behavior_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:rov.telemetry.AutonomyStatus.behavior)
+}
+
+// string phase = 3;
+inline void AutonomyStatus::clear_phase() {
+  _impl_.phase_.ClearToEmpty();
+}
+inline const std::string& AutonomyStatus::phase() const {
+  // @@protoc_insertion_point(field_get:rov.telemetry.AutonomyStatus.phase)
+  return _internal_phase();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void AutonomyStatus::set_phase(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.phase_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:rov.telemetry.AutonomyStatus.phase)
+}
+inline std::string* AutonomyStatus::mutable_phase() {
+  std::string* _s = _internal_mutable_phase();
+  // @@protoc_insertion_point(field_mutable:rov.telemetry.AutonomyStatus.phase)
+  return _s;
+}
+inline const std::string& AutonomyStatus::_internal_phase() const {
+  return _impl_.phase_.Get();
+}
+inline void AutonomyStatus::_internal_set_phase(const std::string& value) {
+  
+  _impl_.phase_.Set(value, GetArenaForAllocation());
+}
+inline std::string* AutonomyStatus::_internal_mutable_phase() {
+  
+  return _impl_.phase_.Mutable(GetArenaForAllocation());
+}
+inline std::string* AutonomyStatus::release_phase() {
+  // @@protoc_insertion_point(field_release:rov.telemetry.AutonomyStatus.phase)
+  return _impl_.phase_.Release();
+}
+inline void AutonomyStatus::set_allocated_phase(std::string* phase) {
+  if (phase != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.phase_.SetAllocated(phase, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.phase_.IsDefault()) {
+    _impl_.phase_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:rov.telemetry.AutonomyStatus.phase)
+}
+
+// float target_heading = 4;
+inline void AutonomyStatus::clear_target_heading() {
+  _impl_.target_heading_ = 0;
+}
+inline float AutonomyStatus::_internal_target_heading() const {
+  return _impl_.target_heading_;
+}
+inline float AutonomyStatus::target_heading() const {
+  // @@protoc_insertion_point(field_get:rov.telemetry.AutonomyStatus.target_heading)
+  return _internal_target_heading();
+}
+inline void AutonomyStatus::_internal_set_target_heading(float value) {
+  
+  _impl_.target_heading_ = value;
+}
+inline void AutonomyStatus::set_target_heading(float value) {
+  _internal_set_target_heading(value);
+  // @@protoc_insertion_point(field_set:rov.telemetry.AutonomyStatus.target_heading)
+}
+
+// float target_depth = 5;
+inline void AutonomyStatus::clear_target_depth() {
+  _impl_.target_depth_ = 0;
+}
+inline float AutonomyStatus::_internal_target_depth() const {
+  return _impl_.target_depth_;
+}
+inline float AutonomyStatus::target_depth() const {
+  // @@protoc_insertion_point(field_get:rov.telemetry.AutonomyStatus.target_depth)
+  return _internal_target_depth();
+}
+inline void AutonomyStatus::_internal_set_target_depth(float value) {
+  
+  _impl_.target_depth_ = value;
+}
+inline void AutonomyStatus::set_target_depth(float value) {
+  _internal_set_target_depth(value);
+  // @@protoc_insertion_point(field_set:rov.telemetry.AutonomyStatus.target_depth)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------
