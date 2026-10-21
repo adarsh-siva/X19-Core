@@ -32,6 +32,33 @@ X19-Core/
 
 ---
 
+## 🎯 Depth Control, Thruster Control & Straight-Line Autonomy
+
+Three C++ nodes, built with CMake (`cmake -S . -B build && cmake --build build`;
+needs `libeigen3-dev` in addition to the packages from `scripts/setup.sh`):
+
+| node | in | out |
+|---|---|---|
+| `depth_control` | `depthControlCommand` (surface: enable, target, test weights), `SensorData` (depth) | `depthControlOutput`, `depthControlData` (default weights, 1 Hz) |
+| `thruster_control` | `ControllerCommand` (pilot/autonomy), `depthControlOutput`, `ImuData` | `ThrusterCommand` (body frame, each axis −1..1), via `genThrusterCommand` |
+| `straight_line` | `ImuData` (heading), `SensorData` (depth) | `depthControlCommand`, `ControllerCommand`, `AutonomyStatus` |
+
+`straight_line` dives to `--depth`, turns to `--heading-deg` (default: the
+heading at start), waits until both are held, then surges at `--surge` for
+`--cruise-time` seconds and stops. Heading uses the same `Controller` as
+depth (`--heading-gains KP KI KD` to tune). Ports and topics for every node
+are in `src/cpp/messaging/endpoints.hpp` / `src/python/messaging/endpoints.py`.
+
+Every input has a staleness timeout: if commands or sensor data stop
+arriving, depth control turns off and the thrusters go to zero.
+
+These nodes are tested in closed loop against a MuJoCo model of the ROV, which
+publishes `SensorData`/`ImuData` and takes `ThrusterCommand` in place of the
+hardware: [ROV_Mujoco_simulation](https://github.com/zcerawesome/ROV_Mujoco_simulation)
+(`./run.sh`, `python3 straight_line_test.py`). Gains are sim-tuned; retune in the pool.
+
+---
+
 ## ⚙️ Setup & Installation
 
 ### 1. System & Python Dependencies

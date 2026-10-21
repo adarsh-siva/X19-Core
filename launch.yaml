@@ -13,3 +13,14 @@ nodes:
 
   # - name: "telemetry"
   #   cmd: "python3 src/python/sensors/telemetry_node.py"
+
+  # Depth hold + thruster command merging (C++; build first:
+  #   cmake -S . -B build && cmake --build build)
+  # - name: "depth_control"
+  #   cmd: "build/depth_control"
+  # - name: "thruster_control"
+  #   cmd: "build/thruster_control"
+
+  # Autonomy: straight line at a fixed depth/heading (see README)
+  # - name: "straight_line"
+  #   cmd: "build/straight_line --depth 1.5 --surge 0.5 --cruise-time 8"
