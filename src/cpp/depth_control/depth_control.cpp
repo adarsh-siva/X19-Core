@@ -34,6 +34,7 @@ static constexpr double DEPTH_TIMEOUT_S = 0.5;
 
 static double latest_depth = 0;
 static bool have_depth = false;
+static bool new_depth = false;
 static node::Clock::time_point depth_time;
 
 double read_depth() {
@@ -64,6 +65,7 @@ int main() {
       [&](const rov::telemetry::SensorData &data) {
         latest_depth = data.depth();
         have_depth = true;
+        new_depth = true;
         depth_time = node::Clock::now();
         controller->record_measurement(read_depth());
       });
@@ -83,9 +85,10 @@ int main() {
   const auto period = std::chrono::duration_cast<node::Clock::duration>(
       std::chrono::duration<double>(1.0 / LOOP_HZ));
   auto next = node::Clock::now();
-  auto last_tick = node::Clock::now();
+  auto last_compute = node::Clock::now();
   auto last_data = node::Clock::now() - std::chrono::seconds(2);
   bool was_enabled = false;
+  double pid_output = 0;
 
   while (node::running()) {
     next += period;
@@ -98,10 +101,6 @@ int main() {
       data_pub.publish(defaults);
       last_data = node::Clock::now();
     }
-
-    // get change in time
-    double dt = node::seconds_since(last_tick);
-    last_tick = node::Clock::now();
 
     bool depth_ok = have_depth && node::seconds_since(depth_time) < DEPTH_TIMEOUT_S;
     bool enabled = sub.getEnableControl() && depth_ok;
@@ -121,7 +120,8 @@ int main() {
       double depth = controller->get_measurement();
       controller->reset();
       controller->record_measurement(depth);
-      dt = 1.0 / LOOP_HZ;
+      last_compute = node::Clock::now() - period;
+      new_depth = true;
       std::cout << "depth_control: enabled, target " << sub.getTargetDepth() << " m" << std::endl;
     }
     was_enabled = true;
@@ -142,8 +142,18 @@ int main() {
       controller->integral = 0;
     }
 
-    double output = controller->compute_filtered(dt);
-    send_thruster_power(output, *controller, true);
+    // Run the PID once per new depth sample, not once per tick. The sensor
+    // isn't synchronized with this loop, so on ticks without a new sample the
+    // error is unchanged (derivative 0) and the next one sees a double step;
+    // the D term then sawtoothed the heave command between -1 and -0.5.
+    if (new_depth) {
+      new_depth = false;
+      // get change in time
+      double dt = node::seconds_since(last_compute);
+      last_compute = node::Clock::now();
+      pid_output = controller->compute_filtered(dt);
+    }
+    send_thruster_power(pid_output, *controller, true);
 
     std::this_thread::sleep_until(next);
   }
