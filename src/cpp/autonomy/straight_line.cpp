@@ -38,6 +38,10 @@
 // and thruster spin-up add enough lag for a +-1.2 deg limit cycle.
 static constexpr Weights HEADING_WEIGHTS = {.k_p = 0.3, .k_i = 0.03, .k_d = 0.05};
 
+// only integrate heading error within this band, so a turn doesn't wind the
+// integral up and overshoot (same reasoning as depth_control's INTEGRAL_ZONE)
+static constexpr double HEADING_INTEGRAL_ZONE = 5.0 * M_PI / 180.0; // rad
+
 static constexpr double LOOP_HZ = 50.0;
 static constexpr double SETTLE_TOLERANCE = 0.05; // m
 static constexpr double HEADING_TOLERANCE = 1.0 * M_PI / 180.0; // rad
@@ -149,6 +153,9 @@ int main(int argc, char **argv) {
     // heading: hand the controller a measurement unwrapped around its target,
     // so crossing +-180 deg is a small error rather than a 360 deg one
     heading.record_measurement(heading.target - wrap(heading.target - yaw));
+    if (std::abs(heading.target - heading.get_measurement()) > HEADING_INTEGRAL_ZONE) {
+      heading.integral = 0;
+    }
     double yaw_cmd = heading.compute_filtered(dt);
 
     double in_phase = node::seconds_since(phase_start);
