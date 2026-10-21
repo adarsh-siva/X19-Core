@@ -1,7 +1,8 @@
 /**
  * straight_line node: drive the ROV in a straight line autonomously.
  *
- *   settle  enable depth control at the target depth, lock the heading
+ *   settle  enable depth control at the target depth, turn to the heading;
+ *           wait until both are held
  *   cruise  surge forward while holding depth and heading
  *   stop    surge off, keep holding depth and heading
  *
@@ -39,6 +40,7 @@ static constexpr Weights HEADING_WEIGHTS = {.k_p = 0.3, .k_i = 0.03, .k_d = 0.05
 
 static constexpr double LOOP_HZ = 50.0;
 static constexpr double SETTLE_TOLERANCE = 0.05; // m
+static constexpr double HEADING_TOLERANCE = 1.0 * M_PI / 180.0; // rad
 static constexpr double SETTLE_HOLD = 2.0;       // s within tolerance before cruising
 static constexpr double SETTLE_TIMEOUT = 20.0;   // s, cruise anyway after this
 
@@ -151,7 +153,9 @@ int main(int argc, char **argv) {
 
     double in_phase = node::seconds_since(phase_start);
     if (phase == "settle") {
-      settled_for = std::abs(depth - opt.depth) < SETTLE_TOLERANCE ? settled_for + dt : 0.0;
+      bool on_depth = std::abs(depth - opt.depth) < SETTLE_TOLERANCE;
+      bool on_heading = std::abs(wrap(heading.target - yaw)) < HEADING_TOLERANCE;
+      settled_for = on_depth && on_heading ? settled_for + dt : 0.0;
       if (settled_for >= SETTLE_HOLD || in_phase >= SETTLE_TIMEOUT) enter("cruise");
     } else if (phase == "cruise" && in_phase >= opt.cruise_time) {
       enter("stop");
