@@ -15,7 +15,7 @@
  * constant depth; a cross current still pushes the track sideways.
  *
  * Usage: straight_line [--depth M] [--surge F] [--cruise-time S]
- *                      [--heading-deg D] [--exit-after S]
+ *                      [--heading-deg D] [--heading-gains KP KI KD] [--exit-after S]
  */
 #include <cmath>
 #include <cstdlib>
@@ -32,8 +32,10 @@
 #include "telemetry.pb.h"
 
 // heading PID, output in [-1, 1] of full yaw authority per radian of error.
-// Tuned in the MuJoCo sim; retune in the pool.
-static constexpr Weights HEADING_WEIGHTS = {.k_p = 1.0, .k_i = 0.1, .k_d = 0.1};
+// Tuned in the MuJoCo sim through the full node chain; retune in the pool
+// with --heading-gains. kp 1.0 put the loop at ~2.5 Hz, where the pub/sub hops
+// and thruster spin-up add enough lag for a +-1.2 deg limit cycle.
+static constexpr Weights HEADING_WEIGHTS = {.k_p = 0.3, .k_i = 0.03, .k_d = 0.05};
 
 static constexpr double LOOP_HZ = 50.0;
 static constexpr double SETTLE_TOLERANCE = 0.05; // m
@@ -47,6 +49,7 @@ struct Options {
   bool heading_given = false;
   double heading = 0.0;   // rad
   double exit_after = -1; // s after stopping; < 0 runs until killed
+  Weights heading_weights = HEADING_WEIGHTS;
 };
 
 static Options parse(int argc, char **argv) {
@@ -64,9 +67,14 @@ static Options parse(int argc, char **argv) {
     else if (!std::strcmp(argv[i], "--cruise-time")) o.cruise_time = next();
     else if (!std::strcmp(argv[i], "--heading-deg")) { o.heading = next() * M_PI / 180.0; o.heading_given = true; }
     else if (!std::strcmp(argv[i], "--exit-after")) o.exit_after = next();
+    else if (!std::strcmp(argv[i], "--heading-gains")) {
+      o.heading_weights.k_p = next();
+      o.heading_weights.k_i = next();
+      o.heading_weights.k_d = next();
+    }
     else {
       std::cerr << "usage: straight_line [--depth M] [--surge F] [--cruise-time S] "
-                   "[--heading-deg D] [--exit-after S]" << std::endl;
+                   "[--heading-deg D] [--heading-gains KP KI KD] [--exit-after S]" << std::endl;
       std::exit(2);
     }
   }
@@ -102,7 +110,7 @@ int main(int argc, char **argv) {
   CppMsg::Publisher command_pub(endpoints::CONTROLLER_COMMAND.bind(), endpoints::CONTROLLER_COMMAND.topic);
   CppMsg::Publisher status_pub(endpoints::AUTONOMY_STATUS.bind(), endpoints::AUTONOMY_STATUS.topic);
 
-  Controller heading(HEADING_WEIGHTS);
+  Controller heading(opt.heading_weights);
 
   std::string phase = "wait"; // until the first IMU and depth samples
   auto phase_start = node::Clock::now();
